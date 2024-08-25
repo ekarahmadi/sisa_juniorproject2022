@@ -6,4 +6,4 @@
 **Project Lead:** Gavind Muhammad Pramahita  
 **Team Members:**
 - Septian Eka Rahmadi
-- Raden Aryo Bismo Nugroho
+- Raden Aryo Bismo Nugroho (22/494473/TK/54233)
