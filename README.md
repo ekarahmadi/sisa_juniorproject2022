@@ -1,7 +1,9 @@
-#SISA (Sistem Informasi Sampah)
-Merupakan sistem dashboard yang dapat digunakan untuk admin sebagai cara untuk melakukan overview dari waste management yang akan kami buat.
+# SISA (Sistem Informasi Sampah)
+**SISA** is a comprehensive dashboard system designed for administrators to provide an overview of waste management processes. This platform is part of the larger **Nyampah** initiative, which focuses on effective and sustainable waste management solutions.
 
-#Nyampah
-Ketua Kelompok: Gavind Muhammad Pramahita
-Anggota 1: Septian Eka Rahmadi
-Anggota 2: Raden Aryo Bismo Nugroho
+## Nyampah Project
+
+**Project Lead:** Gavind Muhammad Pramahita  
+**Team Members:**
+- Septian Eka Rahmadi
+- Raden Aryo Bismo Nugroho
