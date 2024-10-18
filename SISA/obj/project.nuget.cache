@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "v3Ls5sYbrzAx7lkgliPnAAjKsRRqiDQG/jsbcNLES9CwwJj19WyLjed9UAYSZbBacNdp8txikJXKKDheTlQIdw==",
+  "dgSpecHash": "nbWvrHsMs+EPR63tZ62zPVQATBajmfWCIcYQZCnkGMZZ5i4xDzotCL4NezkJfrF9vpC+bIyOn+csqfwJi/1f0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gavind Pramahita\\source\\repos\\SISA\\SISA\\SISA.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\College\\Sem 5\\Junpro\\Code\\sisa_juniorproject2022\\SISA\\SISA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

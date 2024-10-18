@@ -21,11 +21,7 @@ namespace SISA
         {
             // Logic to edit TPS
         }
-
-        public void CreatePickupRequest(TPS tps)
-        {
-            // Logic to create pickup request
-        }
     }
 
 }
+

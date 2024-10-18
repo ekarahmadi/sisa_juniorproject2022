@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SISA
 {
     public class Request
     {
-        public string RequestId { get; set; }
+        public int RequestId { get; set; }
         public string Status { get; set; }
         public DateTime Date { get; set; }
-        public TPS Tps { get; set; }
+        public string WasteType { get; set; }
+        public int Quantity { get; set; }
+        public int UserId { get; set; }  // ID of the user who created the request
 
-        public Request(TPS tps)
+        public Request(int requestId, string status, DateTime date, string wasteType, int quantity, int userId)
         {
-            RequestId = Guid.NewGuid().ToString();
-            Tps = tps;
-            Status = "Pending";
-            Date = DateTime.Now;
+            RequestId = requestId;
+            Status = status;
+            Date = date;
+            WasteType = wasteType;
+            Quantity = quantity;
+            UserId = userId;
         }
 
-        public void UpdateRequestStatus(string newStatus)
+        public void DisplayRequestInfo()
         {
-            Status = newStatus;
+            Console.WriteLine($"Request ID: {RequestId}, Status: {Status}, Date: {Date}, Waste Type: {WasteType}, Quantity: {Quantity}");
         }
     }
-
-
 }

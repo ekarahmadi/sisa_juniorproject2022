@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SISA
 {
@@ -12,22 +9,32 @@ namespace SISA
         {
         }
 
-        public void ReviewTPSData(TPS tps)
+        // View pickup history from the WasteManagement data
+        public void ViewPickupHistory(List<WasteManagement> wasteHistory)
         {
-            // Logic to review TPS data
+            Console.WriteLine("Waste Pickup History:");
+            foreach (var waste in wasteHistory)
+            {
+                Console.WriteLine($"Waste ID: {waste.WasteId}, Type: {waste.WasteType}, Quantity: {waste.Quantity}, Pickup Date: {waste.PickupDate}, Location: {waste.Location}");
+            }
         }
 
-        public bool PerformQualityCheck(TPS tps)
+        // Display statistics of waste managed within the system
+        public void ViewWasteStatistics(List<WasteManagement> wasteData)
         {
-            // Logic to perform quality check
-            return true;
-        }
+            double totalWaste = 0;
+            var groupedByType = new Dictionary<string, double>();
 
-        public void ManageWasteReports()
-        {
-            // Logic to manage waste reports
-        }
-    }
+            // Calculate total waste and group by waste type
+            foreach (var waste in wasteData)
+            {
+                totalWaste += waste.Quantity;
+
+                if (groupedByType.ContainsKey(waste.WasteType))
+                {
+                    groupedByType[waste.WasteType] += waste.Quantity;
+                }
+                else
+                {
 
 
-}

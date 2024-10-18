@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SISA
-build_property.ProjectDir = C:\Users\Gavind Pramahita\source\repos\SISA\SISA\
+build_property.ProjectDir = D:\College\Sem 5\Junpro\Code\sisa_juniorproject2022\SISA\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
