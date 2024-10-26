@@ -34,7 +34,11 @@ namespace SISA
                 {
                     groupedByType[waste.WasteType] += waste.Quantity;
                 }
-                else
-                {
+
+            }
+        }
+    }
+}
+            
 
 

@@ -7,12 +7,17 @@ namespace SISA
     {
         // Store multiple TPS locations and waste partners
         private List<TPS> tpsList;
-        private List<WasteManagementPartner> partnerList;
+        private List<WasteManagement> partnerList;
 
         public Administrator(string username, string password) : base(username, password)
         {
             tpsList = new List<TPS>();
-            partnerList = new List<WasteManagementPartner>();
+            partnerList = new List<WasteManagement>();
+        }
+
+        public override void ProcessWasteReport()
+        {
+            Console.WriteLine($"Administrator {Username} is reviewing the overall waste reports.");
         }
 
         // Add TPS Location
@@ -33,7 +38,7 @@ namespace SISA
         }
 
         // Add a Waste Management Partner
-        public void AddWasteManagementPartner(WasteManagementPartner newPartner)
+        public void AddWasteManagementPartner(WasteManagement newPartner)
         {
             partnerList.Add(newPartner);
             Console.WriteLine($"Partner {newPartner.Name} has been added.");

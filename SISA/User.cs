@@ -22,5 +22,9 @@ namespace SISA
             // Login logic (check username and password)
             return true;
         }
+        public virtual void ProcessWasteReport()
+        {
+            Console.WriteLine("Processing waste report in a generic way.");
+        }
     }
 }
