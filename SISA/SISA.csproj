@@ -7,4 +7,45 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\bgLoginPage.png" />
+    <None Remove="Images\innerLoginPage.png" />
+    <None Remove="Images\InnerSignUp.png" />
+    <None Remove="Images\SampahLoginPage.png" />
+    <None Remove="Images\trashCan.png" />
+    <None Remove="Views\Images\barIcon.png" />
+    <None Remove="Views\Images\binocularsIcon.png" />
+    <None Remove="Views\Images\exitIcon.png" />
+    <None Remove="Views\Images\homeIcon.png" />
+    <None Remove="Views\Images\innerLoginPage.png" />
+    <None Remove="Views\Images\InnerSignUp.png" />
+    <None Remove="Views\Images\mainBackground.png" />
+    <None Remove="Views\Images\peopleIcon.png" />
+    <None Remove="Views\Images\SampahLoginPage.png" />
+    <None Remove="Views\Images\sideBg.png" />
+    <None Remove="Views\Images\trashCan.png" />
+    <None Remove="Views\Images\trashIcon.png" />
+  </ItemGroup>
+
+    <ItemGroup>
+		<Resource Include="Fonts\Poppins-Regular.ttf" />
+		<Resource Include="Fonts\Poppins-Bold.ttf" />
+		<Resource Include="Fonts\Poppins-ExtraBold.ttf" />
+		<Resource Include="Images\innerLoginPage.png" />
+		<Resource Include="Images\InnerSignUp.png" />
+		<Resource Include="Images\SampahLoginPage.png" />
+		<Resource Include="Images\trashCan.png" />
+		<Resource Include="Views\Images\barIcon.png" />
+		<Resource Include="Views\Images\binocularsIcon.png" />
+		<Resource Include="Views\Images\exitIcon.png" />
+		<Resource Include="Views\Images\homeIcon.png" />
+		<Resource Include="Views\Images\mainBackground.png" />
+		<Resource Include="Views\Images\innerLoginPage.png" />
+		<Resource Include="Views\Images\InnerSignUp.png" />
+		<Resource Include="Views\Images\peopleIcon.png" />
+		<Resource Include="Views\Images\SampahLoginPage.png" />
+		<Resource Include="Views\Images\sideBg.png" />
+		<Resource Include="Views\Images\trashCan.png" />
+		<Resource Include="Views\Images\trashIcon.png" />
+    </ItemGroup>
 </Project>

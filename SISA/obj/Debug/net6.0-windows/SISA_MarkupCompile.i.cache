@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gavind Pramahita\source\repos\SISA\SISA\obj\Debug\net6.0-windows\
+C:\Users\Lenovo\source\repos\sisa_juniorproject2022\SISA\obj\Debug\net6.0-windows\
 SISA
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Gavind Pramahita\source\repos\SISA\SISA\App.xaml
-11407045341
+C:\Users\Lenovo\source\repos\sisa_juniorproject2022\SISA\App.xaml
+4-465560226
 
-12246781467
-194726069201
-MainWindow.xaml;
+15-487218747
+194750953030
+MainWindow.xaml;Views\Admin.xaml;Views\Login.xaml;Views\SignUp.xaml;
 
 False
 
