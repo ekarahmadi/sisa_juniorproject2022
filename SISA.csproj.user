@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Recycle\ReAuthentication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Recycle\RE_Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_EditDataUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Recycle\RE_ReqStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_EditDataUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\1Starting\GetStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\1Starting\UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\1Starting\UC_Signup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\1Starting\UC_Start.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_AppDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_AdminReqDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\2MainWindow\UC_Riwayat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\3AdminWindow\AdminWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\3AdminWindow\UC_AdminAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\3AdminWindow\UC_AdminAccRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\3AdminWindow\UC_AdminDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\3AdminWindow\UC_AdminUnitData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
