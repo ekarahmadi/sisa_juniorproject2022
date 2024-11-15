@@ -124,9 +124,6 @@
   <data name="contentAccountUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\contentAccountUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnLanjutkanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\adminWindow\btnLanjutkanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnReloadHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnReloadHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,8 +145,17 @@
   <data name="nvAdminAccountHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminAccountHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnOlahSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnOlahSampahHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesaiHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesaiHover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EditHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\EditHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditData1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnKembali" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKembali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +169,9 @@
   <data name="MuatDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\MuatDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TPADashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPADashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BerhasilNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\BerhasilNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,11 +181,16 @@
   <data name="btnLanjutkan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnLanjutkan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnHapusUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnHapusUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnTambahUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnTambahUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="btnSelesaiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesaiHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="nvAdminRequestHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminRequestHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +225,8 @@
   <data name="EditNoHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\EditNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnEditDataUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\adminWindow\btnEditDataUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnJemput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnTolak1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnTolak1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +243,13 @@
   <data name="MuatDataHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\MuatDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnDaftarClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDaftarClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="btnOlahSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnOlahSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="EditDataHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\EditDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +275,8 @@
   <data name="nvAccountHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\nvAccountHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nvDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\mainWindow\nvDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contentSignupRev1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignupRev1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AddDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\AddDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,12 +287,15 @@
   <data name="contentEditData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\contentEditData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnHapusDataUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnHapusDataUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnTambahUnit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnTambahUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+=======
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   <data name="nvAdminLogoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminLogoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -289,8 +311,13 @@
   <data name="EditHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\EditHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnHapusDataTerseleksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnHapusDataTerseleksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="btnSelesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="nvAdminAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminAccount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +337,16 @@
   <data name="btnEditData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnEditData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnHapusDataUserHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnHapusDataUserHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="nvDashboardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvDashboardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnJemputHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemputHover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="btnStartClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnStartClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,14 +354,22 @@
   <data name="Riwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\Riwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnHapusUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\adminWindow\btnHapusUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLanjutkanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnLanjutkanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="nvAdminRequest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nvDashboardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\nvDashboardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="nvDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPARiwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPARiwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="nvAdminLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,8 +380,16 @@
   <data name="RefreshDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\RefreshDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnEditDataUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnEditDataUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="BuatNoHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BuatNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="nvAdminUnitDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\nvAdminUnitDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,11 +397,16 @@
   <data name="MuatDataNo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\MuatDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="btnTambahUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnTambahUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\EditNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="nvRiwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvRiwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
   <data name="btnTolakHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnTolakHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -372,6 +428,9 @@
   </data>
   <data name="btnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnJemputHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemputHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AddDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\AddDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -397,6 +456,9 @@
   <data name="nvKeluar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\mainWindow\nvKeluar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TPADashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPADashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="contentLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contentLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -406,12 +468,27 @@
   <data name="contentSignupRev3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contentSignupRev3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="contentSignupRev1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contentSignupRev1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="btnTolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTolak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnHapusDataTerseleksiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\adminWindow\btnHapusDataTerseleksiHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nvRiwayatHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvRiwayatHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nvAdminRequest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminDashboardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminDashboardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
+  </data>
+  <data name="TPALoadHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPALoadHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+<<<<<<< HEAD
   <data name="btnEditData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\btnEditData1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -426,5 +503,9 @@
   </data>
   <data name="contentDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\adminWindow\contentDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="TPALoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPALoad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 485c164297c56d8b9b4bc6f06237528cb5ab2fcc
   </data>
 </root>
