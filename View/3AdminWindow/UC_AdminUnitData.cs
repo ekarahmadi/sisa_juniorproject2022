@@ -90,9 +90,8 @@ namespace SISA.View._3AdminWindow
                 cbTipe.Text = selectedRow.Cells["TipeUnit"].Value?.ToString() ?? "";
                 tbLokasi.Text = selectedRow.Cells["LokasiUnit"].Value?.ToString() ?? "";
                 tbKapasitas.Text = selectedRow.Cells["KapasitasUnit"].Value?.ToString() ?? "";
-
-                isEditing = true;
                 btnHapusSeleksi.Visible = true; // Tampilkan tombol Hapus Seleksi saat ada data yang dipilih
+                isEditing = true;
             }
             else
             {
@@ -125,6 +124,7 @@ namespace SISA.View._3AdminWindow
             List<UnitData> units = authService.GetAllUnits();
             dgvUnit.DataSource = units;
             dgvUnit.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUnit.Columns["UnitId"].FillWeight = 30;
             dgvUnit.Columns["NamaUnit"].FillWeight = 30;
             dgvUnit.Columns["TipeUnit"].FillWeight = 20;
             dgvUnit.Columns["LokasiUnit"].FillWeight = 30;
@@ -165,15 +165,34 @@ namespace SISA.View._3AdminWindow
 
         private void btnTambahUnit_Click(object sender, EventArgs e)
         {
+            // Validasi bahwa semua field telah diisi
+            if (string.IsNullOrWhiteSpace(tbNama.Text) ||
+                string.IsNullOrWhiteSpace(cbTipe.Text) ||
+                string.IsNullOrWhiteSpace(tbLokasi.Text) ||
+                string.IsNullOrWhiteSpace(tbKapasitas.Text))
+            {
+                MessageBox.Show("Semua field harus diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validasi bahwa kapasitas berisi angka
+            if (!int.TryParse(tbKapasitas.Text, out int kapasitas))
+            {
+                MessageBox.Show("Kapasitas harus berupa angka yang valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (isEditing)
             {
+                // Mode Edit - Update data yang dipilih
                 int unitId = (int)dgvUnit.SelectedRows[0].Cells["UnitId"].Value;
                 UnitData updatedUnit = new UnitData
                 {
+                    UnitId = unitId,
                     NamaUnit = tbNama.Text,
                     TipeUnit = cbTipe.Text,
                     LokasiUnit = tbLokasi.Text,
-                    KapasitasUnit = tbKapasitas.Text
+                    KapasitasUnit = kapasitas.ToString() // Menyimpan kapasitas dalam bentuk string
                 };
 
                 authService.UpdateUnit(unitId, updatedUnit);
@@ -181,21 +200,22 @@ namespace SISA.View._3AdminWindow
             }
             else
             {
+                // Mode Tambah - Tambahkan data baru
                 UnitData newUnit = new UnitData
                 {
                     NamaUnit = tbNama.Text,
                     TipeUnit = cbTipe.Text,
                     LokasiUnit = tbLokasi.Text,
-                    KapasitasUnit = tbKapasitas.Text
+                    KapasitasUnit = kapasitas.ToString() // Menyimpan kapasitas dalam bentuk string
                 };
 
                 authService.AddUnit(newUnit);
                 MessageBox.Show("Data baru berhasil ditambahkan.", "Informasi");
             }
 
-            LoadAllUnitData();
-            ClearTextBoxes();
-            isEditing = false;
+            LoadAllUnitData(); // Refresh data
+            ClearTextBoxes();  // Kosongkan TextBox setelah operasi selesai
+            isEditing = false; // Reset flag ke mode tambah
         }
     }
 }

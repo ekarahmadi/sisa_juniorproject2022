@@ -98,6 +98,7 @@ namespace SISA.Model
             }
             return unitsData;
         }
+
         public DataTable GetUnitDataByUsername(string username)
         {
             DataTable unitData = new DataTable();
@@ -127,28 +128,48 @@ namespace SISA.Model
 
         public bool RegisterUser(string name, string username, string password, int unitId)
         {
-            // Tentukan role_id berdasarkan unit_id
+            // Tentukan role_id berdasarkan tipe unit
             int roleId;
-            if (unitId == 1) // Misal 1 = TPS
-            {
-                roleId = 1; // Admin TPS
-            }
-            else if (unitId == 2) // Misal 2 = TPA
-            {
-                roleId = 2; // Admin TPA
-            }
-            else
-            {
-                // Jika unit_id tidak dikenali, kita bisa kembalikan false atau gunakan role default
-                Console.WriteLine("Unit ID tidak valid.");
-                return false;
-            }
+            string unitType = "";
 
             try
             {
                 using (var conn = new NpgsqlConnection(connectionString))
                 {
                     conn.Open();
+
+                    // Ambil unit_type berdasarkan unitId dari tabel units
+                    string unitTypeQuery = "SELECT unit_type FROM units WHERE unit_id = @unitId";
+                    using (var unitTypeCmd = new NpgsqlCommand(unitTypeQuery, conn))
+                    {
+                        unitTypeCmd.Parameters.AddWithValue("unitId", unitId);
+                        var result = unitTypeCmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            unitType = result.ToString();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Unit ID tidak valid.");
+                            return false;
+                        }
+                    }
+
+                    // Tentukan role_id berdasarkan unit_type
+                    if (unitType == "TPS")
+                    {
+                        roleId = 1; // Admin TPS
+                    }
+                    else if (unitType == "TPA")
+                    {
+                        roleId = 2; // Admin TPA
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tipe unit tidak dikenal.");
+                        return false;
+                    }
 
                     // Masukkan data ke dalam tabel calonUser dengan role_id yang sudah ditentukan
                     string query = "INSERT INTO calonUser (name, username, password, unit_id, role_id, date_registered) " +
@@ -171,6 +192,7 @@ namespace SISA.Model
                 return false;
             }
         }
+
 
         // New Method: Get Pending Users
         public DataTable GetCalonUsers()
@@ -208,6 +230,7 @@ namespace SISA.Model
 
             return dataTable;
         }
+
         public bool AddTPSData(float massaSampah, char tipeSampah)
         {
             using (var conn = new NpgsqlConnection(connectionString))
@@ -223,6 +246,30 @@ namespace SISA.Model
                 }
             }
         }
+
+        public bool DeleteUser(int userId)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM users WHERE user_id = @userId";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("userId", userId);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+        }
+
 
         public bool UpdateTPSData(int entryNumber, float massaSampah, char tipeSampah)
         {
@@ -944,6 +991,69 @@ namespace SISA.Model
             return unitId;
         }
 
+        public int GetTotalUsers()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM users";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public int GetTotalAccountRequests()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM calonuser";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public int GetTotalUnitsByType(string unitType)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM units WHERE unit_type = @unitType";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("unitType", unitType);
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        }
 
 
     }

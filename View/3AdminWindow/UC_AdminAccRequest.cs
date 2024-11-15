@@ -34,18 +34,23 @@ namespace SISA.View._3AdminWindow
             LoadCalonUserData();
             LoadUserData();
             ConfigureDataGrids();
+            LoadUnitData();
+
+            // Membuat TextBox Role hanya untuk tampilan (tidak dapat diisi)
+            tbRole.ReadOnly = true;
 
             // Sembunyikan btnHapusSeleksi pada awal
             btnHapusSeleksi.Visible = false;
 
             // Tambahkan event untuk memantau perubahan seleksi pada DataGridView
-            dgvTerdaftar.SelectionChanged += DgvTerdaftar_SelectionChanged;
+            dgvTerdaftar.SelectionChanged += DataGrid_SelectionChanged;
+            dgvCalonUser.SelectionChanged += DataGrid_SelectionChanged;
         }
 
-        private void DgvTerdaftar_SelectionChanged(object sender, EventArgs e)
+        private void DataGrid_SelectionChanged(object sender, EventArgs e)
         {
-            // Tampilkan atau sembunyikan btnHapusSeleksi berdasarkan seleksi
-            btnHapusSeleksi.Visible = dgvTerdaftar.SelectedRows.Count > 0;
+            // Tampilkan btnHapusSeleksi jika ada baris yang dipilih pada salah satu DataGridView
+            btnHapusSeleksi.Visible = dgvCalonUser.SelectedRows.Count > 0 || dgvTerdaftar.SelectedRows.Count > 0;
         }
 
         private void LoadDataGrids()
@@ -161,6 +166,8 @@ namespace SISA.View._3AdminWindow
             editHover = Properties.Resources.btnEditDataHover;
             Image HapusSeleksiDefault = Properties.Resources.btnHapusDataTerseleksi;
             Image HapusSeleksiHover = Properties.Resources.btnHapusDataTerseleksiHover;
+            Image HapusDataDefault = Properties.Resources.btnHapusDataUser1;
+            Image HapusDataHover = Properties.Resources.btnHapusDataUserHover1;
 
             btnTerima.Image = terimaDefault;
             btnTolak.Image = tolakDefault;
@@ -179,6 +186,10 @@ namespace SISA.View._3AdminWindow
             // Add hover events for btnHapusSeleksi
             btnHapusSeleksi.MouseEnter += (s, e) => btnHapusSeleksi.Image = HapusSeleksiHover;
             btnHapusSeleksi.MouseLeave += (s, e) => btnHapusSeleksi.Image = HapusSeleksiDefault;
+
+            // Add hover events for btnHapusSeleksi
+            btnHapusUser.MouseEnter += (s, e) => btnHapusUser.Image = HapusDataHover;
+            btnHapusUser.MouseLeave += (s, e) => btnHapusUser.Image = HapusDataDefault;
         }
 
         private void btnTerima_Click(object sender, EventArgs e)
@@ -259,15 +270,67 @@ namespace SISA.View._3AdminWindow
             }
         }
 
+        private void LoadUnitData()
+        {
+            // Ambil data unit dari AuthService
+            DataTable unitsData = authService.GetUnitData();
+
+            // Atur data source, display member, dan value member
+            tbUnitKerja.DataSource = unitsData;
+            tbUnitKerja.DisplayMember = "unit_name";  // Nama kolom yang ingin ditampilkan
+            tbUnitKerja.ValueMember = "unit_id";      // Nama kolom yang digunakan sebagai nilai
+
+            // Mengatur agar tidak ada item yang terpilih pada tampilan awal
+            tbUnitKerja.SelectedIndex = -1;  // Menampilkan ComboBox kosong
+        }
+
         private void btnHapusSeleksi_Click(object sender, EventArgs e)
         {
+            // Kosongkan semua TextBox dan ComboBox
             tbNama.Clear();
             tbUsername.Clear();
             tbRole.Clear();
-            tbUnitKerja.Clear();
+            tbUnitKerja.SelectedIndex = -1;
             tbWaktu.Clear();
+
+            // Hapus seleksi pada kedua DataGridView
             dgvTerdaftar.ClearSelection();
+            dgvCalonUser.ClearSelection();
+
+            // Sembunyikan tombol Hapus Seleksi setelah semua seleksi dihilangkan
             btnHapusSeleksi.Visible = false;
+        }
+
+        private void btnHapusUser_Click(object sender, EventArgs e)
+        {
+            if (dgvTerdaftar.SelectedRows.Count > 0)
+            {
+                int userId = Convert.ToInt32(dgvTerdaftar.SelectedRows[0].Cells["user_id"].Value);
+
+                DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus pengguna ini?",
+                                                            "Konfirmasi Hapus",
+                                                            MessageBoxButtons.YesNo,
+                                                            MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bool isDeleted = authService.DeleteUser(userId);
+
+                    if (isDeleted)
+                    {
+                        MessageBox.Show("Pengguna berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadUserData(); // Memuat ulang data setelah penghapusan
+                    }
+                    else
+                    {
+                        MessageBox.Show("Terjadi kesalahan saat menghapus pengguna.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih pengguna yang ingin dihapus.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

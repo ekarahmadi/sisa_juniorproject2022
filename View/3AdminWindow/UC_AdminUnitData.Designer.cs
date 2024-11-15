@@ -41,15 +41,15 @@
             label4 = new Label();
             btnEditUnit = new PictureBox();
             btnHapusUnit = new PictureBox();
+            btnHapusSeleksi = new PictureBox();
             label1 = new Label();
             dgvUnit = new DataGridView();
-            btnHapusSeleksi = new PictureBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnTambahUnit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEditUnit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusUnit).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvUnit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusSeleksi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUnit).BeginInit();
             SuspendLayout();
             // 
             // label3
@@ -64,7 +64,6 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btnHapusSeleksi);
             panel3.Controls.Add(cbTipe);
             panel3.Controls.Add(btnTambahUnit);
             panel3.Controls.Add(tbLokasi);
@@ -76,9 +75,9 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(btnEditUnit);
             panel3.Controls.Add(btnHapusUnit);
-            panel3.Location = new Point(693, 74);
+            panel3.Location = new Point(693, 145);
             panel3.Name = "panel3";
-            panel3.Size = new Size(303, 558);
+            panel3.Size = new Size(303, 487);
             panel3.TabIndex = 7;
             // 
             // cbTipe
@@ -187,6 +186,17 @@
             btnHapusUnit.TabStop = false;
             btnHapusUnit.Click += btnHapusUnit_Click;
             // 
+            // btnHapusSeleksi
+            // 
+            btnHapusSeleksi.Image = Properties.Resources.btnHapusDataTerseleksi;
+            btnHapusSeleksi.Location = new Point(756, 94);
+            btnHapusSeleksi.Name = "btnHapusSeleksi";
+            btnHapusSeleksi.Size = new Size(165, 27);
+            btnHapusSeleksi.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnHapusSeleksi.TabIndex = 18;
+            btnHapusSeleksi.TabStop = false;
+            btnHapusSeleksi.Click += btnHapusSeleksi_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -199,28 +209,19 @@
             // 
             // dgvUnit
             // 
+            dgvUnit.BackgroundColor = Color.CadetBlue;
             dgvUnit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUnit.Location = new Point(51, 74);
             dgvUnit.Name = "dgvUnit";
             dgvUnit.Size = new Size(621, 558);
             dgvUnit.TabIndex = 10;
             // 
-            // btnHapusSeleksi
-            // 
-            btnHapusSeleksi.Image = Properties.Resources.btnHapusDataTerseleksi;
-            btnHapusSeleksi.Location = new Point(63, 462);
-            btnHapusSeleksi.Name = "btnHapusSeleksi";
-            btnHapusSeleksi.Size = new Size(165, 27);
-            btnHapusSeleksi.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnHapusSeleksi.TabIndex = 18;
-            btnHapusSeleksi.TabStop = false;
-            btnHapusSeleksi.Click += btnHapusSeleksi_Click;
-            // 
             // UC_AdminUnitData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
+            Controls.Add(btnHapusSeleksi);
             Controls.Add(dgvUnit);
             Controls.Add(label1);
             Controls.Add(panel3);
@@ -232,8 +233,8 @@
             ((System.ComponentModel.ISupportInitialize)btnTambahUnit).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnEditUnit).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusUnit).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvUnit).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusSeleksi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUnit).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
