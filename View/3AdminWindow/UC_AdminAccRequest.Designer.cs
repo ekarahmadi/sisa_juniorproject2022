@@ -166,7 +166,7 @@
             // tbWaktu
             // 
             tbWaktu.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbWaktu.Location = new Point(18, 349);
+            tbWaktu.Location = new Point(18, 348);
             tbWaktu.Name = "tbWaktu";
             tbWaktu.Size = new Size(262, 31);
             tbWaktu.TabIndex = 13;
