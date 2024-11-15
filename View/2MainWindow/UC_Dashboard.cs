@@ -12,7 +12,6 @@ namespace SISA.View._2MainWindow
         private AuthService authService;
         //Add authservice
         private string currentUsername;
-        private int userId;
 
         public UC_Dashboard()
         {
