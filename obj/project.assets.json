@@ -236,19 +236,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\ekara\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Dokumen\\Aryo\\KULIAH\\SEM 5\\JunPro\\JUNPRO\\sisa_juniorproject2022\\SISA.csproj",
+      "projectUniqueName": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\SISA.csproj",
       "projectName": "SISA",
-      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Dokumen\\Aryo\\KULIAH\\SEM 5\\JunPro\\JUNPRO\\sisa_juniorproject2022\\SISA.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Dokumen\\Aryo\\KULIAH\\SEM 5\\JunPro\\JUNPRO\\sisa_juniorproject2022\\obj\\",
+      "projectPath": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\SISA.csproj",
+      "packagesPath": "C:\\Users\\ekara\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ekara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -256,6 +261,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -307,7 +313,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
