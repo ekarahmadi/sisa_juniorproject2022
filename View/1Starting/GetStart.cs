@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SISA.View._3AdminWindow;
+using SISA.View._4TPAWindow;
 using SISA.Model;
 using Npgsql;
 
@@ -83,10 +84,11 @@ namespace SISA.View._1Starting
             switch (roleId)
             {
                 case 1: // Admin TPS
-                case 2: // Admin TPA
                     nextForm = new MainWindow(); // Form untuk Admin TPS/TPA
                     break;
-
+                case 2: // Admin TPA
+                    nextForm = new AdminTPAWindow(); // Form untuk Admin TPS/TPA
+                    break;
                 case 3: // Admin Aplikasi
                     nextForm = new AdminWindow(); // Form untuk Admin Aplikasi
                     break;
