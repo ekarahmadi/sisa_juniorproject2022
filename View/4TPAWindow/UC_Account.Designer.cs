@@ -49,7 +49,6 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.contentAccountUser;
             pictureBox1.Location = new Point(27, 141);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(662, 464);
@@ -114,7 +113,6 @@
             // btnEditUser
             // 
             btnEditUser.BackColor = SystemColors.ButtonFace;
-            btnEditUser.Image = Properties.Resources.btnEditData1;
             btnEditUser.Location = new Point(380, 507);
             btnEditUser.Name = "btnEditUser";
             btnEditUser.Size = new Size(138, 27);
@@ -126,7 +124,6 @@
             // btnReload
             // 
             btnReload.BackColor = SystemColors.ButtonFace;
-            btnReload.Image = Properties.Resources.btnReload;
             btnReload.Location = new Point(524, 507);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(97, 27);

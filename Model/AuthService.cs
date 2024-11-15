@@ -13,6 +13,8 @@ namespace SISA.Model
     internal class AuthService
     {
         private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=postgres;Database=sisa_juniorproject";
+
+        // private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=root;Database=sisa_juniorproject";
         private static int? _currentUserId = null;
         public bool Login(string username, string password, out int roleId)
         {

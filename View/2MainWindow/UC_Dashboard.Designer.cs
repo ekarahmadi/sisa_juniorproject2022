@@ -229,7 +229,7 @@
             btnPesan.Size = new Size(118, 21);
             btnPesan.TabIndex = 25;
             btnPesan.TabStop = false;
-            btnPesan.Click += btnPesan_Click;
+            //btnPesan.Click += btnPesan_Click;
             // 
             // pictureBox2
             // 
