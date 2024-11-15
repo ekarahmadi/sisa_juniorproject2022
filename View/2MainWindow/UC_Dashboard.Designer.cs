@@ -35,10 +35,8 @@
             btnEditData = new PictureBox();
             btnTambahData = new PictureBox();
             txtMassaAdd = new TextBox();
-            txtTipeAdd = new TextBox();
             txtMassaMod = new TextBox();
             txtNoMod = new TextBox();
-            txtTipeMod = new TextBox();
             tbOrderData = new TextBox();
             tbUnitID = new TextBox();
             tbName = new TextBox();
@@ -48,6 +46,8 @@
             btnPesan = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            cmbTipeAdd = new ComboBox();
+            cmbTipeMod = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GridViewSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMuatData).BeginInit();
@@ -70,7 +70,7 @@
             // 
             // GridViewSampah
             // 
-            GridViewSampah.BackgroundColor = Color.CadetBlue;
+            GridViewSampah.BackgroundColor = Color.DarkSlateGray;
             GridViewSampah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GridViewSampah.Location = new Point(56, 126);
             GridViewSampah.Name = "GridViewSampah";
@@ -120,16 +120,6 @@
             txtMassaAdd.TabIndex = 12;
             txtMassaAdd.TextChanged += txtMassaAdd_TextChanged;
             // 
-            // txtTipeAdd
-            // 
-            txtTipeAdd.BackColor = Color.CadetBlue;
-            txtTipeAdd.ForeColor = SystemColors.ButtonHighlight;
-            txtTipeAdd.Location = new Point(202, 360);
-            txtTipeAdd.Name = "txtTipeAdd";
-            txtTipeAdd.Size = new Size(168, 23);
-            txtTipeAdd.TabIndex = 13;
-            txtTipeAdd.TextChanged += txtTipeAdd_TextChanged;
-            // 
             // txtMassaMod
             // 
             txtMassaMod.BackColor = Color.CadetBlue;
@@ -150,19 +140,9 @@
             txtNoMod.TabIndex = 14;
             txtNoMod.TextChanged += txtNoMod_TextChanged;
             // 
-            // txtTipeMod
-            // 
-            txtTipeMod.BackColor = Color.CadetBlue;
-            txtTipeMod.ForeColor = SystemColors.ButtonHighlight;
-            txtTipeMod.Location = new Point(202, 564);
-            txtTipeMod.Name = "txtTipeMod";
-            txtTipeMod.Size = new Size(168, 23);
-            txtTipeMod.TabIndex = 16;
-            txtTipeMod.TextChanged += txtTipeMod_TextChanged;
-            // 
             // tbOrderData
             // 
-            tbOrderData.BackColor = Color.CadetBlue;
+            tbOrderData.BackColor = Color.DarkSlateGray;
             tbOrderData.ForeColor = SystemColors.ButtonHighlight;
             tbOrderData.Location = new Point(659, 128);
             tbOrderData.Name = "tbOrderData";
@@ -208,7 +188,7 @@
             // 
             // tbPesananProcess
             // 
-            tbPesananProcess.BackColor = Color.CadetBlue;
+            tbPesananProcess.BackColor = Color.DarkSlateGray;
             tbPesananProcess.ForeColor = SystemColors.ButtonHighlight;
             tbPesananProcess.Location = new Point(663, 290);
             tbPesananProcess.Name = "tbPesananProcess";
@@ -230,10 +210,10 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.CadetBlue;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Properties.Resources.BerhasilNoHover;
             pictureBox2.Location = new Point(664, 356);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(147, 21);
+            pictureBox2.Size = new Size(167, 21);
             pictureBox2.TabIndex = 26;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -249,11 +229,33 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // cmbTipeAdd
+            // 
+            cmbTipeAdd.BackColor = Color.CadetBlue;
+            cmbTipeAdd.ForeColor = SystemColors.ButtonHighlight;
+            cmbTipeAdd.FormattingEnabled = true;
+            cmbTipeAdd.Location = new Point(202, 360);
+            cmbTipeAdd.Name = "cmbTipeAdd";
+            cmbTipeAdd.Size = new Size(168, 23);
+            cmbTipeAdd.TabIndex = 28;
+            // 
+            // cmbTipeMod
+            // 
+            cmbTipeMod.BackColor = Color.CadetBlue;
+            cmbTipeMod.ForeColor = SystemColors.ButtonHighlight;
+            cmbTipeMod.FormattingEnabled = true;
+            cmbTipeMod.Location = new Point(202, 559);
+            cmbTipeMod.Name = "cmbTipeMod";
+            cmbTipeMod.Size = new Size(168, 23);
+            cmbTipeMod.TabIndex = 29;
+            // 
             // UC_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
+            Controls.Add(cmbTipeMod);
+            Controls.Add(cmbTipeAdd);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(btnPesan);
@@ -263,10 +265,8 @@
             Controls.Add(tbName);
             Controls.Add(tbUnitID);
             Controls.Add(tbOrderData);
-            Controls.Add(txtTipeMod);
             Controls.Add(txtMassaMod);
             Controls.Add(txtNoMod);
-            Controls.Add(txtTipeAdd);
             Controls.Add(txtMassaAdd);
             Controls.Add(btnTambahData);
             Controls.Add(btnEditData);
@@ -295,10 +295,8 @@
         private PictureBox btnEditData;
         private PictureBox btnTambahData;
         private TextBox txtMassaAdd;
-        private TextBox txtTipeAdd;
         private TextBox txtMassaMod;
         private TextBox txtNoMod;
-        private TextBox txtTipeMod;
         private TextBox tbOrderData;
         private TextBox tbUnitID;
         private TextBox tbName;
@@ -308,5 +306,7 @@
         private PictureBox btnPesan;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private ComboBox cmbTipeAdd;
+        private ComboBox cmbTipeMod;
     }
 }

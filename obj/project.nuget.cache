@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "N7DbuHwUuc8=",
+  "success": true,
+  "projectFilePath": "D:\\College\\Sem 5\\Junior Project\\SISA_gvnd\\SISA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Davin\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Davin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Davin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Davin\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

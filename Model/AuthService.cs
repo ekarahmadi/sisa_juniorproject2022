@@ -547,19 +547,21 @@ namespace SISA.Model
             }
         }
 
-        public bool CreateOrder(int entryNumber)
+        public bool CreateOrder(int entryNumber, int units_Id)
         {
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO Orders (entry_number, process) VALUES (@entryNumber, 'Pending')";
+                string query = "INSERT INTO Orders (entry_number, units_id, process) VALUES (@entryNumber, @units_Id, 'Pending')";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("entryNumber", entryNumber);
+                    cmd.Parameters.AddWithValue("units_Id", units_Id);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
         }
+
 
         public bool TransferOrderToRiwayat(int entryNumber)
         {
@@ -620,7 +622,15 @@ namespace SISA.Model
             {
                 conn.Open();
 
-                var query = "SELECT order_id, entry_number, order_date, process FROM Orders";
+                // Updated query to include units_id
+                var query = @"
+            SELECT 
+                order_id, 
+                entry_number, 
+                order_date, 
+                units_id, 
+                process 
+            FROM Orders";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -633,6 +643,7 @@ namespace SISA.Model
                 }
             }
         }
+
 
         public DataTable GetRiwayatData()
         {
