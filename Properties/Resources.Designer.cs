@@ -253,6 +253,46 @@ namespace SISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnHapusDataUser {
+            get {
+                object obj = ResourceManager.GetObject("btnHapusDataUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnHapusDataUser1 {
+            get {
+                object obj = ResourceManager.GetObject("btnHapusDataUser1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnHapusDataUserHover {
+            get {
+                object obj = ResourceManager.GetObject("btnHapusDataUserHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnHapusDataUserHover1 {
+            get {
+                object obj = ResourceManager.GetObject("btnHapusDataUserHover1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnHapusUnit {
             get {
                 object obj = ResourceManager.GetObject("btnHapusUnit", resourceCulture);
@@ -526,6 +566,16 @@ namespace SISA.Properties {
         internal static System.Drawing.Bitmap contentAccountUser {
             get {
                 object obj = ResourceManager.GetObject("contentAccountUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contentDashboard {
+            get {
+                object obj = ResourceManager.GetObject("contentDashboard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
