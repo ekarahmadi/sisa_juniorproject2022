@@ -12,7 +12,7 @@ namespace SISA.Model
 {
     internal class AuthService
     {
-        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=joshuadun;Database=sisa_juniorproject";
+        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=root;Database=sisa_juniorproject";
         private static int? _currentUserId = null;
         public bool Login(string username, string password, out int roleId)
         {
@@ -300,21 +300,22 @@ namespace SISA.Model
         // New Method: Get Approved Users
         public DataTable GetApprovedUsers()
         {
-            DataTable dtUsers = new DataTable();
+            DataTable dataTable = new DataTable();
+            string query = "SELECT user_id, nama, username, unit_id, role_id, created_at FROM users";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT nama, username, unit_id, role_id,created_at FROM users";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 using (var adapter = new NpgsqlDataAdapter(cmd))
                 {
-                    adapter.Fill(dtUsers);
+                    adapter.Fill(dataTable);
                 }
             }
 
-            return dtUsers;
+            return dataTable;
         }
+
 
         public bool ApproveUser(int calonUserId, string name, string username, string password, int roleId, int unitId)
         {
@@ -790,6 +791,159 @@ namespace SISA.Model
                 }
             }
         }
+
+        public List<UnitData> GetAllUnits()
+        {
+            List<UnitData> units = new List<UnitData>();
+            string query = "SELECT unit_id, unit_name, unit_type, location, capacity FROM units";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            units.Add(new UnitData
+                            {
+                                UnitId = reader.GetInt32(0), // Ambil unit_id dari database
+                                NamaUnit = reader["unit_name"].ToString(),
+                                TipeUnit = reader["unit_type"].ToString(),
+                                LokasiUnit = reader["location"].ToString(),
+                                KapasitasUnit = reader["capacity"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return units;
+        }
+
+
+        public void UpdateUnit(int unitId, UnitData updatedUnit)
+        {
+            string query = "UPDATE units SET unit_name = @unitName, unit_type = @unitType, location = @location, capacity = @capacity WHERE unit_id = @unitId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("unitId", unitId);
+                    cmd.Parameters.AddWithValue("unitName", updatedUnit.NamaUnit);
+                    cmd.Parameters.AddWithValue("unitType", updatedUnit.TipeUnit);
+                    cmd.Parameters.AddWithValue("location", updatedUnit.LokasiUnit);
+
+                    // Pastikan kapasitas dikonversi ke integer
+                    int kapasitas;
+                    if (int.TryParse(updatedUnit.KapasitasUnit, out kapasitas))
+                    {
+                        cmd.Parameters.AddWithValue("capacity", kapasitas);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Kapasitas harus berupa angka yang valid.");
+                    }
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public void DeleteUnit(int unitId)
+        {
+            string query = "DELETE FROM units WHERE unit_id = @unitId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("unitId", unitId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void AddUnit(UnitData newUnit)
+        {
+            string query = "INSERT INTO units (unit_name, unit_type, location, capacity) VALUES (@unitName, @unitType, @location, @capacity)";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("unitName", newUnit.NamaUnit);
+                    cmd.Parameters.AddWithValue("unitType", newUnit.TipeUnit);
+                    cmd.Parameters.AddWithValue("location", newUnit.LokasiUnit);
+
+                    // Pastikan capacity dikonversi ke tipe integer
+                    int kapasitas;
+                    if (int.TryParse(newUnit.KapasitasUnit, out kapasitas))
+                    {
+                        cmd.Parameters.AddWithValue("capacity", kapasitas);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Kapasitas harus berupa angka yang valid.");
+                    }
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateUser(int userId, string name, string username, int roleId, int unitId)
+        {
+            string query = "UPDATE public.users SET nama = @name, username = @username, role_id = @roleId, unit_id = @unitId WHERE user_id = @userId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("username", username);
+                    cmd.Parameters.AddWithValue("roleId", roleId);
+                    cmd.Parameters.AddWithValue("unitId", unitId);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public int GetUnitIdByName(string unitName)
+        {
+            int unitId = -1;
+            string query = "SELECT unit_id FROM public.units WHERE unit_name = @unitName";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("unitName", unitName);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            unitId = reader.GetInt32(0); // Mengambil unit_id dari hasil query
+                        }
+                    }
+                }
+            }
+            return unitId;
+        }
+
+
+
     }
 
 }

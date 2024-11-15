@@ -8,6 +8,7 @@ namespace SISA.Model
 {
     public class UnitData
     {
+        public int UnitId { get; set; }
         public string NamaUnit { get; set; }
         public string TipeUnit { get; set; }
         public string LokasiUnit { get; set; }

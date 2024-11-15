@@ -14,9 +14,6 @@ namespace SISA.View._3AdminWindow
 {
     public partial class UC_AdminAccount : UserControl
     {
-        private Image defaultImage;
-        private Image hoverImage;
-
         private AuthService authService;
 
         public UC_AdminAccount()
@@ -27,15 +24,6 @@ namespace SISA.View._3AdminWindow
             // Panggil LoadUserData setelah kontrol ini diinisialisasi
             LoadUserData();
 
-            defaultImage = Properties.Resources.btnEditData1; // Ganti dengan nama gambar default di Resources
-            hoverImage = Properties.Resources.btnEditData1Hover;     // Ganti dengan nama gambar hover di Resources
-
-            // Set gambar awal pada btnLogin
-            btnEdit.Image = defaultImage;
-
-            // Tambahkan event MouseEnter dan MouseLeave ke btnLogin
-            btnEdit.MouseEnter += BtnEdit_MouseEnter;
-            btnEdit.MouseLeave += BtnEdit_MouseLeave;
         }
 
         private void LoadUserData()
@@ -80,18 +68,6 @@ namespace SISA.View._3AdminWindow
                 default:
                     return "Unknown Role";
             }
-        }
-
-        private void BtnEdit_MouseEnter(object sender, EventArgs e)
-        {
-            // Ubah gambar ke hover saat kursor berada di atas btnLogin
-            btnEdit.Image = hoverImage;
-        }
-
-        private void BtnEdit_MouseLeave(object sender, EventArgs e)
-        {
-            // Kembalikan gambar ke default saat kursor meninggalkan btnLogin
-            btnEdit.Image = defaultImage;
         }
 
         private void UC_AdminAccount_Load(object sender, EventArgs e)
