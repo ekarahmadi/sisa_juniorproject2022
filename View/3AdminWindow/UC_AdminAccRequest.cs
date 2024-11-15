@@ -33,6 +33,19 @@ namespace SISA.View._3AdminWindow
             LoadDataGrids();
             LoadCalonUserData();
             LoadUserData();
+            ConfigureDataGrids();
+
+            // Sembunyikan btnHapusSeleksi pada awal
+            btnHapusSeleksi.Visible = false;
+
+            // Tambahkan event untuk memantau perubahan seleksi pada DataGridView
+            dgvTerdaftar.SelectionChanged += DgvTerdaftar_SelectionChanged;
+        }
+
+        private void DgvTerdaftar_SelectionChanged(object sender, EventArgs e)
+        {
+            // Tampilkan atau sembunyikan btnHapusSeleksi berdasarkan seleksi
+            btnHapusSeleksi.Visible = dgvTerdaftar.SelectedRows.Count > 0;
         }
 
         private void LoadDataGrids()
@@ -58,34 +71,48 @@ namespace SISA.View._3AdminWindow
 
         private void ConfigureDataGrids()
         {
-            // Customize dgvCalonUser
-            dgvCalonUser.Columns["name"].HeaderText = "Nama";
-            dgvCalonUser.Columns["username"].HeaderText = "Username";
-            dgvCalonUser.Columns["unit_id"].HeaderText = "Unit Kerja";
-            dgvCalonUser.Columns["role_id"].HeaderText = "Role";
-            dgvCalonUser.Columns["date_registered"].HeaderText = "Waktu Mendaftar";
+            // Konfigurasi pengaturan untuk dgvCalonUser
+            dgvCalonUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCalonUser.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            // Customize dgvTerdaftar
-            dgvTerdaftar.Columns["nama"].HeaderText = "Nama";
-            dgvTerdaftar.Columns["username"].HeaderText = "Username";
-            dgvTerdaftar.Columns["role_id"].HeaderText = "Role";
-            dgvTerdaftar.Columns["unit_id"].HeaderText = "Unit Kerja";
-            dgvTerdaftar.Columns["created_at"].HeaderText = "Waktu Diterima";
+            // Set AutoSizeMode untuk kolom tertentu di dgvCalonUser
+            dgvCalonUser.Columns["name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCalonUser.Columns["username"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCalonUser.Columns["unit_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCalonUser.Columns["role_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            // Konfigurasi pengaturan untuk dgvTerdaftar
+            dgvTerdaftar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTerdaftar.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            // Set AutoSizeMode untuk kolom tertentu di dgvTerdaftar
+            dgvTerdaftar.Columns["user_id"].Visible = false;
+            dgvTerdaftar.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvTerdaftar.Columns["username"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvTerdaftar.Columns["unit_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvTerdaftar.Columns["role_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private string ConvertRoleIdToText(int roleId)
         {
-            switch (roleId)
+            return roleId switch
             {
-                case 1:
-                    return "AdminTPS";
-                case 2:
-                    return "AdminTPA";
-                case 3:
-                    return "AdminApp";
-                default:
-                    return "Unknown Role";
-            }
+                1 => "AdminTPS",
+                2 => "AdminTPA",
+                3 => "AdminApp",
+                _ => "Unknown Role"
+            };
+        }
+
+        private int ConvertRoleTextToId(string roleText)
+        {
+            return roleText switch
+            {
+                "AdminTPS" => 1,
+                "AdminTPA" => 2,
+                "AdminApp" => 3,
+                _ => 0
+            };
         }
 
         private void dgvCalonUser_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -96,11 +123,9 @@ namespace SISA.View._3AdminWindow
                 tbNama.Text = row.Cells["name"].Value.ToString();
                 tbUsername.Text = row.Cells["username"].Value.ToString();
 
-                // Ambil nama unit berdasarkan unit_id dan tampilkan di tbUnitKerja
                 int unitId = Convert.ToInt32(row.Cells["unit_id"].Value);
                 tbUnitKerja.Text = authService.GetUnitNameById(unitId);
 
-                // Konversi role_id menjadi teks dan tampilkan di tbRole
                 int roleId = Convert.ToInt32(row.Cells["role_id"].Value);
                 tbRole.Text = ConvertRoleIdToText(roleId);
 
@@ -116,11 +141,9 @@ namespace SISA.View._3AdminWindow
                 tbNama.Text = row.Cells["nama"].Value.ToString();
                 tbUsername.Text = row.Cells["username"].Value.ToString();
 
-                // Ambil nama unit berdasarkan unit_id dan tampilkan di tbUnitKerja
                 int unitId = Convert.ToInt32(row.Cells["unit_id"].Value);
                 tbUnitKerja.Text = authService.GetUnitNameById(unitId);
 
-                // Konversi role_id menjadi teks dan tampilkan di tbRole
                 int roleId = Convert.ToInt32(row.Cells["role_id"].Value);
                 tbRole.Text = ConvertRoleIdToText(roleId);
 
@@ -130,30 +153,32 @@ namespace SISA.View._3AdminWindow
 
         private void InitializeButtonHoverEffects()
         {
-            // Load images from resources
-            terimaDefault = Properties.Resources.btnTerima; // Replace with your actual image resource
+            terimaDefault = Properties.Resources.btnTerima;
             terimaHover = Properties.Resources.btnTerimaHover;
             tolakDefault = Properties.Resources.btnTolak1;
             tolakHover = Properties.Resources.btnTolakHover1;
             editDefault = Properties.Resources.btnEditData;
             editHover = Properties.Resources.btnEditDataHover;
+            Image HapusSeleksiDefault = Properties.Resources.btnHapusDataTerseleksi;
+            Image HapusSeleksiHover = Properties.Resources.btnHapusDataTerseleksiHover;
 
-            // Set default images for buttons
             btnTerima.Image = terimaDefault;
             btnTolak.Image = tolakDefault;
             btnEdit.Image = editDefault;
+            btnHapusSeleksi.Image = HapusSeleksiDefault;
 
-            // Add hover events for btnTerima
             btnTerima.MouseEnter += (s, e) => btnTerima.Image = terimaHover;
             btnTerima.MouseLeave += (s, e) => btnTerima.Image = terimaDefault;
 
-            // Add hover events for btnTolak
             btnTolak.MouseEnter += (s, e) => btnTolak.Image = tolakHover;
             btnTolak.MouseLeave += (s, e) => btnTolak.Image = tolakDefault;
 
-            // Add hover events for btnEdit
             btnEdit.MouseEnter += (s, e) => btnEdit.Image = editHover;
             btnEdit.MouseLeave += (s, e) => btnEdit.Image = editDefault;
+
+            // Add hover events for btnHapusSeleksi
+            btnHapusSeleksi.MouseEnter += (s, e) => btnHapusSeleksi.Image = HapusSeleksiHover;
+            btnHapusSeleksi.MouseLeave += (s, e) => btnHapusSeleksi.Image = HapusSeleksiDefault;
         }
 
         private void btnTerima_Click(object sender, EventArgs e)
@@ -166,8 +191,6 @@ namespace SISA.View._3AdminWindow
                 string username = row.Cells["username"].Value.ToString();
                 string password = row.Cells["password"].Value.ToString();
                 int unitId = Convert.ToInt32(row.Cells["unit_id"].Value);
-
-                // Tentukan role_id berdasarkan unit_id
                 int roleId = (unitId == 1) ? 1 : 2;
 
                 bool isApproved = authService.ApproveUser(calonUserId, name, username, password, roleId, unitId);
@@ -216,7 +239,35 @@ namespace SISA.View._3AdminWindow
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dgvTerdaftar.SelectedRows.Count > 0)
+            {
+                int userId = Convert.ToInt32(dgvTerdaftar.SelectedRows[0].Cells["user_id"].Value);
 
+                string name = tbNama.Text;
+                string username = tbUsername.Text;
+                int roleId = ConvertRoleTextToId(tbRole.Text);
+                int unitId = authService.GetUnitIdByName(tbUnitKerja.Text);
+
+                authService.UpdateUser(userId, name, username, roleId, unitId);
+
+                MessageBox.Show("Data pengguna berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadUserData();
+            }
+            else
+            {
+                MessageBox.Show("Pilih pengguna yang ingin diedit.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnHapusSeleksi_Click(object sender, EventArgs e)
+        {
+            tbNama.Clear();
+            tbUsername.Clear();
+            tbRole.Clear();
+            tbUnitKerja.Clear();
+            tbWaktu.Clear();
+            dgvTerdaftar.ClearSelection();
+            btnHapusSeleksi.Visible = false;
         }
     }
 }

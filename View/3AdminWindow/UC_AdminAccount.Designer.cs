@@ -29,27 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AdminAccount));
-            btnEdit = new PictureBox();
             lblRole = new Label();
             lblUnit = new Label();
             lblUsername = new Label();
             lblNama = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)btnEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnEdit
-            // 
-            btnEdit.BackColor = SystemColors.ButtonFace;
-            btnEdit.Image = Properties.Resources.btnEditData1;
-            btnEdit.Location = new Point(527, 500);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(138, 27);
-            btnEdit.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnEdit.TabIndex = 15;
-            btnEdit.TabStop = false;
-            btnEdit.Click += btnEdit_Click;
             // 
             // lblRole
             // 
@@ -112,7 +98,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
-            Controls.Add(btnEdit);
             Controls.Add(lblRole);
             Controls.Add(lblUnit);
             Controls.Add(lblUsername);
@@ -121,14 +106,12 @@
             Name = "UC_AdminAccount";
             Size = new Size(1035, 720);
             Load += UC_AdminAccount_Load;
-            ((System.ComponentModel.ISupportInitialize)btnEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox btnEdit;
         private Label lblRole;
         private Label lblUnit;
         private Label lblUsername;

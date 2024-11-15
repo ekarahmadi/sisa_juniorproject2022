@@ -16,9 +16,47 @@ namespace SISA.View._2MainWindow
         private AuthService authService;
         public UC_Riwayat()
         {
+
             authService = new AuthService();
             InitializeComponent();
+            InitializeButtonHoverEffects();
             LoadRiwayatData(); // Initial load of the data
+        }
+
+        //list buat button
+        private Image muatDataNo;
+        private Image muatDataHover;
+        private void InitializeButtonHoverEffects()
+        {
+            muatDataNo = Properties.Resources.MuatDataNo;
+            muatDataHover = Properties.Resources.MuatDataHover;
+            btnRiwayat.Image = muatDataNo;
+            btnLoadReq.Image = muatDataNo;
+
+            btnRiwayat.MouseEnter += BtnRiwayat_MouseEnter;
+            btnRiwayat.MouseLeave += BtnRiwayat_MouseLeave;
+            btnLoadReq.MouseEnter += BtnLoadReq_MouseEnter;
+            btnLoadReq.MouseLeave += BtnLoadReq_MouseLeave;
+        }
+
+        private void BtnRiwayat_MouseEnter(object sender, EventArgs e)
+        {
+            btnRiwayat.Image = muatDataHover;
+        }
+
+        private void BtnRiwayat_MouseLeave(object sender, EventArgs e)
+        {
+            btnRiwayat.Image = muatDataNo;
+        }
+
+        private void BtnLoadReq_MouseEnter(object sender, EventArgs e)
+        {
+            btnLoadReq.Image = muatDataHover;
+        }
+
+        private void BtnLoadReq_MouseLeave(object sender, EventArgs e)
+        {
+            btnLoadReq.Image = muatDataNo;
         }
         private void LoadRiwayatData()
         {
@@ -54,7 +92,22 @@ namespace SISA.View._2MainWindow
 
         private void btnLoadReq_Click(object sender, EventArgs e)
         {
-            LoadRequestData();
+            try
+            {
+                DataTable requestData = authService.GetRequestData(); // Get updated request data
+                gridRequest.DataSource = requestData;               // Bind to DataGridView
+
+                // Optional: Format DataGridView columns (if needed)
+                gridRequest.Columns["order_id"].HeaderText = "Order ID";
+                gridRequest.Columns["entry_number"].HeaderText = "Entry Number";
+                gridRequest.Columns["order_date"].HeaderText = "Order Date";
+                gridRequest.Columns["units_id"].HeaderText = "Units ID";
+                gridRequest.Columns["process"].HeaderText = "Process";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load request data: " + ex.Message);
+            }
         }
 
         private void LoadRequestData()
@@ -63,7 +116,6 @@ namespace SISA.View._2MainWindow
             {
                 // Fetch the request data from the AuthService
                 DataTable requestData = authService.GetRequestData();
-
                 // Bind the data to gridRequest
                 gridRequest.DataSource = requestData;
             }

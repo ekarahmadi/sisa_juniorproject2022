@@ -33,6 +33,8 @@
             panel2 = new Panel();
             dgvTerdaftar = new DataGridView();
             panel3 = new Panel();
+            tbRole = new TextBox();
+            label8 = new Label();
             tbWaktu = new TextBox();
             label7 = new Label();
             tbUnitKerja = new TextBox();
@@ -47,8 +49,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            tbRole = new TextBox();
-            label8 = new Label();
+            npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
+            btnHapusSeleksi = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCalonUser).BeginInit();
             panel2.SuspendLayout();
@@ -57,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)btnTerima).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnTolak).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnHapusSeleksi).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -99,6 +102,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnHapusSeleksi);
             panel3.Controls.Add(tbRole);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(tbWaktu);
@@ -114,8 +118,26 @@
             panel3.Controls.Add(btnEdit);
             panel3.Location = new Point(702, 88);
             panel3.Name = "panel3";
-            panel3.Size = new Size(303, 558);
+            panel3.Size = new Size(303, 597);
             panel3.TabIndex = 2;
+            // 
+            // tbRole
+            // 
+            tbRole.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbRole.Location = new Point(18, 200);
+            tbRole.Name = "tbRole";
+            tbRole.Size = new Size(262, 31);
+            tbRole.TabIndex = 15;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(18, 169);
+            label8.Name = "label8";
+            label8.Size = new Size(46, 28);
+            label8.TabIndex = 14;
+            label8.Text = "Role";
             // 
             // tbWaktu
             // 
@@ -252,23 +274,23 @@
             label3.TabIndex = 5;
             label3.Text = "Data Terseleksi";
             // 
-            // tbRole
+            // npgsqlDataAdapter1
             // 
-            tbRole.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbRole.Location = new Point(18, 200);
-            tbRole.Name = "tbRole";
-            tbRole.Size = new Size(262, 31);
-            tbRole.TabIndex = 15;
+            npgsqlDataAdapter1.DeleteCommand = null;
+            npgsqlDataAdapter1.InsertCommand = null;
+            npgsqlDataAdapter1.SelectCommand = null;
+            npgsqlDataAdapter1.UpdateCommand = null;
             // 
-            // label8
+            // btnHapusSeleksi
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(18, 169);
-            label8.Name = "label8";
-            label8.Size = new Size(46, 28);
-            label8.TabIndex = 14;
-            label8.Text = "Role";
+            btnHapusSeleksi.Image = Properties.Resources.btnHapusDataTerseleksi;
+            btnHapusSeleksi.Location = new Point(70, 552);
+            btnHapusSeleksi.Name = "btnHapusSeleksi";
+            btnHapusSeleksi.Size = new Size(165, 27);
+            btnHapusSeleksi.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnHapusSeleksi.TabIndex = 16;
+            btnHapusSeleksi.TabStop = false;
+            btnHapusSeleksi.Click += btnHapusSeleksi_Click;
             // 
             // UC_AdminAccRequest
             // 
@@ -292,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)btnTerima).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnTolak).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnHapusSeleksi).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,5 +342,7 @@
         private TextBox tbWaktu;
         private TextBox tbRole;
         private Label label8;
+        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
+        private PictureBox btnHapusSeleksi;
     }
 }

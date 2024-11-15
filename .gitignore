@@ -9,6 +9,7 @@
 *.exe
 *.dll
 bin/
+obj/
 
 # Ignore log files
 *.log

@@ -45,7 +45,7 @@ namespace SISA.Recycle
 
             LoadUserData(); // Panggil fungsi untuk memuat data pengguna
             LoadUnitData(); // Memuat data unit kerja dari database
-            this.mainWindow = mainWindow;
+            mainWindow = mainWindow;
 
             // Inisialisasi gambar default dan hover untuk btnKembali
             kembaliDefaultImage = Properties.Resources.btnKembali; // Gambar default untuk btnKembali

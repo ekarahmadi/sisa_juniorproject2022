@@ -13,16 +13,13 @@ namespace SISA.View._2MainWindow
         //Add authservice
         private string currentUsername;
 
-
-
-
-        private int userId;
         public UC_Dashboard()
         {
             InitializeComponent();
             authService = new AuthService();
             InitializeButtonHoverEffects();
-
+            cmbTipeAdd.Items.AddRange(new object[] { "A", "B" });
+            cmbTipeMod.Items.AddRange(new object[] { "A", "B" });
         }
 
         // Gambar default dan hover untuk masing-masing button
@@ -34,21 +31,52 @@ namespace SISA.View._2MainWindow
         private Image muatDataHover;
         private Image buatHover1;
         private Image buatNoHover1;
-
-
-
+        private Image BerhasilNoHover;
+        private Image BerhasilHover;
+        private Image RefreshDataHover;
+        private Image RefreshDataNo;
 
         private void InitializeButtonHoverEffects()
         {
             // Inisialisasi gambar default dan hover untuk Dashboard
             muatDataNo = Properties.Resources.MuatDataNo;
             muatDataHover = Properties.Resources.MuatDataHover;
+            btnMuatData.Image = muatDataNo;
+
+            addDataNo = Properties.Resources.AddDataNo;
+            addDataHover = Properties.Resources.AddDataHover;
             btnMuatData.Image = addDataNo;
+
+            editDataNo = Properties.Resources.EditDataNo;
+            editDataHover = Properties.Resources.EditDataHover;
+            btnMuatData.Image = editDataNo;
+
+            buatNoHover1 = Properties.Resources.BuatNoHover;
+            buatHover1 = Properties.Resources.BuatHover;
+            btnMuatData.Image = buatNoHover1;
+
+            RefreshDataHover = Properties.Resources.RefreshHover;
+            RefreshDataNo = Properties.Resources.RefreshNoHover;
+            pictureBox3.Image = RefreshDataHover;
+
+            BerhasilNoHover = Properties.Resources.BerhasilNoHover;
+            BerhasilHover = Properties.Resources.BerhasilHover;
+            pictureBox2.Image = BerhasilNoHover;
+
 
             // Tambahkan event MouseEnter dan MouseLeave untuk Dashboard
             btnMuatData.MouseEnter += BtnMuatData_MouseEnter;
             btnMuatData.MouseLeave += BtnMuatData_MouseLeave;
-
+            btnTambahData.MouseEnter += BtnTambahData_MouseEnter;
+            btnTambahData.MouseLeave += BtnTambahData_MouseLeave;
+            btnEditData.MouseEnter += BtnEditData_MouseEnter;
+            btnEditData.MouseLeave += BtnEditData_MouseLeave;
+            btnPesan.MouseEnter += BtnPesan_MouseEnter;
+            btnPesan.MouseLeave += BtnPesan_MouseLeave;
+            pictureBox3.MouseEnter += PictureBox3_MouseEnter;
+            pictureBox3.MouseLeave += PictureBox3_MouseLeave;
+            pictureBox2.MouseEnter += PictureBox2_MouseEnter;
+            pictureBox2.MouseLeave += PictureBox2_MouseLeave;
         }
         // Event handler untuk hover effect pada btnDashboard
         private void BtnMuatData_MouseEnter(object sender, EventArgs e)
@@ -61,6 +89,54 @@ namespace SISA.View._2MainWindow
             btnMuatData.Image = muatDataNo;
         }
 
+        private void BtnTambahData_MouseEnter(object sender, EventArgs e)
+        {
+            btnTambahData.Image = addDataHover;
+        }
+
+        private void BtnTambahData_MouseLeave(object sender, EventArgs e)
+        {
+            btnTambahData.Image = addDataNo;
+        }
+
+        private void BtnEditData_MouseEnter(object sender, EventArgs e)
+        {
+            btnEditData.Image = editDataHover;
+        }
+
+        private void BtnEditData_MouseLeave(object sender, EventArgs e)
+        {
+            btnEditData.Image = editDataNo;
+        }
+
+        private void BtnPesan_MouseLeave(object sender, EventArgs e)
+        {
+            btnPesan.Image = buatNoHover1;
+        }
+        private void BtnPesan_MouseEnter(object sender, EventArgs e)
+        {
+            btnPesan.Image = buatHover1;
+        }
+
+        private void PictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox3.Image = RefreshDataHover;
+        }
+
+        private void PictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.Image = RefreshDataNo;
+        }
+
+        private void PictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.Image = BerhasilHover;
+        }
+
+        private void PictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = BerhasilNoHover;
+        }
         private void label1_Click(object sender, EventArgs e)
         {
             // Optional: You can add any code here if needed for label1 clicks.
@@ -130,9 +206,9 @@ namespace SISA.View._2MainWindow
             // Validate input for modification
             if (int.TryParse(txtNoMod.Text, out int entryNumber) &&
                 float.TryParse(txtMassaMod.Text, out float massaSampah) &&
-                txtTipeMod.Text.Length == 1)
+                cmbTipeMod.SelectedItem != null)  // Check that a type is selected
             {
-                char tipeSampah = txtTipeMod.Text[0];
+                char tipeSampah = cmbTipeMod.SelectedItem.ToString()[0]; // Get selected type as char
 
                 // Call UpdateTPSData from authService
                 bool success = authService.UpdateTPSData(entryNumber, massaSampah, tipeSampah);
@@ -181,9 +257,10 @@ namespace SISA.View._2MainWindow
         private void btnTambahData_Click(object sender, EventArgs e)
         {
             // Validate input
-            if (float.TryParse(txtMassaAdd.Text, out float massaSampah) && txtTipeAdd.Text.Length == 1)
+            if (float.TryParse(txtMassaAdd.Text, out float massaSampah) &&
+                cmbTipeAdd.SelectedItem != null)  // Check that a type is selected
             {
-                char tipeSampah = txtTipeAdd.Text[0];
+                char tipeSampah = cmbTipeAdd.SelectedItem.ToString()[0]; // Get selected type as char
 
                 // Call AddTPSData from authService
                 bool success = authService.AddTPSData(massaSampah, tipeSampah);
@@ -255,10 +332,17 @@ namespace SISA.View._2MainWindow
 
         private void btnPesan_Click(object sender, EventArgs e)
         {
+            // Get Units ID from the session
+            if (!int.TryParse(SessionManager.UnitKerja, out int unitsId))
+            {
+                MessageBox.Show("Units ID is not set. Please log in again.");
+                return;
+            }
+
             // Create a new order based on the data entered in tbOrderData
             if (int.TryParse(tbOrderData.Text, out int entryNumber))
             {
-                bool success = authService.CreateOrder(entryNumber);
+                bool success = authService.CreateOrder(entryNumber, unitsId);  // Pass unitsId to CreateOrder
                 if (success)
                 {
                     MessageBox.Show("Order created successfully.");
@@ -275,15 +359,17 @@ namespace SISA.View._2MainWindow
             }
         }
 
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            // Mark order as completed and transfer to Riwayat if available
+            // Mark order as completed and transfer data to Riwayat if available
             if (int.TryParse(tbOrderData.Text, out int entryNumber))
             {
-                bool success = authService.TransferOrderToRiwayat(entryNumber);
+                // Call TransferDataToRiwayat instead of TransferOrderToRiwayat
+                bool success = authService.TransferDataToRiwayat(entryNumber);
                 if (success)
                 {
-                    MessageBox.Show("Order completed and transferred to Riwayat.");
+                    MessageBox.Show("Order completed, transferred to Riwayat, and removed from TPSData.");
                     tbPesananProcess.Text = "Completed";
                     LoadTPSData();  // Refresh data grid view to reflect changes
                 }

@@ -51,8 +51,6 @@ namespace SISA.View._3AdminWindow
             // Set tampilan awal
             LoadUserControl(ucAdminDashboard);
 
-           // Memanggil fungsi untuk memuat UC_Account saat form diinisialisasi
-
         }
 
         private void LoadUserControl(UserControl userControl)
@@ -134,6 +132,7 @@ namespace SISA.View._3AdminWindow
         private void btnAdminUnitData_Click(object sender, EventArgs e)
         {
             LoadUserControl(ucAdminUnitData);
+
         }
 
         private void btnAdminAccount_Click(object sender, EventArgs e)
