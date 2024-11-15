@@ -9,13 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\btnJemput.png" />
+    <None Remove="Resources\btnJemputHover2.png" />
+    <None Remove="Resources\btnOlahSampah.png" />
+    <None Remove="Resources\btnSelesai.png" />
+    <None Remove="Resources\btnSelesaiHover1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Resource\" />
+    <Folder Include="Resource\TPAWindow\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Npgsql" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\btnJemput.png" />
+    <Resource Include="Resources\btnJemputHover2.png" />
+    <Resource Include="Resources\btnOlahSampah.png" />
+    <Resource Include="Resources\btnSelesai.png" />
+    <Resource Include="Resources\btnSelesaiHover1.png" />
   </ItemGroup>
 
   <ItemGroup>

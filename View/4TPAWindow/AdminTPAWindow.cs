@@ -1,8 +1,8 @@
 ﻿using SISA.Model;
 using SISA.Recycle;
 using SISA.View._1Starting;
+using SISA.View._2MainWindow;
 using SISA.View._3AdminWindow;
-using SISA.View._4TPAWindow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +13,11 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace SISA.View._2MainWindow
+namespace SISA.View._4TPAWindow
 {
-    public partial class MainWindow : Form
+    public partial class AdminTPAWindow : Form
     {
-
         // Gambar default dan hover untuk masing-masing button
         private Image dashboardDefault;
         private Image dashboardHover;
@@ -41,7 +39,7 @@ namespace SISA.View._2MainWindow
         private UC_EditDataUser ucEditDataUser;
         private AuthService authService;
 
-        public MainWindow()
+        public AdminTPAWindow()
         {
             InitializeComponent();
             InitializeButtonHoverEffects();
@@ -51,21 +49,6 @@ namespace SISA.View._2MainWindow
             ucDashboard = new UC_Dashboard();
             ucRiwayat = new UC_Riwayat();
             ucAccount = new UC_Account();
-            ucAppDetail = new UC_AppDetail();
-            ucEditDataUser = new UC_EditDataUser(this); // Kirim referensi MainWindow
-
-            // Tambahkan handler untuk event ShowEditDataUser dan ShowEditDataUnit di UC_Account
-            ucAccount.ShowEditDataUser += MainWindow_ShowEditDataUser;
-            ucAccount.ShowEditDataUnit += MainWindow_ShowEditDataUnit;
-
-            // Tambahkan listener untuk BackButtonClicked dari UC_EditDataUser
-            ucEditDataUser.BackButtonClicked += UcEditDataUser_BackButtonClicked;
-
-            // Memulai tampilan awal di UC_Account
-            ShowAccountControl();
-
-            // Menambahkan listener pada event DataEditSuccessful
-            ucEditDataUser.DataEditSuccessful += OnDataEditSuccessful;
 
             // Set tampilan awal
             LoadUserControl(ucDashboard);
@@ -186,10 +169,29 @@ namespace SISA.View._2MainWindow
             btnHome.Image = homeDefault;
         }
 
+        private void AdminTPAWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(ucDashboard);
+        }
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             LoadUserControl(ucDashboard);
+        }
 
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(ucRiwayat);
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(ucAccount);
         }
 
         private void btnKeluar_Click(object sender, EventArgs e)
@@ -203,90 +205,6 @@ namespace SISA.View._2MainWindow
 
             // Tutup MainWindow atau AdminWindow saat ini
             this.Close();
-        }
-
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(ucAccount);
-        }
-
-        private void btnRiwayat_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(ucRiwayat);
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(ucAppDetail);
-        }
-
-        private void MainWindow_ShowEditDataUser()
-        {
-            // Ambil username dari SessionManager
-            string currentUsername = SessionManager.Username;
-
-            UC_EditDataUser editDataUser = new UC_EditDataUser();
-            LoadUserControl(editDataUser);
-        }
-
-        private void MainWindow_ShowEditDataUnit()
-        {
-            UC_EditDataUnit editDataUnit = new UC_EditDataUnit();
-            LoadUserControl(editDataUnit);
-        }
-
-        public void ShowEditDataUser()
-        {
-            UC_EditDataUser editDataUser = new UC_EditDataUser();
-            LoadUserControl(editDataUser);
-        }
-
-        private void ShowAccountView()
-        {
-            // Memuat UC_Account
-            LoadUserControl(ucAccount);
-        }
-
-        private void OnDataEditSuccessful()
-        {
-            Console.WriteLine("Event DataEditSuccessful diterima di MainWindow.");
-
-            // Kembali ke UC_Account setelah data berhasil diedit
-            UC_Account uC_Account = new UC_Account();
-            LoadUserControl(ucAccount);
-
-            // Panggil LoadUserData di UC_Account untuk memuat data terbaru
-            ucAccount.LoadUserData();
-        }
-
-        // Listener untuk event BackButtonClicked di UC_EditDataUser
-        private void UcEditDataUser_BackButtonClicked(object sender, EventArgs e)
-        {
-            Console.WriteLine("Event BackButtonClicked diterima di MainWindow."); // Debugging
-            MessageBox.Show("Kembali ke UC_Account"); // Debugging
-
-            ShowAccountControl(); // Kembali ke UC_Account
-        }
-
-        public void ShowAccountControl()
-        {
-            Console.WriteLine("Memuat UC_Account..."); // Debugging
-
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(ucAccount);
-            ucAccount.Dock = DockStyle.Fill;
-
-            Console.WriteLine("UC_Account telah dimuat.");
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelContent_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

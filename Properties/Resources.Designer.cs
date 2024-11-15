@@ -213,6 +213,36 @@ namespace SISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnJemput {
+            get {
+                object obj = ResourceManager.GetObject("btnJemput", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnJemputHover {
+            get {
+                object obj = ResourceManager.GetObject("btnJemputHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnJemputHover1 {
+            get {
+                object obj = ResourceManager.GetObject("btnJemputHover1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnKembali {
             get {
                 object obj = ResourceManager.GetObject("btnKembali", resourceCulture);
@@ -273,6 +303,26 @@ namespace SISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnOlahSampah {
+            get {
+                object obj = ResourceManager.GetObject("btnOlahSampah", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnOlahSampahHover {
+            get {
+                object obj = ResourceManager.GetObject("btnOlahSampahHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnReload {
             get {
                 object obj = ResourceManager.GetObject("btnReload", resourceCulture);
@@ -286,6 +336,36 @@ namespace SISA.Properties {
         internal static System.Drawing.Bitmap btnReloadHover {
             get {
                 object obj = ResourceManager.GetObject("btnReloadHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSelesai {
+            get {
+                object obj = ResourceManager.GetObject("btnSelesai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSelesaiHover {
+            get {
+                object obj = ResourceManager.GetObject("btnSelesaiHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSelesaiHover1 {
+            get {
+                object obj = ResourceManager.GetObject("btnSelesaiHover1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -946,6 +1026,56 @@ namespace SISA.Properties {
         internal static System.Drawing.Bitmap SelesaikanNoHover {
             get {
                 object obj = ResourceManager.GetObject("SelesaikanNoHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TPADashboard {
+            get {
+                object obj = ResourceManager.GetObject("TPADashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TPADashboard1 {
+            get {
+                object obj = ResourceManager.GetObject("TPADashboard1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TPALoad {
+            get {
+                object obj = ResourceManager.GetObject("TPALoad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TPALoadHover {
+            get {
+                object obj = ResourceManager.GetObject("TPALoadHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TPARiwayat {
+            get {
+                object obj = ResourceManager.GetObject("TPARiwayat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

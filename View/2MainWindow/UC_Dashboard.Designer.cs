@@ -60,6 +60,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.FromArgb(59, 115, 120);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(29, 6);
             pictureBox1.Name = "pictureBox1";
@@ -80,6 +81,7 @@
             // 
             // btnMuatData
             // 
+            btnMuatData.BackColor = Color.FromArgb(59, 115, 120);
             btnMuatData.Image = (Image)resources.GetObject("btnMuatData.Image");
             btnMuatData.Location = new Point(507, 237);
             btnMuatData.Name = "btnMuatData";
@@ -90,6 +92,7 @@
             // 
             // btnEditData
             // 
+            btnEditData.BackColor = Color.FromArgb(59, 115, 120);
             btnEditData.Image = (Image)resources.GetObject("btnEditData.Image");
             btnEditData.Location = new Point(519, 589);
             btnEditData.Name = "btnEditData";
@@ -101,6 +104,7 @@
             // 
             // btnTambahData
             // 
+            btnTambahData.BackColor = Color.FromArgb(59, 115, 120);
             btnTambahData.Image = (Image)resources.GetObject("btnTambahData.Image");
             btnTambahData.Location = new Point(481, 404);
             btnTambahData.Name = "btnTambahData";
@@ -218,7 +222,7 @@
             // 
             // btnPesan
             // 
-            btnPesan.BackColor = Color.CadetBlue;
+            btnPesan.BackColor = Color.FromArgb(53, 74, 75);
             btnPesan.Image = (Image)resources.GetObject("btnPesan.Image");
             btnPesan.Location = new Point(664, 166);
             btnPesan.Name = "btnPesan";
@@ -229,7 +233,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.CadetBlue;
+            pictureBox2.BackColor = Color.FromArgb(37, 54, 66);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(664, 356);
             pictureBox2.Name = "pictureBox2";
@@ -240,7 +244,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.CadetBlue;
+            pictureBox3.BackColor = Color.FromArgb(37, 54, 66);
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(663, 327);
             pictureBox3.Name = "pictureBox3";
@@ -253,7 +257,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.CadetBlue;
+            BackColor = SystemColors.ControlDark;
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(btnPesan);
