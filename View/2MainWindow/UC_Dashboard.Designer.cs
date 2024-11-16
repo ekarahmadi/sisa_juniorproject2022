@@ -30,266 +30,310 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
             pictureBox1 = new PictureBox();
-            GridViewSampah = new DataGridView();
-            btnMuatData = new PictureBox();
-            btnEditData = new PictureBox();
-            btnTambahData = new PictureBox();
-            txtMassaAdd = new TextBox();
-            txtTipeAdd = new TextBox();
-            txtMassaMod = new TextBox();
-            txtNoMod = new TextBox();
-            txtTipeMod = new TextBox();
-            tbOrderData = new TextBox();
-            tbPesananProcess = new TextBox();
-            btnPesan = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            tbUnitID = new Label();
-            tbName = new Label();
-            tbLocation = new Label();
-            tbCategory = new Label();
+            btnTambahDataSampah = new PictureBox();
+            btnBuatPermintaan = new PictureBox();
+            btnUpdateStatus = new PictureBox();
+            btnBatalkanStatus = new PictureBox();
+            btnEditDataSampah = new PictureBox();
+            btnHapusDataSampah = new PictureBox();
+            cbKategori = new ComboBox();
+            tbBerat = new TextBox();
+            dgvDataSampah = new DataGridView();
+            dgvPermintaan = new DataGridView();
+            lblBelumDiambil = new Label();
+            lblSudahDiambil = new Label();
+            lblTotalOrganik = new Label();
+            lblTotalAnorganik = new Label();
+            lblTotalB3 = new Label();
+            lblTotalHarian = new Label();
+            lblUnitID = new Label();
+            lblNamaUnit = new Label();
+            lblTypeUnit = new Label();
+            lblKapasitasUnit = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)GridViewSampah).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnMuatData).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnEditData).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnTambahData).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnPesan).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnTambahDataSampah).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnBuatPermintaan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnUpdateStatus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnBatalkanStatus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnEditDataSampah).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnHapusDataSampah).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDataSampah).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPermintaan).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(59, 115, 120);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(29, 6);
+            pictureBox1.Location = new Point(22, 41);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(973, 644);
+            pictureBox1.Size = new Size(991, 648);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
-            // GridViewSampah
+            // btnTambahDataSampah
             // 
-            GridViewSampah.BackgroundColor = Color.CadetBlue;
-            GridViewSampah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridViewSampah.Location = new Point(56, 126);
-            GridViewSampah.Name = "GridViewSampah";
-            GridViewSampah.Size = new Size(555, 104);
-            GridViewSampah.TabIndex = 2;
-            GridViewSampah.CellContentClick += GridViewSampah_CellContentClick;
+            btnTambahDataSampah.BackColor = SystemColors.ButtonFace;
+            btnTambahDataSampah.Image = Properties.Resources.btnTambahDataSampah;
+            btnTambahDataSampah.Location = new Point(48, 257);
+            btnTambahDataSampah.Name = "btnTambahDataSampah";
+            btnTambahDataSampah.Size = new Size(133, 27);
+            btnTambahDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnTambahDataSampah.TabIndex = 1;
+            btnTambahDataSampah.TabStop = false;
+            btnTambahDataSampah.Click += btnTambahDataSampah_Click;
             // 
-            // btnMuatData
+            // btnBuatPermintaan
             // 
-            btnMuatData.BackColor = Color.FromArgb(59, 115, 120);
-            btnMuatData.Image = (Image)resources.GetObject("btnMuatData.Image");
-            btnMuatData.Location = new Point(507, 237);
-            btnMuatData.Name = "btnMuatData";
-            btnMuatData.Size = new Size(100, 28);
-            btnMuatData.TabIndex = 8;
-            btnMuatData.TabStop = false;
-            btnMuatData.Click += pictureBox2_Click_1;
+            btnBuatPermintaan.BackColor = SystemColors.ButtonFace;
+            btnBuatPermintaan.Image = Properties.Resources.btnBuatPermintaan;
+            btnBuatPermintaan.Location = new Point(198, 257);
+            btnBuatPermintaan.Name = "btnBuatPermintaan";
+            btnBuatPermintaan.Size = new Size(133, 27);
+            btnBuatPermintaan.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnBuatPermintaan.TabIndex = 2;
+            btnBuatPermintaan.TabStop = false;
             // 
-            // btnEditData
+            // btnUpdateStatus
             // 
-            btnEditData.BackColor = Color.FromArgb(59, 115, 120);
-            btnEditData.Image = (Image)resources.GetObject("btnEditData.Image");
-            btnEditData.Location = new Point(519, 589);
-            btnEditData.Name = "btnEditData";
-            btnEditData.Size = new Size(89, 26);
-            btnEditData.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnEditData.TabIndex = 10;
-            btnEditData.TabStop = false;
-            btnEditData.Click += pictureBox4_Click;
+            btnUpdateStatus.BackColor = Color.DarkSlateGray;
+            btnUpdateStatus.Image = Properties.Resources.btnUpdateStatusSampah;
+            btnUpdateStatus.Location = new Point(404, 557);
+            btnUpdateStatus.Name = "btnUpdateStatus";
+            btnUpdateStatus.Size = new Size(133, 27);
+            btnUpdateStatus.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnUpdateStatus.TabIndex = 3;
+            btnUpdateStatus.TabStop = false;
             // 
-            // btnTambahData
+            // btnBatalkanStatus
             // 
-            btnTambahData.BackColor = Color.FromArgb(59, 115, 120);
-            btnTambahData.Image = (Image)resources.GetObject("btnTambahData.Image");
-            btnTambahData.Location = new Point(481, 404);
-            btnTambahData.Name = "btnTambahData";
-            btnTambahData.Size = new Size(130, 26);
-            btnTambahData.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnTambahData.TabIndex = 11;
-            btnTambahData.TabStop = false;
-            btnTambahData.Click += btnTambahData_Click;
+            btnBatalkanStatus.BackColor = Color.DarkSlateGray;
+            btnBatalkanStatus.Image = Properties.Resources.btnBatalkanStatus;
+            btnBatalkanStatus.Location = new Point(543, 557);
+            btnBatalkanStatus.Name = "btnBatalkanStatus";
+            btnBatalkanStatus.Size = new Size(133, 27);
+            btnBatalkanStatus.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnBatalkanStatus.TabIndex = 4;
+            btnBatalkanStatus.TabStop = false;
             // 
-            // txtMassaAdd
+            // btnEditDataSampah
             // 
-            txtMassaAdd.BackColor = Color.CadetBlue;
-            txtMassaAdd.ForeColor = SystemColors.ButtonHighlight;
-            txtMassaAdd.Location = new Point(202, 331);
-            txtMassaAdd.Name = "txtMassaAdd";
-            txtMassaAdd.Size = new Size(168, 23);
-            txtMassaAdd.TabIndex = 12;
-            txtMassaAdd.TextChanged += txtMassaAdd_TextChanged;
+            btnEditDataSampah.BackColor = SystemColors.ButtonFace;
+            btnEditDataSampah.Image = Properties.Resources.btnEditDataSampah;
+            btnEditDataSampah.Location = new Point(48, 294);
+            btnEditDataSampah.Name = "btnEditDataSampah";
+            btnEditDataSampah.Size = new Size(133, 27);
+            btnEditDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnEditDataSampah.TabIndex = 5;
+            btnEditDataSampah.TabStop = false;
             // 
-            // txtTipeAdd
+            // btnHapusDataSampah
             // 
-            txtTipeAdd.BackColor = Color.CadetBlue;
-            txtTipeAdd.ForeColor = SystemColors.ButtonHighlight;
-            txtTipeAdd.Location = new Point(202, 360);
-            txtTipeAdd.Name = "txtTipeAdd";
-            txtTipeAdd.Size = new Size(168, 23);
-            txtTipeAdd.TabIndex = 13;
-            txtTipeAdd.TextChanged += txtTipeAdd_TextChanged;
+            btnHapusDataSampah.BackColor = SystemColors.ButtonFace;
+            btnHapusDataSampah.Image = Properties.Resources.btnHapusDataSampah;
+            btnHapusDataSampah.Location = new Point(198, 294);
+            btnHapusDataSampah.Name = "btnHapusDataSampah";
+            btnHapusDataSampah.Size = new Size(133, 27);
+            btnHapusDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnHapusDataSampah.TabIndex = 6;
+            btnHapusDataSampah.TabStop = false;
             // 
-            // txtMassaMod
+            // cbKategori
             // 
-            txtMassaMod.BackColor = Color.CadetBlue;
-            txtMassaMod.ForeColor = SystemColors.ButtonHighlight;
-            txtMassaMod.Location = new Point(202, 530);
-            txtMassaMod.Name = "txtMassaMod";
-            txtMassaMod.Size = new Size(168, 23);
-            txtMassaMod.TabIndex = 15;
-            txtMassaMod.TextChanged += txtMassaMod_TextChanged;
+            cbKategori.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbKategori.FormattingEnabled = true;
+            cbKategori.Location = new Point(48, 128);
+            cbKategori.Name = "cbKategori";
+            cbKategori.Size = new Size(283, 36);
+            cbKategori.TabIndex = 7;
             // 
-            // txtNoMod
+            // tbBerat
             // 
-            txtNoMod.BackColor = Color.CadetBlue;
-            txtNoMod.ForeColor = SystemColors.ButtonHighlight;
-            txtNoMod.Location = new Point(202, 498);
-            txtNoMod.Name = "txtNoMod";
-            txtNoMod.Size = new Size(168, 23);
-            txtNoMod.TabIndex = 14;
-            txtNoMod.TextChanged += txtNoMod_TextChanged;
+            tbBerat.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBerat.Location = new Point(48, 201);
+            tbBerat.Name = "tbBerat";
+            tbBerat.Size = new Size(283, 31);
+            tbBerat.TabIndex = 8;
             // 
-            // txtTipeMod
+            // dgvDataSampah
             // 
-            txtTipeMod.BackColor = Color.CadetBlue;
-            txtTipeMod.ForeColor = SystemColors.ButtonHighlight;
-            txtTipeMod.Location = new Point(202, 564);
-            txtTipeMod.Name = "txtTipeMod";
-            txtTipeMod.Size = new Size(168, 23);
-            txtTipeMod.TabIndex = 16;
-            txtTipeMod.TextChanged += txtTipeMod_TextChanged;
+            dgvDataSampah.BackgroundColor = Color.DarkSlateGray;
+            dgvDataSampah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDataSampah.Location = new Point(404, 93);
+            dgvDataSampah.Name = "dgvDataSampah";
+            dgvDataSampah.Size = new Size(587, 228);
+            dgvDataSampah.TabIndex = 9;
             // 
-            // tbOrderData
+            // dgvPermintaan
             // 
-            tbOrderData.BackColor = Color.CadetBlue;
-            tbOrderData.ForeColor = SystemColors.ButtonHighlight;
-            tbOrderData.Location = new Point(659, 128);
-            tbOrderData.Name = "tbOrderData";
-            tbOrderData.Size = new Size(168, 23);
-            tbOrderData.TabIndex = 18;
-            tbOrderData.TextChanged += tbOrderData_TextChanged;
+            dgvPermintaan.BackgroundColor = Color.DarkSlateGray;
+            dgvPermintaan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPermintaan.Location = new Point(404, 422);
+            dgvPermintaan.Name = "dgvPermintaan";
+            dgvPermintaan.Size = new Size(587, 119);
+            dgvPermintaan.TabIndex = 10;
             // 
-            // tbPesananProcess
+            // lblBelumDiambil
             // 
-            tbPesananProcess.BackColor = Color.CadetBlue;
-            tbPesananProcess.ForeColor = SystemColors.ButtonHighlight;
-            tbPesananProcess.Location = new Point(663, 290);
-            tbPesananProcess.Name = "tbPesananProcess";
-            tbPesananProcess.Size = new Size(168, 23);
-            tbPesananProcess.TabIndex = 24;
-            tbPesananProcess.TextChanged += tbPesananProcess_TextChanged;
+            lblBelumDiambil.AutoSize = true;
+            lblBelumDiambil.BackColor = SystemColors.ButtonFace;
+            lblBelumDiambil.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBelumDiambil.Location = new Point(78, 456);
+            lblBelumDiambil.Name = "lblBelumDiambil";
+            lblBelumDiambil.Size = new Size(86, 65);
+            lblBelumDiambil.TabIndex = 11;
+            lblBelumDiambil.Text = "100";
+            lblBelumDiambil.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnPesan
+            // lblSudahDiambil
             // 
-            btnPesan.BackColor = Color.FromArgb(53, 74, 75);
-            btnPesan.Image = (Image)resources.GetObject("btnPesan.Image");
-            btnPesan.Location = new Point(664, 166);
-            btnPesan.Name = "btnPesan";
-            btnPesan.Size = new Size(118, 21);
-            btnPesan.TabIndex = 25;
-            btnPesan.TabStop = false;
+            lblSudahDiambil.AutoSize = true;
+            lblSudahDiambil.BackColor = SystemColors.ButtonFace;
+            lblSudahDiambil.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSudahDiambil.Location = new Point(224, 456);
+            lblSudahDiambil.Name = "lblSudahDiambil";
+            lblSudahDiambil.Size = new Size(86, 65);
+            lblSudahDiambil.TabIndex = 12;
+            lblSudahDiambil.Text = "100";
+            lblSudahDiambil.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBox2
+            // lblTotalOrganik
             // 
-            pictureBox2.BackColor = Color.FromArgb(37, 54, 66);
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(664, 356);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(147, 21);
-            pictureBox2.TabIndex = 26;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            lblTotalOrganik.AutoSize = true;
+            lblTotalOrganik.BackColor = SystemColors.ButtonFace;
+            lblTotalOrganik.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalOrganik.Location = new Point(78, 535);
+            lblTotalOrganik.Name = "lblTotalOrganik";
+            lblTotalOrganik.Size = new Size(86, 65);
+            lblTotalOrganik.TabIndex = 13;
+            lblTotalOrganik.Text = "100";
+            lblTotalOrganik.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // lblTotalAnorganik
             // 
-            pictureBox3.BackColor = Color.FromArgb(37, 54, 66);
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(663, 327);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(79, 21);
-            pictureBox3.TabIndex = 27;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
+            lblTotalAnorganik.AutoSize = true;
+            lblTotalAnorganik.BackColor = SystemColors.ButtonFace;
+            lblTotalAnorganik.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalAnorganik.Location = new Point(224, 535);
+            lblTotalAnorganik.Name = "lblTotalAnorganik";
+            lblTotalAnorganik.Size = new Size(86, 65);
+            lblTotalAnorganik.TabIndex = 14;
+            lblTotalAnorganik.Text = "100";
+            lblTotalAnorganik.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tbUnitID
+            // lblTotalB3
             // 
-            tbUnitID.AutoSize = true;
-            tbUnitID.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbUnitID.Location = new Point(744, 515);
-            tbUnitID.Name = "tbUnitID";
-            tbUnitID.Size = new Size(57, 28);
-            tbUnitID.TabIndex = 28;
-            tbUnitID.Text = "label1";
+            lblTotalB3.AutoSize = true;
+            lblTotalB3.BackColor = SystemColors.ButtonFace;
+            lblTotalB3.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalB3.Location = new Point(78, 619);
+            lblTotalB3.Name = "lblTotalB3";
+            lblTotalB3.Size = new Size(86, 65);
+            lblTotalB3.TabIndex = 15;
+            lblTotalB3.Text = "100";
+            lblTotalB3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tbName
+            // lblTotalHarian
             // 
-            tbName.AutoSize = true;
-            tbName.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbName.Location = new Point(744, 559);
-            tbName.Name = "tbName";
-            tbName.Size = new Size(57, 28);
-            tbName.TabIndex = 29;
-            tbName.Text = "label1";
+            lblTotalHarian.AutoSize = true;
+            lblTotalHarian.BackColor = SystemColors.ButtonFace;
+            lblTotalHarian.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalHarian.Location = new Point(224, 619);
+            lblTotalHarian.Name = "lblTotalHarian";
+            lblTotalHarian.Size = new Size(86, 65);
+            lblTotalHarian.TabIndex = 16;
+            lblTotalHarian.Text = "100";
+            lblTotalHarian.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tbLocation
+            // lblUnitID
             // 
-            tbLocation.AutoSize = true;
-            tbLocation.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbLocation.Location = new Point(744, 602);
-            tbLocation.Name = "tbLocation";
-            tbLocation.Size = new Size(57, 28);
-            tbLocation.TabIndex = 30;
-            tbLocation.Text = "label1";
+            lblUnitID.AutoSize = true;
+            lblUnitID.BackColor = Color.DarkSlateGray;
+            lblUnitID.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUnitID.ForeColor = SystemColors.ButtonFace;
+            lblUnitID.Location = new Point(620, 647);
+            lblUnitID.Name = "lblUnitID";
+            lblUnitID.Size = new Size(50, 37);
+            lblUnitID.TabIndex = 17;
+            lblUnitID.Text = "100";
+            lblUnitID.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tbCategory
+            // lblNamaUnit
             // 
-            tbCategory.AutoSize = true;
-            tbCategory.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbCategory.Location = new Point(837, 476);
-            tbCategory.Name = "tbCategory";
-            tbCategory.Size = new Size(57, 28);
-            tbCategory.TabIndex = 31;
-            tbCategory.Text = "label1";
+            lblNamaUnit.AutoSize = true;
+            lblNamaUnit.BackColor = Color.DarkSlateGray;
+            lblNamaUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNamaUnit.ForeColor = SystemColors.ButtonFace;
+            lblNamaUnit.Location = new Point(725, 647);
+            lblNamaUnit.Name = "lblNamaUnit";
+            lblNamaUnit.Size = new Size(50, 37);
+            lblNamaUnit.TabIndex = 18;
+            lblNamaUnit.Text = "100";
+            lblNamaUnit.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblTypeUnit
+            // 
+            lblTypeUnit.AutoSize = true;
+            lblTypeUnit.BackColor = Color.DarkSlateGray;
+            lblTypeUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTypeUnit.ForeColor = SystemColors.ButtonFace;
+            lblTypeUnit.Location = new Point(840, 647);
+            lblTypeUnit.Name = "lblTypeUnit";
+            lblTypeUnit.Size = new Size(50, 37);
+            lblTypeUnit.TabIndex = 19;
+            lblTypeUnit.Text = "100";
+            lblTypeUnit.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblKapasitasUnit
+            // 
+            lblKapasitasUnit.AutoSize = true;
+            lblKapasitasUnit.BackColor = Color.DarkSlateGray;
+            lblKapasitasUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblKapasitasUnit.ForeColor = SystemColors.ButtonFace;
+            lblKapasitasUnit.Location = new Point(941, 647);
+            lblKapasitasUnit.Name = "lblKapasitasUnit";
+            lblKapasitasUnit.Size = new Size(50, 37);
+            lblKapasitasUnit.TabIndex = 20;
+            lblKapasitasUnit.Text = "100";
+            lblKapasitasUnit.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // UC_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
-            Controls.Add(tbCategory);
-            Controls.Add(tbLocation);
-            Controls.Add(tbName);
-            Controls.Add(tbUnitID);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(btnPesan);
-            Controls.Add(tbPesananProcess);
-            Controls.Add(tbOrderData);
-            Controls.Add(txtTipeMod);
-            Controls.Add(txtMassaMod);
-            Controls.Add(txtNoMod);
-            Controls.Add(txtTipeAdd);
-            Controls.Add(txtMassaAdd);
-            Controls.Add(btnTambahData);
-            Controls.Add(btnEditData);
-            Controls.Add(btnMuatData);
-            Controls.Add(GridViewSampah);
+            BackColor = Color.CadetBlue;
+            Controls.Add(lblKapasitasUnit);
+            Controls.Add(lblTypeUnit);
+            Controls.Add(lblNamaUnit);
+            Controls.Add(lblUnitID);
+            Controls.Add(lblTotalHarian);
+            Controls.Add(lblTotalB3);
+            Controls.Add(lblTotalAnorganik);
+            Controls.Add(lblTotalOrganik);
+            Controls.Add(lblSudahDiambil);
+            Controls.Add(lblBelumDiambil);
+            Controls.Add(dgvPermintaan);
+            Controls.Add(dgvDataSampah);
+            Controls.Add(tbBerat);
+            Controls.Add(cbKategori);
+            Controls.Add(btnHapusDataSampah);
+            Controls.Add(btnEditDataSampah);
+            Controls.Add(btnBatalkanStatus);
+            Controls.Add(btnUpdateStatus);
+            Controls.Add(btnBuatPermintaan);
+            Controls.Add(btnTambahDataSampah);
             Controls.Add(pictureBox1);
             Name = "UC_Dashboard";
             Size = new Size(1035, 720);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)GridViewSampah).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnMuatData).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnEditData).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnTambahData).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnPesan).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnTambahDataSampah).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnBuatPermintaan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnUpdateStatus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnBatalkanStatus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnEditDataSampah).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnHapusDataSampah).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDataSampah).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPermintaan).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -297,23 +341,25 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private DataGridView GridViewSampah;
-        private PictureBox btnMuatData;
-        private PictureBox btnEditData;
-        private PictureBox btnTambahData;
-        private TextBox txtMassaAdd;
-        private TextBox txtTipeAdd;
-        private TextBox txtMassaMod;
-        private TextBox txtNoMod;
-        private TextBox txtTipeMod;
-        private TextBox tbOrderData;
-        private TextBox tbPesananProcess;
-        private PictureBox btnPesan;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private Label tbUnitID;
-        private Label tbName;
-        private Label tbLocation;
-        private Label tbCategory;
+        private PictureBox btnTambahDataSampah;
+        private PictureBox btnBuatPermintaan;
+        private PictureBox btnUpdateStatus;
+        private PictureBox btnBatalkanStatus;
+        private PictureBox btnEditDataSampah;
+        private PictureBox btnHapusDataSampah;
+        private ComboBox cbKategori;
+        private TextBox tbBerat;
+        private DataGridView dgvDataSampah;
+        private DataGridView dgvPermintaan;
+        private Label lblBelumDiambil;
+        private Label lblSudahDiambil;
+        private Label lblTotalOrganik;
+        private Label lblTotalAnorganik;
+        private Label lblTotalB3;
+        private Label lblTotalHarian;
+        private Label lblUnitID;
+        private Label lblNamaUnit;
+        private Label lblTypeUnit;
+        private Label lblKapasitasUnit;
     }
 }
