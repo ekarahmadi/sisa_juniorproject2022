@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
             pictureBox1 = new PictureBox();
             btnTambahDataSampah = new PictureBox();
             btnBuatPermintaan = new PictureBox();
             btnUpdateStatus = new PictureBox();
             btnBatalkanStatus = new PictureBox();
-            btnEditDataSampah = new PictureBox();
             btnHapusDataSampah = new PictureBox();
             cbKategori = new ComboBox();
             tbBerat = new TextBox();
@@ -49,16 +49,17 @@
             lblUnitID = new Label();
             lblNamaUnit = new Label();
             lblTypeUnit = new Label();
-            lblKapasitasUnit = new Label();
+            toolTip1 = new ToolTip(components);
+            btnInfo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnTambahDataSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBuatPermintaan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnUpdateStatus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBatalkanStatus).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnEditDataSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusDataSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDataSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPermintaan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnInfo).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -86,13 +87,14 @@
             // btnBuatPermintaan
             // 
             btnBuatPermintaan.BackColor = SystemColors.ButtonFace;
-            btnBuatPermintaan.Image = Properties.Resources.btnBuatPermintaan;
+            btnBuatPermintaan.Image = Properties.Resources.btnBuatPermintaan1;
             btnBuatPermintaan.Location = new Point(198, 257);
             btnBuatPermintaan.Name = "btnBuatPermintaan";
-            btnBuatPermintaan.Size = new Size(133, 27);
+            btnBuatPermintaan.Size = new Size(133, 63);
             btnBuatPermintaan.SizeMode = PictureBoxSizeMode.AutoSize;
             btnBuatPermintaan.TabIndex = 2;
             btnBuatPermintaan.TabStop = false;
+            btnBuatPermintaan.Click += btnBuatPermintaan_Click;
             // 
             // btnUpdateStatus
             // 
@@ -104,6 +106,7 @@
             btnUpdateStatus.SizeMode = PictureBoxSizeMode.AutoSize;
             btnUpdateStatus.TabIndex = 3;
             btnUpdateStatus.TabStop = false;
+            btnUpdateStatus.Click += btnUpdateStatus_Click;
             // 
             // btnBatalkanStatus
             // 
@@ -115,23 +118,13 @@
             btnBatalkanStatus.SizeMode = PictureBoxSizeMode.AutoSize;
             btnBatalkanStatus.TabIndex = 4;
             btnBatalkanStatus.TabStop = false;
-            // 
-            // btnEditDataSampah
-            // 
-            btnEditDataSampah.BackColor = SystemColors.ButtonFace;
-            btnEditDataSampah.Image = Properties.Resources.btnEditDataSampah;
-            btnEditDataSampah.Location = new Point(48, 294);
-            btnEditDataSampah.Name = "btnEditDataSampah";
-            btnEditDataSampah.Size = new Size(133, 27);
-            btnEditDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnEditDataSampah.TabIndex = 5;
-            btnEditDataSampah.TabStop = false;
+            btnBatalkanStatus.Click += btnBatalkanStatus_Click;
             // 
             // btnHapusDataSampah
             // 
             btnHapusDataSampah.BackColor = SystemColors.ButtonFace;
             btnHapusDataSampah.Image = Properties.Resources.btnHapusDataSampah;
-            btnHapusDataSampah.Location = new Point(198, 294);
+            btnHapusDataSampah.Location = new Point(48, 294);
             btnHapusDataSampah.Name = "btnHapusDataSampah";
             btnHapusDataSampah.Size = new Size(133, 27);
             btnHapusDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -264,7 +257,7 @@
             lblNamaUnit.BackColor = Color.DarkSlateGray;
             lblNamaUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNamaUnit.ForeColor = SystemColors.ButtonFace;
-            lblNamaUnit.Location = new Point(725, 647);
+            lblNamaUnit.Location = new Point(716, 647);
             lblNamaUnit.Name = "lblNamaUnit";
             lblNamaUnit.Size = new Size(50, 37);
             lblNamaUnit.TabIndex = 18;
@@ -277,32 +270,30 @@
             lblTypeUnit.BackColor = Color.DarkSlateGray;
             lblTypeUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTypeUnit.ForeColor = SystemColors.ButtonFace;
-            lblTypeUnit.Location = new Point(840, 647);
+            lblTypeUnit.Location = new Point(932, 647);
             lblTypeUnit.Name = "lblTypeUnit";
             lblTypeUnit.Size = new Size(50, 37);
             lblTypeUnit.TabIndex = 19;
             lblTypeUnit.Text = "100";
             lblTypeUnit.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblKapasitasUnit
+            // btnInfo
             // 
-            lblKapasitasUnit.AutoSize = true;
-            lblKapasitasUnit.BackColor = Color.DarkSlateGray;
-            lblKapasitasUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblKapasitasUnit.ForeColor = SystemColors.ButtonFace;
-            lblKapasitasUnit.Location = new Point(941, 647);
-            lblKapasitasUnit.Name = "lblKapasitasUnit";
-            lblKapasitasUnit.Size = new Size(50, 37);
-            lblKapasitasUnit.TabIndex = 20;
-            lblKapasitasUnit.Text = "100";
-            lblKapasitasUnit.TextAlign = ContentAlignment.MiddleCenter;
+            btnInfo.BackColor = Color.DarkSlateGray;
+            btnInfo.Image = Properties.Resources.btnI;
+            btnInfo.Location = new Point(682, 557);
+            btnInfo.Name = "btnInfo";
+            btnInfo.Size = new Size(29, 29);
+            btnInfo.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnInfo.TabIndex = 20;
+            btnInfo.TabStop = false;
             // 
             // UC_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
-            Controls.Add(lblKapasitasUnit);
+            Controls.Add(btnInfo);
             Controls.Add(lblTypeUnit);
             Controls.Add(lblNamaUnit);
             Controls.Add(lblUnitID);
@@ -317,7 +308,6 @@
             Controls.Add(tbBerat);
             Controls.Add(cbKategori);
             Controls.Add(btnHapusDataSampah);
-            Controls.Add(btnEditDataSampah);
             Controls.Add(btnBatalkanStatus);
             Controls.Add(btnUpdateStatus);
             Controls.Add(btnBuatPermintaan);
@@ -330,10 +320,10 @@
             ((System.ComponentModel.ISupportInitialize)btnBuatPermintaan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnUpdateStatus).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBatalkanStatus).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnEditDataSampah).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnHapusDataSampah).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDataSampah).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPermintaan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnInfo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -345,7 +335,6 @@
         private PictureBox btnBuatPermintaan;
         private PictureBox btnUpdateStatus;
         private PictureBox btnBatalkanStatus;
-        private PictureBox btnEditDataSampah;
         private PictureBox btnHapusDataSampah;
         private ComboBox cbKategori;
         private TextBox tbBerat;
@@ -360,6 +349,7 @@
         private Label lblUnitID;
         private Label lblNamaUnit;
         private Label lblTypeUnit;
-        private Label lblKapasitasUnit;
+        private ToolTip toolTip1;
+        private PictureBox btnInfo;
     }
 }

@@ -7,6 +7,9 @@
     <Compile Update="Recycle\RE_Account.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="View\2MainWindow\FormSelectTPA.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\2MainWindow\UC_EditDataUser.cs">
       <SubType>UserControl</SubType>
     </Compile>

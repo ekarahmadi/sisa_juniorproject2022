@@ -95,6 +95,9 @@ namespace SISA.View._1Starting
 
             if (authService.Login(username, password, out int roleId))
             {
+
+                SessionManager.LoadAllUnits();
+
                 // Simpan informasi sesi ke dalam SessionManager
                 SessionManager.Username = username; // Menyimpan username yang benar ke SessionManager
                 SessionManager.RoleId = roleId;

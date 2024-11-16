@@ -16,7 +16,6 @@ namespace SISA.View._2MainWindow
         private AuthService authService;
         public UC_Riwayat()
         {
-
             authService = new AuthService();
             InitializeComponent();
             InitializeButtonHoverEffects();
@@ -60,19 +59,7 @@ namespace SISA.View._2MainWindow
         }
         private void LoadRiwayatData()
         {
-            try
-            {
-                // Retrieve the Riwayat data
-                DataTable riwayatData = authService.GetRiwayatData();
-
-                // Bind the data to the DataGridView
-                GridRiwayat.DataSource = riwayatData;
-            }
-            catch (Exception ex)
-            {
-                // Display an error message if data loading fails
-                MessageBox.Show("Error loading Riwayat data: " + ex.Message);
-            }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,38 +79,12 @@ namespace SISA.View._2MainWindow
 
         private void btnLoadReq_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable requestData = authService.GetRequestData(); // Get updated request data
-                gridRequest.DataSource = requestData;               // Bind to DataGridView
-
-                // Optional: Format DataGridView columns (if needed)
-                gridRequest.Columns["order_id"].HeaderText = "Order ID";
-                gridRequest.Columns["entry_number"].HeaderText = "Entry Number";
-                gridRequest.Columns["order_date"].HeaderText = "Order Date";
-                gridRequest.Columns["units_id"].HeaderText = "Units ID";
-                gridRequest.Columns["process"].HeaderText = "Process";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to load request data: " + ex.Message);
-            }
+            
         }
 
         private void LoadRequestData()
         {
-            try
-            {
-                // Fetch the request data from the AuthService
-                DataTable requestData = authService.GetRequestData();
-                // Bind the data to gridRequest
-                gridRequest.DataSource = requestData;
-            }
-            catch (Exception ex)
-            {
-                // Display an error message if data loading fails
-                MessageBox.Show("Error loading request data: " + ex.Message);
-            }
+            
         }
     }
 }

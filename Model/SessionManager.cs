@@ -8,6 +8,8 @@ namespace SISA.Model
 {
     internal class SessionManager
     {
+        public static List<UnitData> AllUnits { get; private set; } = new List<UnitData>();
+
         // Menyimpan ID peran pengguna yang login, atau null jika tidak ada yang login
         public static int? RoleId { get; set; }
 
@@ -36,6 +38,30 @@ namespace SISA.Model
             FullName = fullName;
             UnitKerja = unitKerja;
             RoleId = roleId;
+        }
+
+        // Fungsi untuk memuat semua data unit ke dalam SessionManager
+        public static void LoadAllUnits()
+        {
+            try
+            {
+                TPSService tpsService = new TPSService(); // Panggil TPSService
+                AllUnits = tpsService.GetAllUnits(); // Ambil semua unit dari database
+
+                if (AllUnits == null || AllUnits.Count == 0)
+                {
+                    Console.WriteLine("Data units kosong. Pastikan database memiliki data yang valid.");
+                }
+                else
+                {
+                    Console.WriteLine("Data units berhasil dimuat ke SessionManager.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Gagal memuat data units: {ex.Message}");
+                throw;
+            }
         }
     }
 }

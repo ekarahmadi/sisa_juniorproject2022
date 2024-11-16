@@ -10,6 +10,7 @@
 *.dll
 bin/
 obj/
+src/Model/DatabaseConfig.cs
 
 # Ignore log files
 *.log

@@ -12,7 +12,7 @@ namespace SISA.Model
 {
     internal class AuthService
     {
-        private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=root;Database=sisa_juniorproject";
+        private string connectionString = DatabaseConfig.ConnectionString;
 
         // private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=root;Database=sisa_juniorproject";
         private static int? _currentUserId = null;
@@ -870,6 +870,7 @@ namespace SISA.Model
 
             return units;
         }
+
 
 
         public void UpdateUnit(int unitId, UnitData updatedUnit)
