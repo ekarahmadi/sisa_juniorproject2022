@@ -230,26 +230,6 @@ namespace SISA.View._2MainWindow
 
         }
 
-        private void tbUnitID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbCategory_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbLocation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             // Refreshes the process status for the order based on the current data in tbOrderData

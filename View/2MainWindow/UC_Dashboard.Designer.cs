@@ -40,14 +40,14 @@
             txtNoMod = new TextBox();
             txtTipeMod = new TextBox();
             tbOrderData = new TextBox();
-            tbUnitID = new TextBox();
-            tbName = new TextBox();
-            tbCategory = new TextBox();
-            tbLocation = new TextBox();
             tbPesananProcess = new TextBox();
             btnPesan = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            tbUnitID = new Label();
+            tbName = new Label();
+            tbLocation = new Label();
+            tbCategory = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GridViewSampah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMuatData).BeginInit();
@@ -174,42 +174,6 @@
             tbOrderData.TabIndex = 18;
             tbOrderData.TextChanged += tbOrderData_TextChanged;
             // 
-            // tbUnitID
-            // 
-            tbUnitID.Font = new Font("Microsoft Sans Serif", 12F);
-            tbUnitID.Location = new Point(739, 510);
-            tbUnitID.Name = "tbUnitID";
-            tbUnitID.Size = new Size(138, 26);
-            tbUnitID.TabIndex = 19;
-            tbUnitID.TextChanged += tbUnitID_TextChanged;
-            // 
-            // tbName
-            // 
-            tbName.Font = new Font("Microsoft Sans Serif", 12F);
-            tbName.Location = new Point(739, 542);
-            tbName.Name = "tbName";
-            tbName.Size = new Size(138, 26);
-            tbName.TabIndex = 20;
-            tbName.TextChanged += tbName_TextChanged;
-            // 
-            // tbCategory
-            // 
-            tbCategory.Font = new Font("Microsoft Sans Serif", 12F);
-            tbCategory.Location = new Point(739, 574);
-            tbCategory.Name = "tbCategory";
-            tbCategory.Size = new Size(138, 26);
-            tbCategory.TabIndex = 21;
-            tbCategory.TextChanged += tbCategory_TextChanged;
-            // 
-            // tbLocation
-            // 
-            tbLocation.Font = new Font("Microsoft Sans Serif", 12F);
-            tbLocation.Location = new Point(739, 604);
-            tbLocation.Name = "tbLocation";
-            tbLocation.Size = new Size(138, 26);
-            tbLocation.TabIndex = 22;
-            tbLocation.TextChanged += tbLocation_TextChanged;
-            // 
             // tbPesananProcess
             // 
             tbPesananProcess.BackColor = Color.CadetBlue;
@@ -229,7 +193,6 @@
             btnPesan.Size = new Size(118, 21);
             btnPesan.TabIndex = 25;
             btnPesan.TabStop = false;
-            //btnPesan.Click += btnPesan_Click;
             // 
             // pictureBox2
             // 
@@ -253,19 +216,59 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // tbUnitID
+            // 
+            tbUnitID.AutoSize = true;
+            tbUnitID.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUnitID.Location = new Point(744, 515);
+            tbUnitID.Name = "tbUnitID";
+            tbUnitID.Size = new Size(57, 28);
+            tbUnitID.TabIndex = 28;
+            tbUnitID.Text = "label1";
+            // 
+            // tbName
+            // 
+            tbName.AutoSize = true;
+            tbName.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbName.Location = new Point(744, 559);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(57, 28);
+            tbName.TabIndex = 29;
+            tbName.Text = "label1";
+            // 
+            // tbLocation
+            // 
+            tbLocation.AutoSize = true;
+            tbLocation.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbLocation.Location = new Point(744, 602);
+            tbLocation.Name = "tbLocation";
+            tbLocation.Size = new Size(57, 28);
+            tbLocation.TabIndex = 30;
+            tbLocation.Text = "label1";
+            // 
+            // tbCategory
+            // 
+            tbCategory.AutoSize = true;
+            tbCategory.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbCategory.Location = new Point(837, 476);
+            tbCategory.Name = "tbCategory";
+            tbCategory.Size = new Size(57, 28);
+            tbCategory.TabIndex = 31;
+            tbCategory.Text = "label1";
+            // 
             // UC_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
+            Controls.Add(tbCategory);
+            Controls.Add(tbLocation);
+            Controls.Add(tbName);
+            Controls.Add(tbUnitID);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(btnPesan);
             Controls.Add(tbPesananProcess);
-            Controls.Add(tbLocation);
-            Controls.Add(tbCategory);
-            Controls.Add(tbName);
-            Controls.Add(tbUnitID);
             Controls.Add(tbOrderData);
             Controls.Add(txtTipeMod);
             Controls.Add(txtMassaMod);
@@ -304,13 +307,13 @@
         private TextBox txtNoMod;
         private TextBox txtTipeMod;
         private TextBox tbOrderData;
-        private TextBox tbUnitID;
-        private TextBox tbName;
-        private TextBox tbCategory;
-        private TextBox tbLocation;
         private TextBox tbPesananProcess;
         private PictureBox btnPesan;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Label tbUnitID;
+        private Label tbName;
+        private Label tbLocation;
+        private Label tbCategory;
     }
 }
