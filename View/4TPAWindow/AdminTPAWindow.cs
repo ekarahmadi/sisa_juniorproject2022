@@ -32,7 +32,7 @@ namespace SISA.View._4TPAWindow
         private Image homeHover;
 
         // Buat Instance UserControl untuk Setiap Tampilan
-        private UC_Dashboard ucDashboard;
+        private UC_DashboardTPA ucDashboard;
         private UC_Riwayat ucRiwayat;
         private SISA.View._2MainWindow.UC_Account ucAccount;
         private UC_AppDetail ucAppDetail;
@@ -46,7 +46,7 @@ namespace SISA.View._4TPAWindow
             authService = new AuthService(); // Inisialisasi authService
 
             // Inisialisasi setiap UserControl
-            ucDashboard = new UC_Dashboard();
+            ucDashboard = new UC_DashboardTPA();
             ucRiwayat = new UC_Riwayat();
             ucAccount = new SISA.View._2MainWindow.UC_Account();
             ucEditDataUser = new UC_EditDataUser();

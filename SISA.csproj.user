@@ -70,7 +70,7 @@
     <Compile Update="View\4TPAWindow\UC_Account.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="View\4TPAWindow\UC_Dashboard.cs">
+    <Compile Update="View\4TPAWindow\UC_DashboardTPA.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="View\4TPAWindow\UC_Riwayat.cs">
