@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnUpdateStatusSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnUpdateStatusSampahHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnHapusDataSampahHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentAccountUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\contentAccountUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReloadHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnReloadHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminKeluar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminKeluar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataTerseleksiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataTerseleksiHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBatalkanStatusHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnBatalkanStatusHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentGetStarted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentGetStarted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBuatPermintaan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnBuatPermintaan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolakHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTolakHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahDataSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnTambahDataSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentSignup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminAccountHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminAccountHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBuatPermintaan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnBuatPermintaan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnOlahSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnOlahSampahHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesaiHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesaiHover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKembali" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKembali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPALoadHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPALoadHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDaftarClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDaftarClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDaftar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDaftar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MuatDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\MuatDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPADashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPADashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BerhasilNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BerhasilNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSimpan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnSimpan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLanjutkan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnLanjutkan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BerhasilHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BerhasilHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesaiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesaiHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminRequestHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminRequestHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dashboard_Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\Dashboard Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminKeluarHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminKeluarHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuatHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BuatHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDataHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\AddDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTerimaHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTerimaHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditData1Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditData1Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelesaikanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\SelesaikanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditNoHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnJemput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolak1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTolak1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKonfirmasiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnKonfirmasiHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataUserHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataUserHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\RefreshNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuatNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BuatNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPALoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPALoad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnOlahSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnOlahSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditDataHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTerima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTerima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentLoginRev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentLoginRev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLoginClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLoginClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAccountHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvAccountHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentSignupRev1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignupRev1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\AddDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentSignupRev2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignupRev2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentEditData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\contentEditData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\contentDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditDataSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnEditDataSampahHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahUnit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTambahUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGaJadi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnGaJadi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminLogoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminLogoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MuatDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\MuatDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvLogoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvLogoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgNavbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\bgNavbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSimpanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnSimpanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataTerseleksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataTerseleksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSelesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminAccount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKonfirmasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnKonfirmasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvKeluarHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvKeluarHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\RefreshDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGaJadiHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnGaJadiHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusUnitHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDataNo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\AddDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnStartClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStartClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Riwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\Riwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvAccount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLanjutkanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnLanjutkanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBuatPermintaanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnBuatPermintaanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPARiwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPARiwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahDataSampahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnTambahDataSampahHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnKembaliHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnKembaliHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDataNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\RefreshDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditDataUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditDataUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuatNoHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BuatNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditDataUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditDataUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminUnitDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminUnitDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MuatDataNo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\MuatDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentSignupRev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignupRev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataUserHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataUserHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTambahUnit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvRiwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvRiwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolakHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTolakHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataUser1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnHapusDataUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTolak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBatalkanStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnBatalkanStatus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditDataNo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\EditDataNo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelesaikanNoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\SelesaikanNoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHapusDataSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnHapusDataSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnJemputHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemputHover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDataHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\AddDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MuatDataHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\MuatDataHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEyeUnlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEyeUnlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\RefreshHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminUnitData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminUnitData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEyeLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEyeLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnReload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvKeluar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvKeluar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TPADashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TPADashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuatHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\BuatHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentSignupRev3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contentSignupRev3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUpdateStatusSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnUpdateStatusSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvDashboardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvDashboardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahUnitHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnTambahUnitHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditDataSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\btnEditDataSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnJemputHover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnJemputHover2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\btnEditData1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvRiwayatHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\mainWindow\nvRiwayatHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminRequest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nvAdminDashboardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminWindow\nvAdminDashboardHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBatalkanPenjemputan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnBatalkanPenjemputan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBatalkanPenjemputanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnBatalkanPenjemputanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesaikanPermintaan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnSelesaikanPermintaan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSelesaikanPermintaanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnSelesaikanPermintaanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSudahDiolah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnSudahDiolah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSudahDiolahHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnSudahDiolahHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTerimaPermintaan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnTerimaPermintaan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTerimaPermintaanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnTerimaPermintaanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolakPermintaan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnTolakPermintaan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTolakPermintaanHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\btnTolakPermintaanHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contentDashboardTPA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\adminTPA\contentDashboardTPA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

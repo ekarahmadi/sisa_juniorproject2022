@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="Resource\TPAWindow\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="Resource\TPAWindow\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="Resource\TPAWindow\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\btnJemput.png" />
+    <None Remove="Resources\btnJemputHover2.png" />
+    <None Remove="Resources\btnOlahSampah.png" />
+    <None Remove="Resources\btnSelesai.png" />
+    <None Remove="Resources\btnSelesaiHover1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Npgsql" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\btnJemput.png" />
+    <Resource Include="Resources\btnJemputHover2.png" />
+    <Resource Include="Resources\btnOlahSampah.png" />
+    <Resource Include="Resources\btnSelesai.png" />
+    <Resource Include="Resources\btnSelesaiHover1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+# Visual Studio temporary files
+.vs/
+
+# Output and intermediate files
+*.tmp
+*.obj
+*.suo
+*.pdb
+*.exe
+*.dll
+bin/
+obj/
+src/Model/DatabaseConfig.cs
+
+# Ignore log files
+*.log
+
+# Ignore IDE specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Custom configurations
+*.userprefs
