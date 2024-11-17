@@ -7,28 +7,60 @@
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:model\\tpsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\recycle\\uc_riwayat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\model\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:model\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\1starting\\getstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\1starting\\getstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\1starting\\uc_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\1starting\\uc_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\1starting\\uc_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\1starting\\uc_signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\1starting\\uc_start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\1starting\\uc_start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\4tpawindow\\uc_dashboardtpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\recycle\\uc_riwayat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:recycle\\uc_riwayat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\recycle\\uc_riwayat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:recycle\\uc_riwayat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\2mainwindow\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\model\\datahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,11 +79,11 @@
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\2mainwindow\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\2mainwindow\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\2mainwindow\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\2mainwindow\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminunitdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminunitdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminunitdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -59,27 +91,19 @@
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\4tpawindow\\admintpawindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\recycle\\uc_appdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\recycle\\uc_appdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:recycle\\uc_appdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\recycle\\uc_editdataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\recycle\\uc_editdataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:recycle\\uc_editdataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\adminwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\3adminwindow\\adminwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\adminwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_adminaccrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\view\\3adminwindow\\uc_admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:view\\3adminwindow\\uc_admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -94,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,20 +134,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_DashboardTPA.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "RelativeDocumentMoniker": "View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "RelativeToolTip": "View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAewMYAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "GetStart.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\GetStart.cs",
+              "RelativeDocumentMoniker": "View\\1Starting\\GetStart.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\GetStart.cs",
+              "RelativeToolTip": "View\\1Starting\\GetStart.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:45:47.544Z",
+              "WhenOpened": "2024-11-17T18:19:49.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
+              "Title": "UC_Signup.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Signup.cs",
+              "RelativeDocumentMoniker": "View\\1Starting\\UC_Signup.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Signup.cs",
+              "RelativeToolTip": "View\\1Starting\\UC_Signup.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAFsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:19:08.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_Signup.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Signup.cs",
+              "RelativeDocumentMoniker": "View\\1Starting\\UC_Signup.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Signup.cs [Design]",
+              "RelativeToolTip": "View\\1Starting\\UC_Signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:19:07.073Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UC_Start.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Start.cs",
+              "RelativeDocumentMoniker": "View\\1Starting\\UC_Start.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\1Starting\\UC_Start.cs [Design]",
+              "RelativeToolTip": "View\\1Starting\\UC_Start.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:19:06.371Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TPSService.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\TPSService.cs",
+              "RelativeDocumentMoniker": "Model\\TPSService.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\TPSService.cs*",
+              "RelativeToolTip": "Model\\TPSService.cs*",
+              "ViewState": "AgIAAMACAAAAAAAAAAAAAN4CAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:58:28.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\AuthService.cs",
+              "RelativeDocumentMoniker": "Model\\AuthService.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\AuthService.cs",
+              "RelativeToolTip": "Model\\AuthService.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAqwNMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:20:51.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UC_AdminAccRequest.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccRequest.cs",
+              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminAccRequest.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccRequest.cs",
+              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminAccRequest.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAIwPIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:14:53.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "AdminTPAWindow.cs",
               "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\AdminTPAWindow.cs",
               "RelativeDocumentMoniker": "View\\4TPAWindow\\AdminTPAWindow.cs",
@@ -131,12 +231,11 @@
               "RelativeToolTip": "View\\4TPAWindow\\AdminTPAWindow.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:16:51.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T16:16:51.952Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "UC_Riwayat.cs",
               "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_Riwayat.cs",
               "RelativeDocumentMoniker": "Recycle\\UC_Riwayat.cs",
@@ -149,7 +248,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "UC_Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\UC_Dashboard.cs",
+              "RelativeDocumentMoniker": "View\\2MainWindow\\UC_Dashboard.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\UC_Dashboard.cs",
+              "RelativeToolTip": "View\\2MainWindow\\UC_Dashboard.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAAAAQBAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:19:03.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DataHelper.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DataHelper.cs",
+              "RelativeDocumentMoniker": "Model\\DataHelper.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DataHelper.cs",
+              "RelativeToolTip": "Model\\DataHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T17:21:12.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UC_Dashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\UC_Dashboard.cs",
               "RelativeDocumentMoniker": "View\\2MainWindow\\UC_Dashboard.cs",
@@ -161,181 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UC_Dashboard.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\UC_Dashboard.cs",
-              "RelativeDocumentMoniker": "View\\2MainWindow\\UC_Dashboard.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\UC_Dashboard.cs",
-              "RelativeToolTip": "View\\2MainWindow\\UC_Dashboard.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJYAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:19:03.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TPSService.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\TPSService.cs",
-              "RelativeDocumentMoniker": "Model\\TPSService.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\TPSService.cs*",
-              "RelativeToolTip": "Model\\TPSService.cs*",
-              "ViewState": "AgIAAGkBAAAAAAAAAAAQwHcBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:58:28.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UC_DashboardTPA.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "RelativeDocumentMoniker": "View\\4TPAWindow\\UC_DashboardTPA.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs [Design]",
-              "RelativeToolTip": "View\\4TPAWindow\\UC_DashboardTPA.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:50:17.065Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UC_Riwayat.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_Riwayat.cs",
-              "RelativeDocumentMoniker": "Recycle\\UC_Riwayat.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_Riwayat.cs [Design]",
-              "RelativeToolTip": "Recycle\\UC_Riwayat.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:42:30.642Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UC_AdminUnitData.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminUnitData.cs",
-              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminUnitData.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminUnitData.cs [Design]",
-              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminUnitData.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:17:22.058Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataHelper.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DataHelper.cs",
-              "RelativeDocumentMoniker": "Model\\DataHelper.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DataHelper.cs",
-              "RelativeToolTip": "Model\\DataHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:21:12.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainWindow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
-              "RelativeDocumentMoniker": "View\\2MainWindow\\MainWindow.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs [Design]",
-              "RelativeToolTip": "View\\2MainWindow\\MainWindow.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:17:24.895Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SessionManager.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\SessionManager.cs",
-              "RelativeDocumentMoniker": "Model\\SessionManager.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\SessionManager.cs",
-              "RelativeToolTip": "Model\\SessionManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:32:14.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UnitData.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\UnitData.cs",
-              "RelativeDocumentMoniker": "Model\\UnitData.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\UnitData.cs",
-              "RelativeToolTip": "Model\\UnitData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:45:51.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MainWindow.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
-              "RelativeDocumentMoniker": "View\\2MainWindow\\MainWindow.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
-              "RelativeToolTip": "View\\2MainWindow\\MainWindow.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAwwDMAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:15:48.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UC_AppDetail.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_AppDetail.cs",
-              "RelativeDocumentMoniker": "Recycle\\UC_AppDetail.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_AppDetail.cs [Design]",
-              "RelativeToolTip": "Recycle\\UC_AppDetail.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:14:16.001Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UC_EditDataUnit.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_EditDataUnit.cs",
-              "RelativeDocumentMoniker": "Recycle\\UC_EditDataUnit.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_EditDataUnit.cs [Design]",
-              "RelativeToolTip": "Recycle\\UC_EditDataUnit.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:14:05.233Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AdminWindow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\AdminWindow.cs",
-              "RelativeDocumentMoniker": "View\\3AdminWindow\\AdminWindow.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\AdminWindow.cs [Design]",
-              "RelativeToolTip": "View\\3AdminWindow\\AdminWindow.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:46:34.915Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UC_AdminAccount.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccount.cs",
-              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminAccount.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccount.cs [Design]",
-              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminAccount.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:46:33.793Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "UC_AdminAccRequest.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccRequest.cs",
               "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminAccRequest.cs",
@@ -347,19 +297,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UC_AdminDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminDashboard.cs",
-              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminDashboard.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminDashboard.cs [Design]",
-              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminDashboard.cs [Design]",
+              "DocumentIndex": 17,
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\SessionManager.cs",
+              "RelativeDocumentMoniker": "Model\\SessionManager.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\SessionManager.cs",
+              "RelativeToolTip": "Model\\SessionManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:46:31.93Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-17T16:32:14.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 16,
+              "Title": "UnitData.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\UnitData.cs",
+              "RelativeDocumentMoniker": "Model\\UnitData.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\UnitData.cs",
+              "RelativeToolTip": "Model\\UnitData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:45:51.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
+              "RelativeDocumentMoniker": "View\\2MainWindow\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
+              "RelativeToolTip": "View\\2MainWindow\\MainWindow.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAwwDMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:15:48.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "DatabaseConfig.cs",
               "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DatabaseConfig.cs",
               "RelativeDocumentMoniker": "Model\\DatabaseConfig.cs",
@@ -367,8 +341,120 @@
               "RelativeToolTip": "Model\\DatabaseConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:24:00.921Z",
+              "WhenOpened": "2024-11-17T15:24:00.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UC_AdminAccount.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccount.cs",
+              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminAccount.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminAccount.cs [Design]",
+              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminAccount.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:46:33.793Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UC_DashboardTPA.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "RelativeDocumentMoniker": "View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "RelativeToolTip": "View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAewMYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T17:45:47.544Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UC_DashboardTPA.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "RelativeDocumentMoniker": "View\\4TPAWindow\\UC_DashboardTPA.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\4TPAWindow\\UC_DashboardTPA.cs [Design]",
+              "RelativeToolTip": "View\\4TPAWindow\\UC_DashboardTPA.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:50:17.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UC_Riwayat.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_Riwayat.cs",
+              "RelativeDocumentMoniker": "Recycle\\UC_Riwayat.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_Riwayat.cs [Design]",
+              "RelativeToolTip": "Recycle\\UC_Riwayat.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:42:30.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UC_AdminUnitData.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminUnitData.cs",
+              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminUnitData.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminUnitData.cs [Design]",
+              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminUnitData.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:17:22.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "MainWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs",
+              "RelativeDocumentMoniker": "View\\2MainWindow\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\2MainWindow\\MainWindow.cs [Design]",
+              "RelativeToolTip": "View\\2MainWindow\\MainWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:17:24.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UC_AppDetail.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_AppDetail.cs",
+              "RelativeDocumentMoniker": "Recycle\\UC_AppDetail.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_AppDetail.cs [Design]",
+              "RelativeToolTip": "Recycle\\UC_AppDetail.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:14:16.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UC_EditDataUnit.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_EditDataUnit.cs",
+              "RelativeDocumentMoniker": "Recycle\\UC_EditDataUnit.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Recycle\\UC_EditDataUnit.cs [Design]",
+              "RelativeToolTip": "Recycle\\UC_EditDataUnit.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:14:05.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AdminWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\AdminWindow.cs",
+              "RelativeDocumentMoniker": "View\\3AdminWindow\\AdminWindow.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\AdminWindow.cs [Design]",
+              "RelativeToolTip": "View\\3AdminWindow\\AdminWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:46:34.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UC_AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminDashboard.cs",
+              "RelativeDocumentMoniker": "View\\3AdminWindow\\UC_AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\View\\3AdminWindow\\UC_AdminDashboard.cs [Design]",
+              "RelativeToolTip": "View\\3AdminWindow\\UC_AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:46:31.93Z"
             }
           ]
         }

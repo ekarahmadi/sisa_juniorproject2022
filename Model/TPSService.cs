@@ -138,7 +138,7 @@ namespace SISA.Model
 
         public DataTable GetAvailableWaste(int unitId)
         {
-            string query = "SELECT * FROM wasteinventory WHERE unit_id = @unitId AND status_sampah = 'TPS'";
+            string query = "SELECT kategori, berat, diterima_dari AS \"Diterima oleh\", tanggal_pembaruan FROM wasteinventory  WHERE unit_id = @unitId AND status_sampah = 'TPS'";
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
@@ -732,7 +732,7 @@ namespace SISA.Model
             tanggal_request AS ""Tanggal Request"",
             tanggal_selesai AS ""Tanggal Selesai""
             FROM pickuprequest
-            WHERE tps_id = @tpsId";
+            WHERE tpa_id = @tpaId";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -777,13 +777,13 @@ namespace SISA.Model
         public DataTable GetWasteInventoryByUnitId(int unitId)
         {
             string query = @"
-        SELECT 
+            SELECT 
             kategori, 
             berat, 
             diterima_dari, 
             tanggal_pembaruan 
-        FROM wasteinventory 
-        WHERE unit_id = @unitId";
+            FROM wasteinventory 
+            WHERE unit_id = @unitId";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {

@@ -202,8 +202,28 @@ namespace SISA.View._3AdminWindow
                 string username = row.Cells["username"].Value.ToString();
                 string password = row.Cells["password"].Value.ToString();
                 int unitId = Convert.ToInt32(row.Cells["unit_id"].Value);
-                int roleId = (unitId == 1) ? 1 : 2;
 
+                AuthService authService = new AuthService();
+
+                // Tentukan role berdasarkan unit_type
+                string unitType = authService.GetUnitTypeByUnitId(unitId);
+                int roleId;
+
+                if (unitType == "TPS")
+                {
+                    roleId = 1; // Role TPS
+                }
+                else if (unitType == "TPA")
+                {
+                    roleId = 2; // Role TPA
+                }
+                else
+                {
+                    MessageBox.Show("Unit type tidak valid untuk unit_id: " + unitId, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Batalkan proses
+                }
+
+                // Proses penerimaan pengguna
                 bool isApproved = authService.ApproveUser(calonUserId, name, username, password, roleId, unitId);
 
                 if (isApproved)
@@ -221,6 +241,17 @@ namespace SISA.View._3AdminWindow
             {
                 MessageBox.Show("Pilih pengguna yang ingin diterima.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private int DetermineRoleId(int unitId)
+        {
+            // Gunakan logika validasi yang lebih lengkap
+            if (unitId == 1)
+                return 1; // TPS
+            else if (unitId == 2)
+                return 2; // TPA
+            else
+                throw new ArgumentException("Unit ID tidak valid untuk menentukan role.");
         }
 
         private void btnTolak_Click(object sender, EventArgs e)

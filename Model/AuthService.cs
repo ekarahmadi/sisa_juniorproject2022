@@ -193,6 +193,23 @@ namespace SISA.Model
             }
         }
 
+        public string GetUnitTypeByUnitId(int unitId)
+        {
+            string query = "SELECT unit_type FROM units WHERE unit_id = @unitId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : null;
+                }
+            }
+        }
+
 
         // New Method: Get Pending Users
         public DataTable GetCalonUsers()
