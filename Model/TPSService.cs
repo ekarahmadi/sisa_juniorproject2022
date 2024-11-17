@@ -663,5 +663,114 @@ WHERE request_id = @requestId";
             }
         }
 
+        public DataTable GetPickupRequestsByTPS(int tpsId)
+        {
+            string query = @"
+            SELECT 
+            tpa_id AS ""TPA Tujuan"",
+            kategori AS ""Kategori Sampah"",
+            berat AS ""Berat (kg)"",
+            status AS ""Status Penjemputan"",
+            tanggal_request AS ""Tanggal Request"",
+            tanggal_selesai AS ""Tanggal Selesai""
+            FROM pickuprequest
+            WHERE tps_id = @tpsId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tpsId", tpsId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable result = new DataTable();
+                        adapter.Fill(result);
+                        return result;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetPickupRequestsByTPA(int tpaId)
+        {
+            string query = @"
+            SELECT 
+            tps_id AS ""TPS ASAL"",
+            kategori AS ""Kategori Sampah"",
+            berat AS ""Berat (kg)"",
+            status AS ""Status Penjemputan"",
+            tanggal_request AS ""Tanggal Request"",
+            tanggal_selesai AS ""Tanggal Selesai""
+            FROM pickuprequest
+            WHERE tps_id = @tpsId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tpaId", tpaId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable result = new DataTable();
+                        adapter.Fill(result);
+                        return result;
+                    }
+                }
+            }
+        }
+
+
+        public DataTable GetWasteEntriesByUnit(int unitId)
+        {
+            string query = @"
+            SELECT kategori, berat, status_sampah AS ""Lokasi Sampah"", tanggal_pembaruan, diterima_dari AS ""diterima dari/oleh""
+            FROM wasteinventory
+            WHERE unit_id = @unitId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable result = new DataTable();
+                        adapter.Fill(result);
+                        return result;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetWasteInventoryByUnitId(int unitId)
+        {
+            string query = @"
+        SELECT 
+            kategori, 
+            berat, 
+            diterima_dari, 
+            tanggal_pembaruan 
+        FROM wasteinventory 
+        WHERE unit_id = @unitId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+
+                    var adapter = new NpgsqlDataAdapter(cmd);
+                    var dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    return dataTable;
+                }
+            }
+        }
+
+
     }
 }

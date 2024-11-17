@@ -135,46 +135,53 @@ namespace SISA.View._2MainWindow
             btnBatalkanStatus.Image = Properties.Resources.btnBatalkanStatus; // Gambar normal
         }
 
-        private void LoadStatistics()
+        private void LoadStatistics(int unitId)
         {
             try
             {
-                int unitId = int.Parse(SessionManager.UnitKerja); // Ambil unit_id dari akun yang login
-                TPSService tpsService = new TPSService();
+                // Ambil data dari database menggunakan TPSService
+                DataTable wasteData = tpsService.GetWasteInventoryByUnitId(unitId);
 
-                // Query untuk lblBelumDiambil
-                int belumDiambil = tpsService.CountWasteInventory(unitId, "belum_diambil");
+                // Hitung jumlah data "Belum Diambil"
+                int belumDiambil = wasteData.AsEnumerable()
+                    .Count(row => row["diterima_dari"] == DBNull.Value);
 
-                // Query untuk lblSudahDiambil
-                int sudahDiambil = tpsService.CountWasteInventory(unitId, "sudah_diambil");
+                // Hitung jumlah data "Sudah Diambil"
+                int sudahDiambil = wasteData.AsEnumerable()
+                    .Count(row => row["diterima_dari"] != DBNull.Value);
 
-                // Query untuk lblTotalOrganik
-                int totalOrganik = tpsService.CountWasteByCategory(unitId, "Organik", "belum_diambil");
+                // Hitung total kategori
+                int totalOrganik = wasteData.AsEnumerable()
+                    .Where(row => row["kategori"].ToString() == "Organik" && row["diterima_dari"] == DBNull.Value)
+                    .Sum(row => Convert.ToInt32(row["berat"]));
 
-                // Query untuk lblTotalAnorganik
-                int totalAnorganik = tpsService.CountWasteByCategory(unitId, "Anorganik", "belum_diambil");
+                int totalAnorganik = wasteData.AsEnumerable()
+                    .Where(row => row["kategori"].ToString() == "Anorganik" && row["diterima_dari"] == DBNull.Value)
+                    .Sum(row => Convert.ToInt32(row["berat"]));
 
-                // Query untuk lblTotalB3
-                int totalB3 = tpsService.CountWasteByCategory(unitId, "B3", "belum_diambil");
+                int totalB3 = wasteData.AsEnumerable()
+                    .Where(row => row["kategori"].ToString() == "B3" && row["diterima_dari"] == DBNull.Value)
+                    .Sum(row => Convert.ToInt32(row["berat"]));
 
-                // Query untuk lblTotalHarian
-                int totalHarian = tpsService.CountDailyWaste(unitId, DateTime.Now.Date);
+                // Hitung total harian
+                DateTime today = DateTime.Now.Date;
+                int totalHarian = wasteData.AsEnumerable()
+                    .Where(row => Convert.ToDateTime(row["tanggal_pembaruan"]).Date == today)
+                    .Sum(row => Convert.ToInt32(row["berat"]));
 
-                // Update label
-                lblBelumDiambil.Text = belumDiambil.ToString ();
+                // Update label statistik
+                lblBelumDiambil.Text = belumDiambil.ToString();
                 lblSudahDiambil.Text = sudahDiambil.ToString();
                 lblTotalOrganik.Text = totalOrganik.ToString();
                 lblTotalAnorganik.Text = totalAnorganik.ToString();
                 lblTotalB3.Text = totalB3.ToString();
-                lblTotalHarian.Text = (totalOrganik + totalAnorganik + totalB3).ToString();
                 lblTotalHarian.Text = totalHarian.ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Terjadi kesalahan saat memuat statistik: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Terjadi kesalahan saat memuat statistik: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
@@ -262,7 +269,7 @@ namespace SISA.View._2MainWindow
                 AdjustDataGridViewColumns();
                 ConfigureDataGridViewColumns();
                 RenameColumns();
-                LoadStatistics();
+                LoadStatistics(unitId);
                 UpdateUnitDetails(unitId);
 
                 Console.WriteLine("Data berhasil dimuat ke DataGridView.");
@@ -412,6 +419,26 @@ namespace SISA.View._2MainWindow
         {
             try
             {
+
+                // Ambil username dari SessionManager
+                string username = SessionManager.Username;
+
+                if (string.IsNullOrEmpty(username))
+                {
+                    MessageBox.Show("Username tidak ditemukan di SessionManager. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Ambil unit_id berdasarkan username
+                AuthService authService = new AuthService();
+                int unitId = authService.GetUnitIdByUsername(username);
+
+                if (unitId == -1)
+                {
+                    MessageBox.Show("Unit ID tidak ditemukan untuk username: " + username, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Pastikan ada baris yang dipilih
                 if (dgvPermintaan.SelectedRows.Count == 0)
                 {
@@ -440,7 +467,7 @@ namespace SISA.View._2MainWindow
                 {
                     MessageBox.Show("Status berhasil diperbarui menjadi 'In Progress'.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDataToDataGridView(); // Refresh DataGridView
-                    LoadStatistics();
+                    LoadStatistics(unitId);
                 }
                 else
                 {

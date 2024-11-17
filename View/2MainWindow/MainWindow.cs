@@ -35,7 +35,7 @@ namespace SISA.View._2MainWindow
 
         // Buat Instance UserControl untuk Setiap Tampilan
         private UC_Dashboard ucDashboard;
-        private UC_Riwayat ucRiwayat;
+        private SISA.View._4TPAWindow.UC_Riwayat ucRiwayat;
         private UC_Account ucAccount;
         private UC_AppDetail ucAppDetail;
         private UC_EditDataUser ucEditDataUser;
@@ -49,7 +49,7 @@ namespace SISA.View._2MainWindow
 
             // Inisialisasi setiap UserControl
             ucDashboard = new UC_Dashboard();
-            ucRiwayat = new UC_Riwayat();
+            ucRiwayat = new SISA.View._4TPAWindow.UC_Riwayat();
             ucAccount = new UC_Account();
             ucAppDetail = new UC_AppDetail();
             ucEditDataUser = new UC_EditDataUser(this); // Kirim referensi MainWindow
