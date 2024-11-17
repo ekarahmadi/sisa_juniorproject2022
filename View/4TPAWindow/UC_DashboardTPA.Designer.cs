@@ -87,6 +87,7 @@
             btnTolakPermintaan.SizeMode = PictureBoxSizeMode.AutoSize;
             btnTolakPermintaan.TabIndex = 2;
             btnTolakPermintaan.TabStop = false;
+            btnTolakPermintaan.Click += btnTolakPermintaan_Click;
             // 
             // btnSelesaikanPermintaan
             // 
@@ -98,6 +99,7 @@
             btnSelesaikanPermintaan.SizeMode = PictureBoxSizeMode.AutoSize;
             btnSelesaikanPermintaan.TabIndex = 3;
             btnSelesaikanPermintaan.TabStop = false;
+            btnSelesaikanPermintaan.Click += btnSelesaikanPermintaan_Click;
             // 
             // btnBatalkanPenjemputan
             // 
@@ -109,6 +111,7 @@
             btnBatalkanPenjemputan.SizeMode = PictureBoxSizeMode.AutoSize;
             btnBatalkanPenjemputan.TabIndex = 4;
             btnBatalkanPenjemputan.TabStop = false;
+            btnBatalkanPenjemputan.Click += btnBatalkanPenjemputan_Click;
             // 
             // btnSudahDiolah
             // 
@@ -120,6 +123,7 @@
             btnSudahDiolah.SizeMode = PictureBoxSizeMode.AutoSize;
             btnSudahDiolah.TabIndex = 5;
             btnSudahDiolah.TabStop = false;
+            btnSudahDiolah.Click += this.btnSudahDiolah_Click;
             // 
             // dgvPermintaan
             // 
@@ -239,7 +243,7 @@
             btnTotalDiolah.Text = "TPS Sinduadi";
             btnTotalDiolah.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // UC_Dashboard
+            // UC_DashboardTPA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -260,7 +264,7 @@
             Controls.Add(btnTolakPermintaan);
             Controls.Add(btnTerimaPermintaan);
             Controls.Add(pictureBox1);
-            Name = "UC_Dashboard";
+            Name = "UC_DashboardTPA";
             Size = new Size(1035, 720);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnTerimaPermintaan).EndInit();

@@ -88,7 +88,7 @@ namespace SISA.Model
         {
             string query = "SELECT request_id, tps_id, kategori, berat, tanggal_request, tanggal_jadwal, status " +
                            "FROM pickuprequest " +
-                           "WHERE tpa_id = @unitId AND status = 'Scheduled'";
+                           "WHERE tpa_id = @unitId AND status = 'In Progress'";
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
@@ -423,6 +423,81 @@ namespace SISA.Model
             }
 
             return units;
+        }
+
+        public bool MarkWasteAsProcessed(int requestId)
+        {
+            string query = @"
+        UPDATE wasteinventory
+        SET status_sampah = 'Sudah Diolah', tanggal_pembaruan = NOW()
+        WHERE request_id = @requestId;
+        ";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@requestId", requestId);
+
+                    try
+                    {
+                        return cmd.ExecuteNonQuery() > 0; // Return true jika ada baris yang diupdate
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error updating wasteinventory: " + ex.Message);
+                        throw; // Lanjutkan lempar exception untuk debugging
+                    }
+                }
+            }
+        }
+
+        public bool AddCompletedWasteToInventory(int requestId, int tpaId)
+        {
+            string query = @"
+        INSERT INTO wasteinventory (tpa_id, kategori, berat, tanggal_pembaruan, status_sampah)
+        SELECT tpa_id, kategori, berat, NOW(), 'Pending'
+        FROM pickuprequest
+        WHERE request_id = @requestId AND tpa_id = @tpaId AND status = 'Completed' AND moved_to_inventory = FALSE;
+        
+        UPDATE pickuprequest
+        SET moved_to_inventory = TRUE
+        WHERE request_id = @requestId;
+    ";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@requestId", requestId);
+                    cmd.Parameters.AddWithValue("@tpaId", tpaId);
+
+                    return cmd.ExecuteNonQuery() > 0; // Return true jika berhasil menambahkan
+                }
+            }
+        }
+
+        public DataTable GetActiveRequests(int tpaId)
+        {
+            string query = "SELECT request_id, tps_id, kategori, berat, tanggal_request " +
+                           "FROM pickuprequest " +
+                           "WHERE tpa_id = @tpaId AND status = 'Pending'";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tpaId", tpaId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
         }
 
 
