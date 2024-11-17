@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\",
+  "WorkspaceRootPath": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\testclone\\sisa_juniorproject2022\\model\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|c:\\users\\ekara\\music\\clonemain\\sisa_juniorproject2022\\model\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6366B4C-9A25-43CB-A569-08F4CC12FA13}|SISA.csproj|solutionrelative:model\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,9 +32,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "DatabaseConfig.cs",
-              "DocumentMoniker": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\Model\\DatabaseConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DatabaseConfig.cs",
               "RelativeDocumentMoniker": "Model\\DatabaseConfig.cs",
-              "ToolTip": "C:\\Users\\ekara\\Music\\testClone\\sisa_juniorproject2022\\Model\\DatabaseConfig.cs",
+              "ToolTip": "C:\\Users\\ekara\\Music\\cloneMain\\sisa_juniorproject2022\\Model\\DatabaseConfig.cs",
               "RelativeToolTip": "Model\\DatabaseConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
