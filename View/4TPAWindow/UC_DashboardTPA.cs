@@ -50,6 +50,11 @@ namespace SISA.View._4TPAWindow
             // Tambahkan event hover untuk setiap tombol
             AddButtonHoverEffects();
 
+            // Load data untuk setiap DataGridView
+            LoadPendingRequests();
+            LoadInProgressRequests();
+            LoadCompletedRequests();
+
             // Ambil unit ID dari SessionManager dan perbarui label
             // Ambil unit_id berdasarkan username
 
@@ -88,6 +93,28 @@ namespace SISA.View._4TPAWindow
             btnSudahDiolah.MouseEnter += (s, e) => btnSudahDiolah.Image = btnSudahDiolahHover;
             btnSudahDiolah.MouseLeave += (s, e) => btnSudahDiolah.Image = btnSudahDiolahDefault;
         }
+
+        private void LoadPendingRequests()
+        {
+            int unitId = int.Parse(SessionManager.UnitKerja);
+            DataTable pendingRequests = tpsService.GetPendingRequests(unitId);
+            dgvPermintaan.DataSource = pendingRequests;
+        }
+
+        private void LoadInProgressRequests()
+        {
+            int unitId = int.Parse(SessionManager.UnitKerja);
+            DataTable inProgressRequests = tpsService.GetInProgressRequests(unitId);
+            dgvPenjemputan.DataSource = inProgressRequests;
+        }
+
+        private void LoadCompletedRequests()
+        {
+            int unitId = int.Parse(SessionManager.UnitKerja);
+            DataTable completedRequests = tpsService.GetCompletedRequests(unitId);
+            dgvDataMasuk.DataSource = completedRequests;
+        }
+
 
         private void UpdateUnitDetails(int unitId)
         {

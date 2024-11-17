@@ -42,6 +42,70 @@ namespace SISA.Model
             return unitId;
         }
 
+        public DataTable GetPendingRequests(int unitId)
+        {
+            string query = "SELECT request_id, tps_id, kategori, berat, tanggal_request, status " +
+                           "FROM pickuprequest " +
+                           "WHERE tpa_id = @unitId AND status = 'Pending'";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetCompletedRequests(int unitId)
+        {
+            string query = "SELECT request_id, tps_id, kategori, berat, tanggal_selesai " +
+                           "FROM pickuprequest " +
+                           "WHERE tpa_id = @unitId AND status = 'Completed'";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetInProgressRequests(int unitId)
+        {
+            string query = "SELECT request_id, tps_id, kategori, berat, tanggal_request, tanggal_jadwal, status " +
+                           "FROM pickuprequest " +
+                           "WHERE tpa_id = @unitId AND status = 'Scheduled'";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
+        }
+
+
         public string GetUnitNameById(int unitId)
         {
             string unitName = null;
