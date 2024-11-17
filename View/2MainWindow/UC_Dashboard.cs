@@ -161,7 +161,7 @@ namespace SISA.View._2MainWindow
                 int totalHarian = tpsService.CountDailyWaste(unitId, DateTime.Now.Date);
 
                 // Update label
-                lblBelumDiambil.Text = belumDiambil.ToString();
+                lblBelumDiambil.Text = belumDiambil.ToString ();
                 lblSudahDiambil.Text = sudahDiambil.ToString();
                 lblTotalOrganik.Text = totalOrganik.ToString();
                 lblTotalAnorganik.Text = totalAnorganik.ToString();
@@ -222,8 +222,10 @@ namespace SISA.View._2MainWindow
 
             if (dgvPermintaan.Columns["inventory_id"] != null)
                 dgvPermintaan.Columns["inventory_id"].Visible = false;
-        }
 
+            if (dgvPermintaan.Columns["moved_to_inventory"] != null)
+                dgvPermintaan.Columns["moved_to_inventory"].Visible = false;
+        }
 
         private void LoadDataToDataGridView()
         {
