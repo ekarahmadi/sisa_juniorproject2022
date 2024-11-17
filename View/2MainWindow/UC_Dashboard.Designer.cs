@@ -130,6 +130,7 @@
             btnHapusDataSampah.SizeMode = PictureBoxSizeMode.AutoSize;
             btnHapusDataSampah.TabIndex = 6;
             btnHapusDataSampah.TabStop = false;
+            btnHapusDataSampah.Click += btnHapusDataSampah_Click;
             // 
             // cbKategori
             // 
@@ -244,11 +245,11 @@
             lblUnitID.BackColor = Color.DarkSlateGray;
             lblUnitID.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUnitID.ForeColor = SystemColors.ButtonFace;
-            lblUnitID.Location = new Point(620, 647);
+            lblUnitID.Location = new Point(634, 647);
             lblUnitID.Name = "lblUnitID";
-            lblUnitID.Size = new Size(50, 37);
+            lblUnitID.Size = new Size(24, 37);
             lblUnitID.TabIndex = 17;
-            lblUnitID.Text = "100";
+            lblUnitID.Text = "1";
             lblUnitID.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblNamaUnit
@@ -257,12 +258,13 @@
             lblNamaUnit.BackColor = Color.DarkSlateGray;
             lblNamaUnit.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNamaUnit.ForeColor = SystemColors.ButtonFace;
-            lblNamaUnit.Location = new Point(716, 647);
+            lblNamaUnit.Location = new Point(726, 647);
             lblNamaUnit.Name = "lblNamaUnit";
-            lblNamaUnit.Size = new Size(50, 37);
+            lblNamaUnit.Size = new Size(148, 37);
             lblNamaUnit.TabIndex = 18;
-            lblNamaUnit.Text = "100";
+            lblNamaUnit.Text = "TPS Sinduadi";
             lblNamaUnit.TextAlign = ContentAlignment.MiddleCenter;
+            lblNamaUnit.Click += lblNamaUnit_Click;
             // 
             // lblTypeUnit
             // 

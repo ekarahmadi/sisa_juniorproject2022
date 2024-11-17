@@ -276,6 +276,39 @@ namespace SISA.Model
             }
         }
 
+        public bool DeleteWasteInventory(int inventoryId)
+        {
+            string query = "DELETE FROM wasteinventory WHERE inventory_id = @inventoryId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@inventoryId", inventoryId);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
+
+
+        public bool IsWasteReferencedInRequest(int inventoryId)
+        {
+            string query = "SELECT COUNT(*) FROM pickuprequest WHERE inventory_id = @inventoryId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@inventoryId", inventoryId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0; // True jika ada referensi
+                }
+            }
+        }
+
 
         public DataTable GetTPAData()
         {

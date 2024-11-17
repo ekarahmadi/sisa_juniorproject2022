@@ -12,7 +12,7 @@ namespace SISA.View._2MainWindow
         private TPSService tpsService;
         private AuthService authService;
         private ToolTip toolTipInfo;
-        private List<string> daftarKategori = new List<string> { "Organik", "Anorganik", "B3" };
+
 
         public UC_Dashboard()
         {
@@ -36,9 +36,9 @@ namespace SISA.View._2MainWindow
 
             tpsService = new TPSService();
             LoadDataToDataGridView();
+            InitializeComboBox();
 
             cbKategori.DataSource = null; // Reset data source
-            cbKategori.DataSource = daftarKategori; // Isi dengan daftar kategori
 
             // Inisialisasi ToolTip
             toolTipInfo = new ToolTip
@@ -264,32 +264,23 @@ namespace SISA.View._2MainWindow
             }
         }
 
-
-
         private void btnTambahDataSampah_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validasi input kategori
-                if (cbKategori.SelectedItem == null || string.IsNullOrWhiteSpace(cbKategori.Text))
-                {
-                    MessageBox.Show("Pilih kategori sampah terlebih dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Validasi ComboBox
+                if (!ValidateComboBox())
                     return;
-                }
 
-                // Validasi berat
-                if (!decimal.TryParse(tbBerat.Text.Trim(), out decimal berat) || berat <= 0)
+                // Validasi input berat
+                if (!decimal.TryParse(tbBerat.Text, out decimal berat) || berat <= 0)
                 {
-                    MessageBox.Show("Masukkan berat sampah yang valid (lebih dari 0).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Masukkan berat sampah yang valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 // Ambil unit_id dari SessionManager
-                if (!int.TryParse(SessionManager.UnitKerja, out int unitId) || unitId <= 0)
-                {
-                    MessageBox.Show("Unit ID tidak valid. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                int unitId = int.Parse(SessionManager.UnitKerja);
 
                 // Tambahkan data sampah ke database
                 bool success = tpsService.AddWasteInventory(unitId, cbKategori.Text, berat);
@@ -298,22 +289,17 @@ namespace SISA.View._2MainWindow
                 {
                     MessageBox.Show("Data sampah berhasil ditambahkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Refresh DataGridView hanya jika diperlukan
-                    DataTable updatedWasteInventory = tpsService.GetWasteInventoryData(unitId);
-                    dgvDataSampah.DataSource = updatedWasteInventory;
+                    // Refresh DataGridView
+                    LoadDataToDataGridView();
 
-                    // Reset input form
-                    tbBerat.Clear();
-                    cbKategori.SelectedIndex = -1;
+                    // Reset form
+                    cbKategori.SelectedIndex = 0; // Kembalikan ke default
+                    tbBerat.Text = string.Empty;
                 }
                 else
                 {
                     MessageBox.Show("Gagal menambahkan data sampah. Silakan coba lagi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Kesalahan format data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -321,16 +307,30 @@ namespace SISA.View._2MainWindow
             }
         }
 
-        private bool ValidasiKategori()
+        private void InitializeComboBox()
         {
-            if (cbKategori.SelectedItem == null || !daftarKategori.Contains(cbKategori.SelectedItem.ToString()))
-            {
-                MessageBox.Show("Kategori tidak valid. Silakan pilih kategori yang sesuai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
+            // Tambahkan item default ke ComboBox
+            cbKategori.Items.Clear(); // Kosongkan daftar item
+            cbKategori.Items.Add("Pilih Kategori");
+            cbKategori.Items.Add("Organik");
+            cbKategori.Items.Add("Anorganik");
+            cbKategori.Items.Add("B3");
+
+            // Set item default
+            cbKategori.SelectedIndex = 0; // Pilih item pertama
         }
 
+        // Validasi untuk memastikan user memilih kategori valid
+        private bool ValidateComboBox()
+        {
+            if (cbKategori.SelectedIndex == 0) // Indeks 0 adalah "Pilih Kategori"
+            {
+                MessageBox.Show("Silakan pilih kategori sampah.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
 
         private void btnBuatPermintaan_Click(object sender, EventArgs e)
         {
@@ -458,6 +458,66 @@ namespace SISA.View._2MainWindow
                 else
                 {
                     MessageBox.Show("Gagal membatalkan permintaan. Silakan coba lagi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void lblNamaUnit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CanDeleteWaste(int inventoryId)
+        {
+            // Periksa apakah inventory_id sudah dirujuk oleh tabel pickupprequest
+            bool isReferenced = tpsService.IsWasteReferencedInRequest(inventoryId);
+
+            if (isReferenced)
+            {
+                MessageBox.Show("Data sampah tidak dapat dihapus karena sudah masuk ke dalam permintaan penjemputan.",
+                                "Peringatan",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void btnHapusDataSampah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Dapatkan inventory_id dari DataGridView
+                if (dgvDataSampah.SelectedRows.Count > 0)
+                {
+                    int inventoryId = Convert.ToInt32(dgvDataSampah.SelectedRows[0].Cells["inventory_id"].Value);
+
+                    // Periksa apakah sampah bisa dihapus
+                    if (!CanDeleteWaste(inventoryId))
+                        return;
+
+                    // Lakukan penghapusan data
+                    bool success = tpsService.DeleteWasteInventory(inventoryId);
+
+                    if (success)
+                    {
+                        MessageBox.Show("Data sampah berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDataToDataGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal menghapus data sampah. Silakan coba lagi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Pilih data sampah yang ingin dihapus.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

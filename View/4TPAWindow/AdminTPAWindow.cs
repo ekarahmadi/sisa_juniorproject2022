@@ -34,7 +34,7 @@ namespace SISA.View._4TPAWindow
         // Buat Instance UserControl untuk Setiap Tampilan
         private UC_Dashboard ucDashboard;
         private UC_Riwayat ucRiwayat;
-        private UC_Account ucAccount;
+        private SISA.View._2MainWindow.UC_Account ucAccount;
         private UC_AppDetail ucAppDetail;
         private UC_EditDataUser ucEditDataUser;
         private AuthService authService;
@@ -48,10 +48,41 @@ namespace SISA.View._4TPAWindow
             // Inisialisasi setiap UserControl
             ucDashboard = new UC_Dashboard();
             ucRiwayat = new UC_Riwayat();
-            ucAccount = new UC_Account();
+            ucAccount = new SISA.View._2MainWindow.UC_Account();
+            ucEditDataUser = new UC_EditDataUser();
 
             // Set tampilan awal
             LoadUserControl(ucDashboard);
+
+            // Tambahkan handler untuk event ShowEditDataUser dan ShowEditDataUnit di UC_Account
+            ucAccount.ShowEditDataUser += MainWindow_ShowEditDataUser;
+        }
+
+        private void MainWindow_ShowEditDataUser()
+        {
+            // Ambil username dari SessionManager
+            string currentUsername = SessionManager.Username;
+
+            UC_EditDataUser editDataUser = new UC_EditDataUser();
+            LoadUserControl(editDataUser);
+        }
+
+        public void ShowEditDataUser()
+        {
+            UC_EditDataUser editDataUser = new UC_EditDataUser();
+            LoadUserControl(editDataUser);
+        }
+
+        private void OnDataEditSuccessful()
+        {
+            Console.WriteLine("Event DataEditSuccessful diterima di MainWindow.");
+
+            // Kembali ke UC_Account setelah data berhasil diedit
+            UC_Account uC_Account = new UC_Account();
+            LoadUserControl(ucAccount);
+
+            // Panggil LoadUserData di UC_Account untuk memuat data terbaru
+            ucAccount.LoadUserData();
         }
 
         public void LoadUserControl(UserControl userControl)
