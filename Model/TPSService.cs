@@ -325,9 +325,9 @@ namespace SISA.Model
         public bool UpdateRequestStatus(int requestId, string newStatus)
         {
             string query = @"
-UPDATE pickuprequest
-SET status = @newStatus, tanggal_selesai = NOW()
-WHERE request_id = @requestId";
+    UPDATE pickuprequest
+    SET status = @newStatus, tanggal_selesai = NOW()
+    WHERE request_id = @requestId";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -350,12 +350,12 @@ WHERE request_id = @requestId";
 
                         if (isAddedToTPA)
                         {
-                            // Tandai sampah di TPS asal dengan status diterima_dari = 'selesai'
-                            bool isMarked = MarkTPSWasteAsProcessed(requestId);
+                            // Tandai sampah di TPS asal dengan nama TPA yang memproses permintaan
+                            bool isMarked = MarkTPSWasteAsProcessed(requestId, unitId);
 
                             if (!isMarked)
                             {
-                                Console.WriteLine("Gagal memperbarui status diterima_dari di TPS.");
+                                Console.WriteLine("Gagal memperbarui kolom diterima_dari di TPS.");
                             }
                         }
                         else
@@ -369,30 +369,59 @@ WHERE request_id = @requestId";
             }
         }
 
-
-        public bool MarkTPSWasteAsProcessed(int requestId)
+        public bool MarkTPSWasteAsProcessed(int requestId, int tpaUnitId)
         {
-            string query = @"
-        UPDATE wasteinventory
-        SET diterima_dari = 'selesai'
-        WHERE inventory_id = (
-            SELECT inventory_id
-            FROM pickuprequest
-            WHERE request_id = @requestId
-        )";
+            // Ambil nama TPA berdasarkan unit_id
+            string getTPANameQuery = @"
+    SELECT unit_name
+    FROM units
+    WHERE unit_id = @tpaUnitId";
+
+            string tpaName = null;
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var cmd = new NpgsqlCommand(getTPANameQuery, conn))
                 {
+                    cmd.Parameters.AddWithValue("@tpaUnitId", tpaUnitId);
+
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        tpaName = result.ToString();
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(tpaName))
+            {
+                Console.WriteLine("Nama TPA tidak ditemukan untuk unit_id: " + tpaUnitId);
+                return false;
+            }
+
+            // Perbarui kolom diterima_dari dengan nama TPA
+            string updateWasteQuery = @"
+    UPDATE wasteinventory
+    SET diterima_dari = @tpaName
+    WHERE inventory_id = (
+        SELECT inventory_id
+        FROM pickuprequest
+        WHERE request_id = @requestId
+    )";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(updateWasteQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tpaName", tpaName);
                     cmd.Parameters.AddWithValue("@requestId", requestId);
 
                     return cmd.ExecuteNonQuery() > 0; // Return true jika ada baris yang diperbarui
                 }
             }
         }
-
 
 
         public bool DeleteWasteInventory(int inventoryId)
