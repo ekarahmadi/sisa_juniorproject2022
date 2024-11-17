@@ -53,7 +53,10 @@ namespace SISA.View._4TPAWindow
             // Load data untuk setiap DataGridView
             LoadPendingRequests();
             LoadInProgressRequests();
-            LoadCompletedRequests();
+            LoadDgvDataMasuk();
+
+            // Perbarui ringkasan sampah yang diolah
+            UpdateProcessedWasteSummary();
 
             // Ambil unit ID dari SessionManager dan perbarui label
             // Ambil unit_id berdasarkan username
@@ -107,14 +110,6 @@ namespace SISA.View._4TPAWindow
             DataTable inProgressRequests = tpsService.GetInProgressRequests(unitId);
             dgvPenjemputan.DataSource = inProgressRequests;
         }
-
-        private void LoadCompletedRequests()
-        {
-            int unitId = int.Parse(SessionManager.UnitKerja);
-            DataTable completedRequests = tpsService.GetCompletedRequests(unitId);
-            dgvDataMasuk.DataSource = completedRequests;
-        }
-
 
         private void UpdateUnitDetails(int unitId)
         {
@@ -176,30 +171,64 @@ namespace SISA.View._4TPAWindow
             }
         }
 
+        private void UpdateProcessedWasteSummary()
+        {
+            try
+            {
+                int unitId = int.Parse(SessionManager.UnitKerja);
+                var summary = tpsService.GetProcessedWasteSummary(unitId);
+
+                // Update label sesuai kategori
+                lblOrganikDiolah.Text = $"{summary["Organik"]} kg";
+                lblAnorganikDiolah.Text = $"{summary["Anorganik"]} kg";
+                lblB3Diolah.Text = $"{summary["B3"]} kg";
+
+                // Hitung total semua kategori
+                decimal totalBerat = summary.Values.Sum();
+                lblTotalDiolah.Text = $"{totalBerat} kg";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat memuat data sampah yang diolah: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void btnSelesaikanPermintaan_Click(object sender, EventArgs e)
         {
-            if (dgvPenjemputan.SelectedRows.Count > 0)
+            try
             {
-                int requestId = Convert.ToInt32(dgvPenjemputan.SelectedRows[0].Cells["request_id"].Value);
-                string kategori = dgvPenjemputan.SelectedRows[0].Cells["kategori"].Value.ToString();
-                decimal berat = Convert.ToDecimal(dgvPenjemputan.SelectedRows[0].Cells["berat"].Value);
+                // Validasi baris yang dipilih
+                if (dgvPenjemputan.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Pilih permintaan yang ingin diselesaikan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-                bool success = tpsService.UpdateRequestStatus(requestId, "Completed");
-                if (success)
+                // Ambil request_id dari baris yang dipilih
+                int requestId = Convert.ToInt32(dgvPenjemputan.SelectedRows[0].Cells["request_id"].Value);
+
+                // Update status ke 'Completed'
+                bool isUpdated = tpsService.UpdateRequestStatus(requestId, "Completed");
+                if (isUpdated)
                 {
                     // Tambahkan data ke WasteInventory
-                    int unitId = int.Parse(SessionManager.UnitKerja);
-                    bool inventorySuccess = tpsService.AddWasteInventory(unitId, kategori, berat);
+                    int unitId = Convert.ToInt32(SessionManager.UnitKerja);
+                    bool isAdded = tpsService.AddCompletedWasteToInventory(requestId, unitId);
 
-                    if (inventorySuccess)
+                    if (isAdded)
                     {
-                        MessageBox.Show("Permintaan telah diselesaikan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Permintaan berhasil diselesaikan dan data telah ditambahkan ke inventory.",
+                                        "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Reload DataGridViews
+                        LoadPendingRequests();
                         LoadInProgressRequests();
-                        LoadCompletedRequests();
+                        LoadDgvDataMasuk();
                     }
                     else
                     {
-                        MessageBox.Show("Gagal menambahkan data ke WasteInventory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Gagal menambahkan data ke inventory.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -207,9 +236,9 @@ namespace SISA.View._4TPAWindow
                     MessageBox.Show("Gagal menyelesaikan permintaan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Silakan pilih permintaan yang ingin diselesaikan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -236,62 +265,50 @@ namespace SISA.View._4TPAWindow
             }
         }
 
-        private void LoadDgvPenjemputan()
-        {
-            int tpaId = Convert.ToInt32(SessionManager.UnitKerja);
-            DataTable activeRequests = tpsService.GetActiveRequests(tpaId);
-            dgvPenjemputan.DataSource = activeRequests;
-        }
+        
 
         private void LoadDgvDataMasuk()
         {
-            int tpaId = Convert.ToInt32(SessionManager.UnitKerja);
-            DataTable completedRequests = tpsService.GetCompletedRequests(tpaId);
-            dgvDataMasuk.DataSource = completedRequests;
+            try
+            {
+                int unitId = Convert.ToInt32(SessionManager.UnitKerja);
+                DataTable wasteData = tpsService.GetWasteInventoryForTPA(unitId);
+
+                dgvDataMasuk.DataSource = wasteData;
+                dgvDataMasuk.Columns["inventory_id"].Visible = false; // Sembunyikan kolom ID jika tidak diperlukan
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat memuat data masuk: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSudahDiolah_Click(object sender, EventArgs e)
         {
             try
             {
-                // Pastikan baris dipilih di DataGridView
                 if (dgvDataMasuk.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Pilih permintaan yang ingin diselesaikan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pilih data sampah yang ingin diubah statusnya.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                // Ambil request_id dari baris yang dipilih
-                int requestId = Convert.ToInt32(dgvDataMasuk.SelectedRows[0].Cells["request_id"].Value);
-                int tpaId = Convert.ToInt32(SessionManager.UnitKerja);
+                int inventoryId = Convert.ToInt32(dgvDataMasuk.SelectedRows[0].Cells["inventory_id"].Value);
 
-                // Update status ke Completed
-                bool isCompleted = tpsService.UpdateRequestStatus(requestId, "Completed");
+                // Perbarui status sampah menjadi 'Sudah Diolah'
+                bool isUpdated = tpsService.MarkWasteAsProcessed(inventoryId);
 
-                if (isCompleted)
+                if (isUpdated)
                 {
-                    // Pindahkan data ke wasteinventory
-                    bool isAddedToInventory = tpsService.AddCompletedWasteToInventory(requestId, tpaId);
-
-                    if (isAddedToInventory)
-                    {
-                        MessageBox.Show("Permintaan berhasil diselesaikan dan data sampah ditambahkan ke inventory.",
-                            "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Refresh DataGridView
-                        LoadDgvPenjemputan(); // Memuat ulang data penjemputan
-                        LoadDgvDataMasuk();  // Memuat ulang data inventory
-                    }
-                    else
-                    {
-                        MessageBox.Show("Permintaan berhasil diselesaikan, tetapi data sampah gagal dipindahkan ke inventory.",
-                            "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Status sampah berhasil diperbarui menjadi 'Sudah Diolah'.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadPendingRequests();
+                    LoadInProgressRequests();
+                    LoadDgvDataMasuk();
+                    UpdateProcessedWasteSummary();
                 }
                 else
                 {
-                    MessageBox.Show("Gagal menyelesaikan permintaan. Silakan coba lagi.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Gagal memperbarui status sampah. Silakan coba lagi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -299,5 +316,7 @@ namespace SISA.View._4TPAWindow
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

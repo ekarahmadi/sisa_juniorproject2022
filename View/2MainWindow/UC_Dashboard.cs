@@ -135,18 +135,46 @@ namespace SISA.View._2MainWindow
             btnBatalkanStatus.Image = Properties.Resources.btnBatalkanStatus; // Gambar normal
         }
 
-        private void UpdateStatistics(int unitId)
+        private void LoadStatistics()
         {
-            TPSService tpsService = new TPSService();
-            Dictionary<string, int> stats = tpsService.GetStatistics(unitId);
+            try
+            {
+                int unitId = int.Parse(SessionManager.UnitKerja); // Ambil unit_id dari akun yang login
+                TPSService tpsService = new TPSService();
 
-            lblBelumDiambil.Text = stats["BelumDiambil"].ToString();
-            lblSudahDiambil.Text = stats["SudahDiambil"].ToString();
-            lblTotalOrganik.Text = stats["TotalOrganik"].ToString();
-            lblTotalAnorganik.Text = stats["TotalAnorganik"].ToString();
-            lblTotalB3.Text = stats["TotalB3"].ToString();
-            lblTotalHarian.Text = stats["TotalHarian"].ToString();
+                // Query untuk lblBelumDiambil
+                int belumDiambil = tpsService.CountWasteInventory(unitId, "belum_diambil");
+
+                // Query untuk lblSudahDiambil
+                int sudahDiambil = tpsService.CountWasteInventory(unitId, "sudah_diambil");
+
+                // Query untuk lblTotalOrganik
+                int totalOrganik = tpsService.CountWasteByCategory(unitId, "Organik", "belum_diambil");
+
+                // Query untuk lblTotalAnorganik
+                int totalAnorganik = tpsService.CountWasteByCategory(unitId, "Anorganik", "belum_diambil");
+
+                // Query untuk lblTotalB3
+                int totalB3 = tpsService.CountWasteByCategory(unitId, "B3", "belum_diambil");
+
+                // Query untuk lblTotalHarian
+                int totalHarian = tpsService.CountDailyWaste(unitId, DateTime.Now.Date);
+
+                // Update label
+                lblBelumDiambil.Text = belumDiambil.ToString();
+                lblSudahDiambil.Text = sudahDiambil.ToString();
+                lblTotalOrganik.Text = totalOrganik.ToString();
+                lblTotalAnorganik.Text = totalAnorganik.ToString();
+                lblTotalB3.Text = totalB3.ToString();
+                lblTotalHarian.Text = (totalOrganik + totalAnorganik + totalB3).ToString();
+                lblTotalHarian.Text = totalHarian.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat memuat statistik: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
@@ -232,7 +260,7 @@ namespace SISA.View._2MainWindow
                 AdjustDataGridViewColumns();
                 ConfigureDataGridViewColumns();
                 RenameColumns();
-                UpdateStatistics(unitId);
+                LoadStatistics();
                 UpdateUnitDetails(unitId);
 
                 Console.WriteLine("Data berhasil dimuat ke DataGridView.");
@@ -410,6 +438,7 @@ namespace SISA.View._2MainWindow
                 {
                     MessageBox.Show("Status berhasil diperbarui menjadi 'In Progress'.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDataToDataGridView(); // Refresh DataGridView
+                    LoadStatistics();
                 }
                 else
                 {

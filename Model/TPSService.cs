@@ -324,21 +324,76 @@ namespace SISA.Model
 
         public bool UpdateRequestStatus(int requestId, string newStatus)
         {
-            string query = "UPDATE pickuprequest SET status = @newStatus WHERE request_id = @requestId";
+            string query = @"
+UPDATE pickuprequest
+SET status = @newStatus, tanggal_selesai = NOW()
+WHERE request_id = @requestId";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("newStatus", newStatus);
-                    cmd.Parameters.AddWithValue("requestId", requestId);
+                    cmd.Parameters.AddWithValue("@requestId", requestId);
+                    cmd.Parameters.AddWithValue("@newStatus", newStatus);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    int affectedRows = cmd.ExecuteNonQuery();
+
+                    // Jika status diubah ke 'Completed' dan ada baris yang terpengaruh
+                    if (newStatus == "Completed" && affectedRows > 0)
+                    {
+                        // Ambil unit_id saat ini (TPA) dari SessionManager
+                        int unitId = Convert.ToInt32(SessionManager.UnitKerja);
+
+                        // Pindahkan data ke TPA
+                        bool isAddedToTPA = AddCompletedWasteToInventory(requestId, unitId);
+
+                        if (isAddedToTPA)
+                        {
+                            // Tandai sampah di TPS asal dengan status diterima_dari = 'selesai'
+                            bool isMarked = MarkTPSWasteAsProcessed(requestId);
+
+                            if (!isMarked)
+                            {
+                                Console.WriteLine("Gagal memperbarui status diterima_dari di TPS.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Gagal memindahkan data ke TPA.");
+                        }
+                    }
+
+                    return affectedRows > 0;
                 }
             }
         }
+
+
+        public bool MarkTPSWasteAsProcessed(int requestId)
+        {
+            string query = @"
+        UPDATE wasteinventory
+        SET diterima_dari = 'selesai'
+        WHERE inventory_id = (
+            SELECT inventory_id
+            FROM pickuprequest
+            WHERE request_id = @requestId
+        )";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@requestId", requestId);
+
+                    return cmd.ExecuteNonQuery() > 0; // Return true jika ada baris yang diperbarui
+                }
+            }
+        }
+
+
 
         public bool DeleteWasteInventory(int inventoryId)
         {
@@ -425,45 +480,37 @@ namespace SISA.Model
             return units;
         }
 
-        public bool MarkWasteAsProcessed(int requestId)
+        public bool MarkWasteAsProcessed(int inventoryId)
         {
             string query = @"
         UPDATE wasteinventory
         SET status_sampah = 'Sudah Diolah', tanggal_pembaruan = NOW()
-        WHERE request_id = @requestId;
-        ";
+        WHERE inventory_id = @inventoryId";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@requestId", requestId);
-
-                    try
-                    {
-                        return cmd.ExecuteNonQuery() > 0; // Return true jika ada baris yang diupdate
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error updating wasteinventory: " + ex.Message);
-                        throw; // Lanjutkan lempar exception untuk debugging
-                    }
+                    cmd.Parameters.AddWithValue("@inventoryId", inventoryId);
+                    return cmd.ExecuteNonQuery() > 0; // Return true jika berhasil diperbarui
                 }
             }
         }
 
-        public bool AddCompletedWasteToInventory(int requestId, int tpaId)
+        public bool AddCompletedWasteToInventory(int requestId, int unitId)
         {
             string query = @"
-        INSERT INTO wasteinventory (tpa_id, kategori, berat, tanggal_pembaruan, status_sampah)
-        SELECT tpa_id, kategori, berat, NOW(), 'Pending'
-        FROM pickuprequest
-        WHERE request_id = @requestId AND tpa_id = @tpaId AND status = 'Completed' AND moved_to_inventory = FALSE;
-        
-        UPDATE pickuprequest
-        SET moved_to_inventory = TRUE
-        WHERE request_id = @requestId;
+    INSERT INTO wasteinventory (unit_id, kategori, berat, tanggal_pembaruan, status_sampah, diterima_dari)
+    SELECT 
+        tpa_id, kategori, berat, NOW(), 'TPA', 
+        (SELECT unit_name FROM units WHERE unit_id = pickuprequest.tps_id)
+    FROM pickuprequest
+    WHERE request_id = @requestId AND tpa_id = @unitId AND status = 'Completed' AND moved_to_inventory = FALSE;
+
+    UPDATE pickuprequest
+    SET moved_to_inventory = TRUE
+    WHERE request_id = @requestId;
     ";
 
             using (var conn = new NpgsqlConnection(connectionString))
@@ -472,7 +519,7 @@ namespace SISA.Model
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@requestId", requestId);
-                    cmd.Parameters.AddWithValue("@tpaId", tpaId);
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
 
                     return cmd.ExecuteNonQuery() > 0; // Return true jika berhasil menambahkan
                 }
@@ -500,6 +547,121 @@ namespace SISA.Model
             }
         }
 
+        public Dictionary<string, decimal> GetProcessedWasteSummary(int unitId)
+        {
+            string query = @"
+        SELECT kategori, SUM(berat) AS total_berat
+        FROM wasteinventory
+        WHERE unit_id = @unitId AND status_sampah = 'Sudah Diolah'
+        GROUP BY kategori";
+
+            Dictionary<string, decimal> summary = new Dictionary<string, decimal>
+    {
+        { "Organik", 0 },
+        { "Anorganik", 0 },
+        { "B3", 0 }
+    };
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string kategori = reader["kategori"].ToString();
+                            decimal totalBerat = reader.GetDecimal(reader.GetOrdinal("total_berat"));
+
+                            if (summary.ContainsKey(kategori))
+                            {
+                                summary[kategori] = totalBerat;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return summary;
+        }
+
+
+        public DataTable GetWasteInventoryForTPA(int unitId)
+        {
+            string query = @"
+        SELECT inventory_id, unit_id, kategori, berat, tanggal_pembaruan, status_sampah
+        FROM wasteinventory
+        WHERE unit_id = @unitId AND status_sampah = 'TPA'";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
+        }
+
+        public int CountWasteInventory(int unitId, string status)
+        {
+            string query = status == "belum_diambil"
+                ? "SELECT COUNT(*) FROM wasteinventory WHERE unit_id = @unitId AND diterima_dari IS NULL"
+                : "SELECT COUNT(*) FROM wasteinventory WHERE unit_id = @unitId AND diterima_dari IS NOT NULL";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public int CountWasteByCategory(int unitId, string category, string status)
+        {
+            string query = status == "belum_diambil"
+                ? "SELECT SUM(berat) FROM wasteinventory WHERE unit_id = @unitId AND kategori = @category AND diterima_dari IS NULL"
+                : "SELECT SUM(berat) FROM wasteinventory WHERE unit_id = @unitId AND kategori = @category AND diterima_dari IS NOT NULL";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    cmd.Parameters.AddWithValue("@category", category);
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public int CountDailyWaste(int unitId, DateTime date)
+        {
+            string query = "SELECT SUM(berat) FROM wasteinventory WHERE unit_id = @unitId AND DATE(tanggal_pembaruan) = @date";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitId", unitId);
+                    cmd.Parameters.AddWithValue("@date", date);
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
 
     }
 }

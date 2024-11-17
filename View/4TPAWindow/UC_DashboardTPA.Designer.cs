@@ -41,9 +41,9 @@
             lblNamaUnit = new Label();
             lblUnitID = new Label();
             lblOrganikDiolah = new Label();
-            btnAnorganikDiolah = new Label();
-            btnB3Diolah = new Label();
-            btnTotalDiolah = new Label();
+            lblAnorganikDiolah = new Label();
+            lblB3Diolah = new Label();
+            lblTotalDiolah = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnTerimaPermintaan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnTolakPermintaan).BeginInit();
@@ -123,7 +123,7 @@
             btnSudahDiolah.SizeMode = PictureBoxSizeMode.AutoSize;
             btnSudahDiolah.TabIndex = 5;
             btnSudahDiolah.TabStop = false;
-            btnSudahDiolah.Click += this.btnSudahDiolah_Click;
+            btnSudahDiolah.Click += btnSudahDiolah_Click;
             // 
             // dgvPermintaan
             // 
@@ -204,53 +204,53 @@
             lblOrganikDiolah.Text = "TPS Sinduadi";
             lblOrganikDiolah.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // btnAnorganikDiolah
+            // lblAnorganikDiolah
             // 
-            btnAnorganikDiolah.AutoSize = true;
-            btnAnorganikDiolah.BackColor = Color.DarkSlateGray;
-            btnAnorganikDiolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAnorganikDiolah.ForeColor = SystemColors.ButtonFace;
-            btnAnorganikDiolah.Location = new Point(830, 458);
-            btnAnorganikDiolah.Name = "btnAnorganikDiolah";
-            btnAnorganikDiolah.Size = new Size(136, 34);
-            btnAnorganikDiolah.TabIndex = 24;
-            btnAnorganikDiolah.Text = "TPS Sinduadi";
-            btnAnorganikDiolah.TextAlign = ContentAlignment.MiddleLeft;
+            lblAnorganikDiolah.AutoSize = true;
+            lblAnorganikDiolah.BackColor = Color.DarkSlateGray;
+            lblAnorganikDiolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAnorganikDiolah.ForeColor = SystemColors.ButtonFace;
+            lblAnorganikDiolah.Location = new Point(830, 458);
+            lblAnorganikDiolah.Name = "lblAnorganikDiolah";
+            lblAnorganikDiolah.Size = new Size(136, 34);
+            lblAnorganikDiolah.TabIndex = 24;
+            lblAnorganikDiolah.Text = "TPS Sinduadi";
+            lblAnorganikDiolah.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // btnB3Diolah
+            // lblB3Diolah
             // 
-            btnB3Diolah.AutoSize = true;
-            btnB3Diolah.BackColor = Color.DarkSlateGray;
-            btnB3Diolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnB3Diolah.ForeColor = SystemColors.ButtonFace;
-            btnB3Diolah.Location = new Point(830, 501);
-            btnB3Diolah.Name = "btnB3Diolah";
-            btnB3Diolah.Size = new Size(136, 34);
-            btnB3Diolah.TabIndex = 25;
-            btnB3Diolah.Text = "TPS Sinduadi";
-            btnB3Diolah.TextAlign = ContentAlignment.MiddleLeft;
+            lblB3Diolah.AutoSize = true;
+            lblB3Diolah.BackColor = Color.DarkSlateGray;
+            lblB3Diolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblB3Diolah.ForeColor = SystemColors.ButtonFace;
+            lblB3Diolah.Location = new Point(830, 501);
+            lblB3Diolah.Name = "lblB3Diolah";
+            lblB3Diolah.Size = new Size(136, 34);
+            lblB3Diolah.TabIndex = 25;
+            lblB3Diolah.Text = "TPS Sinduadi";
+            lblB3Diolah.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // btnTotalDiolah
+            // lblTotalDiolah
             // 
-            btnTotalDiolah.AutoSize = true;
-            btnTotalDiolah.BackColor = Color.DarkSlateGray;
-            btnTotalDiolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTotalDiolah.ForeColor = SystemColors.ButtonFace;
-            btnTotalDiolah.Location = new Point(830, 546);
-            btnTotalDiolah.Name = "btnTotalDiolah";
-            btnTotalDiolah.Size = new Size(136, 34);
-            btnTotalDiolah.TabIndex = 26;
-            btnTotalDiolah.Text = "TPS Sinduadi";
-            btnTotalDiolah.TextAlign = ContentAlignment.MiddleLeft;
+            lblTotalDiolah.AutoSize = true;
+            lblTotalDiolah.BackColor = Color.DarkSlateGray;
+            lblTotalDiolah.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalDiolah.ForeColor = SystemColors.ButtonFace;
+            lblTotalDiolah.Location = new Point(830, 546);
+            lblTotalDiolah.Name = "lblTotalDiolah";
+            lblTotalDiolah.Size = new Size(136, 34);
+            lblTotalDiolah.TabIndex = 26;
+            lblTotalDiolah.Text = "TPS Sinduadi";
+            lblTotalDiolah.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // UC_DashboardTPA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
-            Controls.Add(btnTotalDiolah);
-            Controls.Add(btnB3Diolah);
-            Controls.Add(btnAnorganikDiolah);
+            Controls.Add(lblTotalDiolah);
+            Controls.Add(lblB3Diolah);
+            Controls.Add(lblAnorganikDiolah);
             Controls.Add(lblOrganikDiolah);
             Controls.Add(lblTypeUnit);
             Controls.Add(lblNamaUnit);
@@ -294,8 +294,8 @@
         private Label lblNamaUnit;
         private Label lblUnitID;
         private Label lblOrganikDiolah;
-        private Label btnAnorganikDiolah;
-        private Label btnB3Diolah;
-        private Label btnTotalDiolah;
+        private Label lblAnorganikDiolah;
+        private Label lblB3Diolah;
+        private Label lblTotalDiolah;
     }
 }

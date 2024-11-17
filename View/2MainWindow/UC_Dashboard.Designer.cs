@@ -184,7 +184,7 @@
             lblSudahDiambil.AutoSize = true;
             lblSudahDiambil.BackColor = SystemColors.ButtonFace;
             lblSudahDiambil.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSudahDiambil.Location = new Point(224, 456);
+            lblSudahDiambil.Location = new Point(227, 456);
             lblSudahDiambil.Name = "lblSudahDiambil";
             lblSudahDiambil.Size = new Size(86, 65);
             lblSudahDiambil.TabIndex = 12;
@@ -208,7 +208,7 @@
             lblTotalAnorganik.AutoSize = true;
             lblTotalAnorganik.BackColor = SystemColors.ButtonFace;
             lblTotalAnorganik.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalAnorganik.Location = new Point(224, 535);
+            lblTotalAnorganik.Location = new Point(226, 535);
             lblTotalAnorganik.Name = "lblTotalAnorganik";
             lblTotalAnorganik.Size = new Size(86, 65);
             lblTotalAnorganik.TabIndex = 14;
@@ -232,7 +232,7 @@
             lblTotalHarian.AutoSize = true;
             lblTotalHarian.BackColor = SystemColors.ButtonFace;
             lblTotalHarian.Font = new Font("Poppins", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalHarian.Location = new Point(224, 619);
+            lblTotalHarian.Location = new Point(227, 619);
             lblTotalHarian.Name = "lblTotalHarian";
             lblTotalHarian.Size = new Size(86, 65);
             lblTotalHarian.TabIndex = 16;
