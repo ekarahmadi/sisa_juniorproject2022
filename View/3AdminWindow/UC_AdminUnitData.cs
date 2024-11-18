@@ -165,57 +165,53 @@ namespace SISA.View._3AdminWindow
 
         private void btnTambahUnit_Click(object sender, EventArgs e)
         {
-            // Validasi bahwa semua field telah diisi
-            if (string.IsNullOrWhiteSpace(tbNama.Text) ||
-                string.IsNullOrWhiteSpace(cbTipe.Text) ||
-                string.IsNullOrWhiteSpace(tbLokasi.Text) ||
-                string.IsNullOrWhiteSpace(tbKapasitas.Text))
+            try
             {
-                MessageBox.Show("Semua field harus diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Validasi bahwa kapasitas berisi angka
-            if (!int.TryParse(tbKapasitas.Text, out int kapasitas))
-            {
-                MessageBox.Show("Kapasitas harus berupa angka yang valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (isEditing)
-            {
-                // Mode Edit - Update data yang dipilih
-                int unitId = (int)dgvUnit.SelectedRows[0].Cells["UnitId"].Value;
-                UnitData updatedUnit = new UnitData
+                // Validasi bahwa semua field telah diisi
+                if (string.IsNullOrWhiteSpace(tbNama.Text) ||
+                    string.IsNullOrWhiteSpace(cbTipe.Text) ||
+                    string.IsNullOrWhiteSpace(tbLokasi.Text) ||
+                    string.IsNullOrWhiteSpace(tbKapasitas.Text))
                 {
-                    UnitId = unitId,
-                    NamaUnit = tbNama.Text,
-                    TipeUnit = cbTipe.Text,
-                    LokasiUnit = tbLokasi.Text,
-                    KapasitasUnit = kapasitas.ToString() // Menyimpan kapasitas dalam bentuk string
-                };
+                    MessageBox.Show("Semua field harus diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                authService.UpdateUnit(unitId, updatedUnit);
-                MessageBox.Show("Data berhasil diperbarui.", "Informasi");
-            }
-            else
-            {
+                // Validasi bahwa kapasitas harus berupa angka
+                if (!int.TryParse(tbKapasitas.Text, out int kapasitas))
+                {
+                    MessageBox.Show("Kapasitas harus berupa angka yang valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Mode Tambah - Tambahkan data baru
                 UnitData newUnit = new UnitData
                 {
                     NamaUnit = tbNama.Text,
                     TipeUnit = cbTipe.Text,
                     LokasiUnit = tbLokasi.Text,
-                    KapasitasUnit = kapasitas.ToString() // Menyimpan kapasitas dalam bentuk string
+                    KapasitasUnit = kapasitas.ToString()
                 };
 
-                authService.AddUnit(newUnit);
-                MessageBox.Show("Data baru berhasil ditambahkan.", "Informasi");
-            }
+                // Validasi jika unit sudah ada
+                if (authService.IsUnitExists(newUnit.NamaUnit, newUnit.LokasiUnit))
+                {
+                    MessageBox.Show("Unit dengan nama atau lokasi yang sama sudah ada.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            LoadAllUnitData(); // Refresh data
-            ClearTextBoxes();  // Kosongkan TextBox setelah operasi selesai
-            isEditing = false; // Reset flag ke mode tambah
+                // Tambahkan unit baru
+                authService.AddUnit(newUnit);
+                MessageBox.Show("Data baru berhasil ditambahkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh data setelah penambahan
+                LoadAllUnitData();
+                ClearTextBoxes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

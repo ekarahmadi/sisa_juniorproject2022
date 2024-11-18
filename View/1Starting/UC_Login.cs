@@ -98,6 +98,7 @@ namespace SISA.View._1Starting
 
                 SessionManager.LoadAllUnits();
 
+                authService.ConnectToDatabase();
                 // Simpan informasi sesi ke dalam SessionManager
                 SessionManager.Username = username; // Menyimpan username yang benar ke SessionManager
                 SessionManager.RoleId = roleId;

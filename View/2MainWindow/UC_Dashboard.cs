@@ -387,6 +387,13 @@ namespace SISA.View._2MainWindow
                 decimal berat = Convert.ToDecimal(selectedRow.Cells["berat"].Value);
                 int tpsId = int.Parse(SessionManager.UnitKerja);
 
+                // Periksa apakah inventory_id sudah pernah direquest
+                if (tpsService.IsPickupRequestExists(inventoryId))
+                {
+                    MessageBox.Show("Data sampah ini sudah pernah direquest sebelumnya.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Buka FormSelectTPA untuk memilih TPA
                 using (FormSelectTPA formSelectTPA = new FormSelectTPA())
                 {

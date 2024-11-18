@@ -138,7 +138,7 @@ namespace SISA.Model
 
         public DataTable GetAvailableWaste(int unitId)
         {
-            string query = "SELECT kategori, berat, diterima_dari AS \"Diterima oleh\", tanggal_pembaruan FROM wasteinventory  WHERE unit_id = @unitId AND status_sampah = 'TPS'";
+            string query = "SELECT kategori, berat, diterima_dari AS \"Diterima oleh\", tanggal_pembaruan, inventory_id FROM wasteinventory  WHERE unit_id = @unitId AND status_sampah = 'TPS'";
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
@@ -419,6 +419,25 @@ namespace SISA.Model
                     cmd.Parameters.AddWithValue("@requestId", requestId);
 
                     return cmd.ExecuteNonQuery() > 0; // Return true jika ada baris yang diperbarui
+                }
+            }
+        }
+
+        public bool IsPickupRequestExists(int inventoryId)
+        {
+            string query = @"
+        SELECT COUNT(*)
+        FROM pickuprequest
+        WHERE inventory_id = @inventoryId";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@inventoryId", inventoryId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0; // Return true jika sudah ada
                 }
             }
         }

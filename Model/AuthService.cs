@@ -16,6 +16,36 @@ namespace SISA.Model
 
         // private string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=root;Database=sisa_juniorproject";
         private static int? _currentUserId = null;
+
+        public void ConnectToDatabase()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    MessageBox.Show("Koneksi berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Contoh query
+                    string query = "SELECT * FROM roles;";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine($"{reader["role_id"]}: {reader["role_name"]}");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gagal terhubung ke database: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public bool Login(string username, string password, out int roleId)
         {
             roleId = -1;
@@ -938,29 +968,43 @@ namespace SISA.Model
 
         public void AddUnit(UnitData newUnit)
         {
-            string query = "INSERT INTO units (unit_name, unit_type, location, capacity) VALUES (@unitName, @unitType, @location, @capacity)";
+            // Query untuk menambahkan unit baru
+            string query = "INSERT INTO units (unit_name, unit_type, location, capacity) " +
+                           "VALUES (@unitName, @unitType, @location, @capacity) RETURNING unit_id";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("unitName", newUnit.NamaUnit);
-                    cmd.Parameters.AddWithValue("unitType", newUnit.TipeUnit);
-                    cmd.Parameters.AddWithValue("location", newUnit.LokasiUnit);
+                    // Parameterisasi input untuk mencegah SQL Injection
+                    cmd.Parameters.AddWithValue("@unitName", newUnit.NamaUnit);
+                    cmd.Parameters.AddWithValue("@unitType", newUnit.TipeUnit);
+                    cmd.Parameters.AddWithValue("@location", newUnit.LokasiUnit);
+                    cmd.Parameters.AddWithValue("@capacity", int.Parse(newUnit.KapasitasUnit));
 
-                    // Pastikan capacity dikonversi ke tipe integer
-                    int kapasitas;
-                    if (int.TryParse(newUnit.KapasitasUnit, out kapasitas))
-                    {
-                        cmd.Parameters.AddWithValue("capacity", kapasitas);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Kapasitas harus berupa angka yang valid.");
-                    }
+                    // Eksekusi query dan ambil unit_id baru
+                    int newUnitId = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine($"Unit baru berhasil ditambahkan dengan ID: {newUnitId}");
+                }
+            }
+        }
 
-                    cmd.ExecuteNonQuery();
+        public bool IsUnitExists(string unitName, string location)
+        {
+            // Query untuk mengecek duplikasi unit berdasarkan nama atau lokasi
+            string query = "SELECT COUNT(*) FROM units WHERE unit_name = @unitName OR location = @location";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@unitName", unitName);
+                    cmd.Parameters.AddWithValue("@location", location);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0; // Kembalikan true jika data sudah ada
                 }
             }
         }
