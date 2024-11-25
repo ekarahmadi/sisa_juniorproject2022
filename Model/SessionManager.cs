@@ -45,7 +45,7 @@ namespace SISA.Model
         {
             try
             {
-                TPSService tpsService = new TPSService(); // Panggil TPSService
+                TPSTPAService tpsService = new TPSTPAService(); // Panggil TPSService
                 AllUnits = tpsService.GetAllUnits(); // Ambil semua unit dari database
 
                 if (AllUnits == null || AllUnits.Count == 0)

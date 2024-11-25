@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SISA.Model
 {
-    public class TPSService
+    public class TPSTPAService
     {
         private string connectionString = DatabaseConfig.ConnectionString;
 

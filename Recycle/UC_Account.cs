@@ -22,7 +22,7 @@ namespace SISA.View._2MainWindow
         private Image hoverImageReload;
 
         private AuthService authService;
-        private MainWindow mainWindow;
+        private AdminTPSWindow mainWindow;
 
         // Event untuk memuat UC_EditDataUser
         public event Action ShowEditDataUser;

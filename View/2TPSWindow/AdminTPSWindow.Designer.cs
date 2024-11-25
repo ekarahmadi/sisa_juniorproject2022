@@ -1,6 +1,6 @@
 ﻿namespace SISA.View._2MainWindow
 {
-    partial class MainWindow
+    partial class AdminTPSWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminTPSWindow));
             pictureBox1 = new PictureBox();
             btnDashboard = new PictureBox();
             btnRiwayat = new PictureBox();

@@ -84,7 +84,7 @@ namespace SISA.View._1Starting
             switch (roleId)
             {
                 case 1: // Admin TPS
-                    nextForm = new MainWindow(); // Form untuk Admin TPS/TPA
+                    nextForm = new AdminTPSWindow(); // Form untuk Admin TPS/TPA
                     break;
                 case 2: // Admin TPA
                     nextForm = new AdminTPAWindow(); // Form untuk Admin TPS/TPA

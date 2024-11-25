@@ -17,7 +17,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SISA.View._2MainWindow
 {
-    public partial class MainWindow : Form
+    public partial class AdminTPSWindow : Form
     {
 
         // Gambar default dan hover untuk masing-masing button
@@ -41,7 +41,7 @@ namespace SISA.View._2MainWindow
         private UC_EditDataUser ucEditDataUser;
         private AuthService authService;
 
-        public MainWindow()
+        public AdminTPSWindow()
         {
             InitializeComponent();
             InitializeButtonHoverEffects();

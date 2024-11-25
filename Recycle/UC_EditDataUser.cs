@@ -25,7 +25,7 @@ namespace SISA.Recycle
         private AuthService authService;
         private UserData? userData;
         private int? userId;
-        private MainWindow mainWindow;
+        private AdminTPSWindow mainWindow;
 
         // Event untuk tombol Kembali
         public event EventHandler BackButtonClicked;
@@ -87,7 +87,7 @@ namespace SISA.Recycle
         }
 
         // Konstruktor yang menerima referensi MainWindow
-        public UC_EditDataUser(MainWindow mainWindow)
+        public UC_EditDataUser(AdminTPSWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;

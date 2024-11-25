@@ -13,13 +13,13 @@ namespace SISA.View._2MainWindow
 {
     public partial class FormSelectTPA : Form
     {
-        private TPSService tpsService;
+        private TPSTPAService tpsService;
         public int SelectedTPAId { get; private set; }
 
         public FormSelectTPA()
         {
             InitializeComponent();
-            tpsService = new TPSService();
+            tpsService = new TPSTPAService();
 
             // Tambahkan event handler secara manual jika perlu
             btnConfirm.MouseEnter += btnConfirm_MouseEnter;
@@ -55,7 +55,7 @@ namespace SISA.View._2MainWindow
         {
             try
             {
-                TPSService tpsService = new TPSService();
+                TPSTPAService tpsService = new TPSTPAService();
 
                 // Ambil semua unit dengan tipe TPA
                 DataTable tpaData = tpsService.GetTPAData();
